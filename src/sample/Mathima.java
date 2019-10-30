@@ -2,21 +2,21 @@ package sample;
 
 public class Mathima
 {
-    private String onomaMathimatos;
-    private int kodikoMathimatos;
-    private String tmimaMathimatos;
-    private int eksaminoMathimatos;
-    private int didaktikesMonadesMathimatos;
+    private String onoma;
+    private int kodikos;
+    private String tmima;
+    private int eksamino;
+    private int didaktikesMonades;
     private int ects;
-    private String tuposMathimatos;
+    private String tupos;
 
-    public Mathimata(String onomaMathimatos, int kodikoMathimatos, String tmimaMathimatos, int eksaminoMathimatos, int didaktikesMonadesMathimatos, int ects, String tuposMathimatos) {
-        this.onomaMathimatos = onomaMathimatos;
-        this.kodikoMathimatos = kodikoMathimatos;
-        this.tmimaMathimatos = tmimaMathimatos;
-        this.eksaminoMathimatos = eksaminoMathimatos;
-        this.didaktikesMonadesMathimatos = didaktikesMonadesMathimatos;
+    public Mathimata(String onoma, int kodikos, String tmima, int eksamino, int didaktikesMonades, int ects, String tupos) {
+        this.onoma = onoma;
+        this.kodikos = kodikos;
+        this.tmima = tmima;
+        this.eksamino = eksamino;
+        this.didaktikesMonades = didaktikesMonades;
         this.ects = ects;
-        this.tuposMathimatos = tuposMathimatos;
+        this.tupos = tupos;
     }
 }
