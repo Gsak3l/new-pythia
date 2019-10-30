@@ -1,6 +1,6 @@
 package sample;
 
-public class Mathimata
+public class Mathima
 {
     private String onomaMathimatos;
     private int kodikoMathimatos;
