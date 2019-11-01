@@ -1,0 +1,89 @@
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Account implements Serializable{
+    private String username;
+    private String password;
+    private String mail;
+    private String onomateponumo;
+    private String idiotita;
+    private String tilefwno;
+    
+    public Account(String username, String password, String mail, String onomateponumo, String tilefwno) {
+        this.username = username;
+        this.password = password;
+        this.mail = mail;
+        this.onomateponumo = onomateponumo;
+        this.tilefwno = tilefwno;
+    }
+    
+    public String getIdiotita() {
+        return "";
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+    
+}
+
+class Admin extends Account {
+    private boolean dilwseis = false;
+    private List<Kathigitis> professor = new ArrayList<>();
+    private List<Foititis> student = new ArrayList<>();
+    
+    public Admin(String username, String password, String mail, String onomateponumo, String tilefwno) {
+        super(username, password, mail, onomateponumo, tilefwno);
+    }
+    public boolean getDilwseis(){
+        return dilwseis;
+    }
+    @Override
+    public String getIdiotita() {
+        return "Administrator";
+    }
+    public void createProf(){
+        
+    }
+}
+
+class Kathigitis extends Account {
+    private String eidikotita;
+    private String tmima;
+
+    public Kathigitis(String username, String password, String mail, String onomateponumo, String tilefwno, String eidikotita, String tmima) {
+        super(username, password, mail, onomateponumo, tilefwno);
+        this.eidikotita = eidikotita;
+        this.tmima = tmima;
+    }
+
+    public String getIdiotita() {
+        return "Professor";
+    }
+}
+
+class Foititis extends Account {
+    private int AM;
+    private String tmima;
+    private int eksamino;
+    private String dieuthinsi;
+    //private StoixeiaEggrafis stoixeiaEggrafis;
+
+    public Foititis(String username, String password, String mail, String onomateponumo, String tilefwno, int AM, String tmima, int eksamino, String dieuthinsi) {
+        super(username, password, mail, onomateponumo, tilefwno);
+        this.AM = AM;
+        this.tmima = tmima;
+        this.eksamino = eksamino;
+        this.dieuthinsi = dieuthinsi;
+        //this.stoixeiaEggrafis = stoixeiaEggrafis;
+    }
+    
+    public String getIdiotita() {
+        return "Student";
+    }
+}
