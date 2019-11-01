@@ -47,8 +47,26 @@ class Admin extends Account {
     public String getIdiotita() {
         return "Administrator";
     }
-    public void createProf(){
-        
+    public void createStd(String usernameStd, String passStd, String mailStd, String onomateponumoStd,
+                          String thlefwnoStd, int AMstd, String tmhmaStd, int eksaminoStd, String dieythinsiStd)
+    {
+        student.add(new Foititis(usernameStd, passStd, mailStd, onomateponumoStd, thlefwnoStd, AMstd, tmhmaStd, eksaminoStd, dieythinsiStd));
+        showStd();
+    }
+    public void showStd(){
+        Foititis f1 = student.get(0);
+        System.out.println(f1);
+    }
+    
+    public void createProf(String usernameProf, String passProf, String mailProf, String onomateponumoProf,
+                          String thlefwnoProf, String idikotitaProf, String tmimaProf)
+    {
+        professor.add(new Kathigitis(usernameProf, passProf, mailProf, onomateponumoProf, thlefwnoProf, idikotitaProf, tmimaProf));
+        showProf();
+    }
+    public void showProf(){
+        Kathigitis p1 = professor.get(0);
+        System.out.println(p1);
     }
 }
 
@@ -64,6 +82,10 @@ class Kathigitis extends Account {
 
     public String getIdiotita() {
         return "Professor";
+    }
+    
+    public String toString(){
+        return this.getUsername();
     }
 }
 
@@ -85,5 +107,9 @@ class Foititis extends Account {
     
     public String getIdiotita() {
         return "Student";
+    }
+    
+    public String toString(){
+        return this.getUsername();
     }
 }

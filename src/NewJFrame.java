@@ -67,10 +67,17 @@ public class NewJFrame extends javax.swing.JFrame {
         stdTmhma = new javax.swing.JTextField();
         stdEksamino = new javax.swing.JTextField();
         stdDieythinsi = new javax.swing.JTextField();
-        stdIdiotita = new javax.swing.JTextField();
         stdThlefwno = new javax.swing.JTextField();
         stdNewSubmit = new javax.swing.JButton();
         newProfPage = new javax.swing.JPanel();
+        profOnomateponimo = new javax.swing.JTextField();
+        profMail = new javax.swing.JTextField();
+        profPassword = new javax.swing.JTextField();
+        profUsername = new javax.swing.JTextField();
+        profIdikotita = new javax.swing.JTextField();
+        profTilefono = new javax.swing.JTextField();
+        profTmima = new javax.swing.JTextField();
+        profNewSubmit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.CardLayout());
@@ -119,6 +126,11 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         addProf.setText("Add Professor");
+        addProf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addProfActionPerformed(evt);
+            }
+        });
 
         addStd.setText("Add Student");
         addStd.addActionListener(new java.awt.event.ActionListener() {
@@ -249,8 +261,6 @@ public class NewJFrame extends javax.swing.JFrame {
 
         stdDieythinsi.setText("jTextField4");
 
-        stdIdiotita.setText("jTextField4");
-
         stdThlefwno.setText("jTextField4");
 
         stdNewSubmit.setText("Submit");
@@ -276,12 +286,10 @@ public class NewJFrame extends javax.swing.JFrame {
                                 .addContainerGap(48, Short.MAX_VALUE)
                                 .addGroup(newStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(stdAM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(stdIdiotita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(stdEksamino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(stdEksamino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(stdThlefwno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(258, 258, 258)))
-                        .addGroup(newStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(stdThlefwno, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(stdPassword, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(stdPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(newStdPageLayout.createSequentialGroup()
                         .addGap(48, 48, 48)
                         .addComponent(stdMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -309,11 +317,9 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGroup(newStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(stdMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(stdOnomaEponymo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(63, 63, 63)
-                .addGroup(newStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(stdThlefwno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(stdIdiotita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(95, 95, 95)
+                .addGap(83, 83, 83)
+                .addComponent(stdThlefwno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(75, 75, 75)
                 .addGroup(newStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(stdTmhma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(stdAM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -331,15 +337,82 @@ public class NewJFrame extends javax.swing.JFrame {
 
         getContentPane().add(newStdPage, "card6");
 
+        profOnomateponimo.setText("jTextField4");
+
+        profMail.setText("jTextField4");
+
+        profPassword.setText("jTextField3");
+
+        profUsername.setText("jTextField2");
+
+        profIdikotita.setText("jTextField4");
+
+        profTilefono.setText("jTextField4");
+
+        profTmima.setText("jTextField4");
+
+        profNewSubmit.setText("Submit");
+        profNewSubmit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                profNewSubmitActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout newProfPageLayout = new javax.swing.GroupLayout(newProfPage);
         newProfPage.setLayout(newProfPageLayout);
         newProfPageLayout.setHorizontalGroup(
             newProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, newProfPageLayout.createSequentialGroup()
+                .addContainerGap(509, Short.MAX_VALUE)
+                .addComponent(profNewSubmit)
+                .addGap(18, 18, 18))
+            .addGroup(newProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(newProfPageLayout.createSequentialGroup()
+                    .addGap(108, 108, 108)
+                    .addGroup(newProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(newProfPageLayout.createSequentialGroup()
+                            .addGroup(newProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(newProfPageLayout.createSequentialGroup()
+                                    .addComponent(profUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, newProfPageLayout.createSequentialGroup()
+                                    .addGroup(newProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(profTilefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(profTmima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGap(258, 258, 258)))
+                            .addComponent(profPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(newProfPageLayout.createSequentialGroup()
+                            .addComponent(profMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(profOnomateponimo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(newProfPageLayout.createSequentialGroup()
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(profIdikotita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGap(108, 108, 108)))
         );
         newProfPageLayout.setVerticalGroup(
             newProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, newProfPageLayout.createSequentialGroup()
+                .addContainerGap(468, Short.MAX_VALUE)
+                .addComponent(profNewSubmit)
+                .addContainerGap())
+            .addGroup(newProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(newProfPageLayout.createSequentialGroup()
+                    .addGap(75, 75, 75)
+                    .addGroup(newProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(profUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(profPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(33, 33, 33)
+                    .addGroup(newProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(profMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(profOnomateponimo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(178, 178, 178)
+                    .addGroup(newProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(profIdikotita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(profTilefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(60, 60, 60)
+                    .addComponent(profTmima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(76, Short.MAX_VALUE)))
         );
 
         getContentPane().add(newProfPage, "card7");
@@ -367,6 +440,9 @@ public class NewJFrame extends javax.swing.JFrame {
             clearLoginFields();
             while (true){
                 a1=(Account)oi.readObject();
+                if(a1 instanceof Admin){
+                    admin = (Admin)a1;
+                }
                 char[] passwordArray = a1.getPassword().toCharArray();
                 if(Arrays.equals(passwordTextfield, passwordArray) && a1.getUsername().equals(usernameTextfield)){
                     getContentPane().removeAll();
@@ -427,9 +503,45 @@ public class NewJFrame extends javax.swing.JFrame {
         String passStd = stdPassword.getText();
         String mailStd = stdMail.getText();
         String onomateponumoStd = stdOnomaEponymo.getText();
-        String idiotitaStd = stdIdiotita.getText();
         String thlefwnoStd = stdThlefwno.getText();
+        int AMstd = Integer.parseInt(stdAM.getText());
+        String tmhmaStd = stdTmhma.getText();
+        int eksaminoStd = Integer.parseInt(stdEksamino.getText());
+        String dieythinsiStd = stdDieythinsi.getText();
+        admin.createStd(usernameStd, passStd, mailStd, onomateponumoStd, thlefwnoStd, AMstd, tmhmaStd, eksaminoStd, dieythinsiStd);
+        getContentPane().removeAll();
+        getContentPane().repaint();
+        getContentPane().revalidate();
+        getContentPane().add(AdminPage);
+        getContentPane().repaint();
+        getContentPane().revalidate();
     }//GEN-LAST:event_stdNewSubmitActionPerformed
+
+    private void profNewSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profNewSubmitActionPerformed
+        String usernameProf = profUsername.getText();
+        String passWordProf = profPassword.getText();
+        String mailProf = profMail.getText();
+        String onomateponumoProf = profOnomateponimo.getText();
+        String thlefwnoProf = profTilefono.getText();
+        String idikotitaProf = profIdikotita.getText();
+        String tmimaProf = profTmima.getText();
+        admin.createProf(usernameProf, passWordProf, mailProf, onomateponumoProf, thlefwnoProf, idikotitaProf, tmimaProf);
+        getContentPane().removeAll();
+        getContentPane().repaint();
+        getContentPane().revalidate();
+        getContentPane().add(AdminPage);
+        getContentPane().repaint();
+        getContentPane().revalidate();
+    }//GEN-LAST:event_profNewSubmitActionPerformed
+
+    private void addProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addProfActionPerformed
+        getContentPane().removeAll();
+        getContentPane().repaint();
+        getContentPane().revalidate();
+        getContentPane().add(newProfPage);
+        getContentPane().repaint();
+        getContentPane().revalidate();
+    }//GEN-LAST:event_addProfActionPerformed
     public void clearLoginFields(){
         jPasswordField1.setText("");
         jTextField1.setText("");
@@ -476,6 +588,9 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
     }
+    Admin admin;
+    Foititis std;
+    Kathigitis prof;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AdminPage;
     private javax.swing.JPanel FoiththsPage;
@@ -494,10 +609,17 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JButton kathigitisLogoutButton;
     private javax.swing.JPanel newProfPage;
     private javax.swing.JPanel newStdPage;
+    private javax.swing.JTextField profIdikotita;
+    private javax.swing.JTextField profMail;
+    private javax.swing.JButton profNewSubmit;
+    private javax.swing.JTextField profOnomateponimo;
+    private javax.swing.JTextField profPassword;
+    private javax.swing.JTextField profTilefono;
+    private javax.swing.JTextField profTmima;
+    private javax.swing.JTextField profUsername;
     private javax.swing.JTextField stdAM;
     private javax.swing.JTextField stdDieythinsi;
     private javax.swing.JTextField stdEksamino;
-    private javax.swing.JTextField stdIdiotita;
     private javax.swing.JTextField stdMail;
     private javax.swing.JButton stdNewSubmit;
     private javax.swing.JTextField stdOnomaEponymo;
