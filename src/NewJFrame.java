@@ -426,8 +426,8 @@ public class NewJFrame extends javax.swing.JFrame {
 //        Account foithths = new Foititis("ego", "555", "ego@gmail.com", "ego memena", "", 174891, "Διοικηση", 5, "Λαχανά 22");
 //        FileOutputStream f;
 //        ObjectOutputStream o;
-        FileInputStream fi;
-        ObjectInputStream oi;
+        FileInputStream fi=null;
+        ObjectInputStream oi=null;
         try {
 //            f = new FileOutputStream(new File("myAccounts.txt"));
 //            o = new ObjectOutputStream(f);
@@ -443,43 +443,52 @@ public class NewJFrame extends javax.swing.JFrame {
             char[] passwordTextfield = jPasswordField1.getPassword();
             clearLoginFields();
             while (true){
-                a1=(Account)oi.readObject();
-                if(a1 instanceof Admin){
-                    admin = (Admin)a1;
-                }
-                char[] passwordArray = a1.getPassword().toCharArray();
-                if(Arrays.equals(passwordTextfield, passwordArray) && a1.getUsername().equals(usernameTextfield)){
-                    getContentPane().removeAll();
-                    getContentPane().repaint();
-                    getContentPane().revalidate();
-                    switch (a1.getIdiotita()) {
-                        case "Administrator":
-                            getContentPane().add(AdminPage);
-                            break;
-                        case "Professor":
-                            getContentPane().add(KathigitisPage);
-                            break;
-                        case "Student":
-                            getContentPane().add(FoiththsPage);
-                            break;
-                        default:
-                            break;
+                try{
+                    a1=(Account)oi.readObject();
+                    if(a1 instanceof Admin){
+                        admin = (Admin)a1;
                     }
-                    getContentPane().repaint();
-                    getContentPane().revalidate();
-                    break;
+                    char[] passwordArray = a1.getPassword().toCharArray();
+                    if(Arrays.equals(passwordTextfield, passwordArray) && a1.getUsername().equals(usernameTextfield)){
+                        getContentPane().removeAll();
+                        getContentPane().repaint();
+                        getContentPane().revalidate();
+                        switch (a1.getIdiotita()) {
+                            case "Administrator":
+                                getContentPane().add(AdminPage);
+                                break;
+                            case "Professor":
+                                getContentPane().add(KathigitisPage);
+                                break;
+                            case "Student":
+                                getContentPane().add(FoiththsPage);
+                                break;
+                            default:
+                                break;
+                        }
+                        getContentPane().repaint();
+                        getContentPane().revalidate();
+                        break;
+                    }
+                }catch (EOFException ex1) {
+                    break; //EOF reached.
+                }catch (IOException ex2) {
+                    System.err.println("An IOException was caught: " + ex2.getMessage());
                 }
             }
-            oi.close();
-            fi.close();
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex){
-            System.out.println("Lathos Stoixeia");
-        } catch (ClassNotFoundException ex) {
+        }catch (IOException ex) {
+            System.err.println("An IOException was caught: " + ex.getMessage());
+        }catch (ClassNotFoundException ex) {
             System.out.println("Geia");
+        }finally{
+            try{
+                oi.close();
+                fi.close();
+                System.out.println("ekleisa");
+            }catch(IOException ex) {
+                System.err.println("An IOException was caught: " + ex.getMessage());
+            }
         }
-        
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
