@@ -424,16 +424,20 @@ public class NewJFrame extends javax.swing.JFrame {
 //        Account admin = new Admin("it174890", "633818", "it174890@it.teithe.gr", "Γιώργος Στίνης", "2310574479");
 //        Account kathigitis = new Kathigitis("daddy", "keftedaki", "dad@it.teithe.gr", "SallaDaddy", "6948855476", "Μαθηματικός", "Μηχανικών Πληροφορικής");
 //        Account foithths = new Foititis("ego", "555", "ego@gmail.com", "ego memena", "", 174891, "Διοικηση", 5, "Λαχανά 22");
+//        FileOutputStream f;
+//        ObjectOutputStream o;
+        FileInputStream fi;
+        ObjectInputStream oi;
         try {
-//            FileOutputStream f = new FileOutputStream(new File("myAccounts.txt"));
-//            ObjectOutputStream o = new ObjectOutputStream(f);
+//            f = new FileOutputStream(new File("myAccounts.txt"));
+//            o = new ObjectOutputStream(f);
 //            o.writeObject(admin);
 //            o.writeObject(kathigitis);
 //            o.writeObject(foithths);
 //            o.close();
 //            f.close();
-            FileInputStream fi = new FileInputStream(new File("myAccounts.txt"));
-            ObjectInputStream oi = new ObjectInputStream(fi);
+            fi = new FileInputStream(new File("myAccounts.txt"));
+            oi = new ObjectInputStream(fi);
             Account a1;
             String usernameTextfield = jTextField1.getText();
             char[] passwordTextfield = jPasswordField1.getPassword();
@@ -466,6 +470,8 @@ public class NewJFrame extends javax.swing.JFrame {
                     break;
                 }
             }
+            oi.close();
+            fi.close();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex){
