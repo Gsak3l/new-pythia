@@ -52,6 +52,7 @@ public class NewJFrame extends javax.swing.JFrame {
         adminLogoutButton = new javax.swing.JButton();
         addProf = new javax.swing.JButton();
         addStd = new javax.swing.JButton();
+        addMath = new javax.swing.JButton();
         FoiththsPage = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         foiththsLogoutButton = new javax.swing.JButton();
@@ -78,13 +79,13 @@ public class NewJFrame extends javax.swing.JFrame {
         profTilefono = new javax.swing.JTextField();
         profTmima = new javax.swing.JTextField();
         profNewSubmit = new javax.swing.JButton();
-        MathimaPage = new javax.swing.JPanel();
-        onomaMathimatos = new javax.swing.JTextField();
-        eksamino = new javax.swing.JTextField();
-        eidosEksaminou = new javax.swing.JTextField();
-        kodikosMathimatos = new javax.swing.JTextField();
-        kateuthinsi = new javax.swing.JTextField();
-        submitLesson = new javax.swing.JButton();
+        newMathPage = new javax.swing.JPanel();
+        mathOnoma = new javax.swing.JTextField();
+        mathEksamino = new javax.swing.JTextField();
+        mathEidosEksaminou = new javax.swing.JTextField();
+        mathKodikos = new javax.swing.JTextField();
+        mathKateuthinsi = new javax.swing.JTextField();
+        mathNewSubmit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.CardLayout());
@@ -146,6 +147,13 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
+        addMath.setText("Add Course");
+        addMath.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addMathActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout AdminPageLayout = new javax.swing.GroupLayout(AdminPage);
         AdminPage.setLayout(AdminPageLayout);
         AdminPageLayout.setHorizontalGroup(
@@ -157,14 +165,16 @@ public class NewJFrame extends javax.swing.JFrame {
                         .addComponent(adminLogoutButton))
                     .addGroup(AdminPageLayout.createSequentialGroup()
                         .addGroup(AdminPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(addStd, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(AdminPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(AdminPageLayout.createSequentialGroup()
                                     .addContainerGap()
                                     .addComponent(jLabel1))
                                 .addGroup(AdminPageLayout.createSequentialGroup()
                                     .addGap(136, 136, 136)
-                                    .addComponent(addProf))))
+                                    .addComponent(addProf)))
+                            .addGroup(AdminPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(addMath, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(addStd, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -177,7 +187,9 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addComponent(addProf)
                 .addGap(28, 28, 28)
                 .addComponent(addStd)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 306, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(addMath)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 265, Short.MAX_VALUE)
                 .addComponent(adminLogoutButton)
                 .addContainerGap())
         );
@@ -424,85 +436,60 @@ public class NewJFrame extends javax.swing.JFrame {
 
         getContentPane().add(newProfPage, "card7");
 
-        onomaMathimatos.setText("Onoma Mathimatos");
-        onomaMathimatos.addActionListener(new java.awt.event.ActionListener() {
+        mathOnoma.setText("Onoma Mathimatos");
+
+        mathEksamino.setText("eksamino");
+
+        mathEidosEksaminou.setText("eidosEksaminou");
+
+        mathKodikos.setText("kodikosMathimatos");
+
+        mathKateuthinsi.setText("kateuthinsi");
+
+        mathNewSubmit.setText("Submit");
+        mathNewSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                onomaMathimatosActionPerformed(evt);
+                mathNewSubmitActionPerformed(evt);
             }
         });
 
-        eksamino.setText("eksamino");
-        eksamino.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eksaminoActionPerformed(evt);
-            }
-        });
-
-        eidosEksaminou.setText("eidosEksaminou");
-        eidosEksaminou.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eidosEksaminouActionPerformed(evt);
-            }
-        });
-
-        kodikosMathimatos.setText("kodikosMathimatos");
-        kodikosMathimatos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kodikosMathimatosActionPerformed(evt);
-            }
-        });
-
-        kateuthinsi.setText("kateuthinsi");
-        kateuthinsi.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                kateuthinsiActionPerformed(evt);
-            }
-        });
-
-        submitLesson.setText("Submit");
-        submitLesson.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                submitLessonActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout MathimaPageLayout = new javax.swing.GroupLayout(MathimaPage);
-        MathimaPage.setLayout(MathimaPageLayout);
-        MathimaPageLayout.setHorizontalGroup(
-            MathimaPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(MathimaPageLayout.createSequentialGroup()
+        javax.swing.GroupLayout newMathPageLayout = new javax.swing.GroupLayout(newMathPage);
+        newMathPage.setLayout(newMathPageLayout);
+        newMathPageLayout.setHorizontalGroup(
+            newMathPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(newMathPageLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(MathimaPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(onomaMathimatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(eksamino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(eidosEksaminou, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(kodikosMathimatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(kateuthinsi, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(newMathPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(mathOnoma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mathEksamino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mathEidosEksaminou, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mathKodikos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mathKateuthinsi, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(484, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MathimaPageLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, newMathPageLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(submitLesson)
+                .addComponent(mathNewSubmit)
                 .addGap(39, 39, 39))
         );
-        MathimaPageLayout.setVerticalGroup(
-            MathimaPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(MathimaPageLayout.createSequentialGroup()
+        newMathPageLayout.setVerticalGroup(
+            newMathPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(newMathPageLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(onomaMathimatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(mathOnoma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(eksamino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(mathEksamino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(eidosEksaminou, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(mathEidosEksaminou, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(kodikosMathimatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(mathKodikos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(kateuthinsi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(mathKateuthinsi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 260, Short.MAX_VALUE)
-                .addComponent(submitLesson)
+                .addComponent(mathNewSubmit)
                 .addGap(27, 27, 27))
         );
 
-        getContentPane().add(MathimaPage, "card8");
+        getContentPane().add(newMathPage, "card8");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -511,12 +498,10 @@ public class NewJFrame extends javax.swing.JFrame {
 //        Account admin = new Admin("it174890", "633818", "it174890@it.teithe.gr", "Γιώργος Στίνης", "2310574479");
 //        Account kathigitis = new Kathigitis("daddy", "keftedaki", "dad@it.teithe.gr", "SallaDaddy", "6948855476", "Μαθηματικός", "Μηχανικών Πληροφορικής");
 //        Account foithths = new Foititis("ego", "555", "ego@gmail.com", "ego memena", "", 174891, "Διοικηση", 5, "Λαχανά 22");
-//        FileOutputStream f;
-//        ObjectOutputStream o;
         FileInputStream fi=null;
         ObjectInputStream oi=null;
         try {
-//            f = new FileOutputStream(new File("myAccounts.txt"));
+//            f = new FileOutputStream(new File("myAccounts.txt"), true);
 //            o = new ObjectOutputStream(f);
 //            o.writeObject(admin);
 //            o.writeObject(kathigitis);
@@ -645,41 +630,29 @@ public class NewJFrame extends javax.swing.JFrame {
         getContentPane().revalidate();
     }//GEN-LAST:event_addProfActionPerformed
 
-    private void onomaMathimatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onomaMathimatosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_onomaMathimatosActionPerformed
-
-    private void eksaminoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eksaminoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_eksaminoActionPerformed
-
-    private void eidosEksaminouActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eidosEksaminouActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_eidosEksaminouActionPerformed
-
-    private void kodikosMathimatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kodikosMathimatosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_kodikosMathimatosActionPerformed
-
-    private void kateuthinsiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kateuthinsiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_kateuthinsiActionPerformed
-
-    private void submitLessonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitLessonActionPerformed
-        // TODO add your handling code here:
-        String onomaM = onomaMathimatos.getText();
-        int eks = Integer.parseInt(eksamino.getText());
-        String eidos = eidosEksaminou.getText();
-        int kodikos = Integer.parseInt(kodikosMathimatos.getText());
-        String kat = kateuthinsi.getText();
-        admin.createLesson(onomaM, eks, eidos, kodikos, kat);
+    private void mathNewSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mathNewSubmitActionPerformed
+        String onomaMath = mathOnoma.getText();
+        int eksamhnoMath = Integer.parseInt(mathEksamino.getText());
+        String eidosMath = mathEidosEksaminou.getText();
+        int kodikosMath = Integer.parseInt(mathKodikos.getText());
+        String kateythinsiMath = mathKateuthinsi.getText();
+        admin.createLesson(onomaMath, eksamhnoMath, eidosMath, kodikosMath, kateythinsiMath);
         getContentPane().removeAll();
         getContentPane().repaint();
         getContentPane().revalidate();
         getContentPane().add(AdminPage);
         getContentPane().repaint();
         getContentPane().revalidate();
-    }//GEN-LAST:event_submitLessonActionPerformed
+    }//GEN-LAST:event_mathNewSubmitActionPerformed
+
+    private void addMathActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMathActionPerformed
+        getContentPane().removeAll();
+        getContentPane().repaint();
+        getContentPane().revalidate();
+        getContentPane().add(newMathPage);
+        getContentPane().repaint();
+        getContentPane().revalidate();
+    }//GEN-LAST:event_addMathActionPerformed
     public void clearLoginFields(){
         jPasswordField1.setText("");
         jTextField1.setText("");
@@ -720,25 +693,23 @@ public class NewJFrame extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new NewJFrame().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new NewJFrame().setVisible(true);
         });
     }
     Admin admin;
     Foititis std;
     Kathigitis prof;
+    FileOutputStream f = null;
+    ObjectOutputStream o = null;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AdminPage;
     private javax.swing.JPanel FoiththsPage;
     private javax.swing.JPanel KathigitisPage;
-    private javax.swing.JPanel MathimaPage;
+    private javax.swing.JButton addMath;
     private javax.swing.JButton addProf;
     private javax.swing.JButton addStd;
     private javax.swing.JButton adminLogoutButton;
-    private javax.swing.JTextField eidosEksaminou;
-    private javax.swing.JTextField eksamino;
     private javax.swing.JButton foiththsLogoutButton;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
@@ -747,12 +718,16 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField kateuthinsi;
     private javax.swing.JButton kathigitisLogoutButton;
-    private javax.swing.JTextField kodikosMathimatos;
+    private javax.swing.JTextField mathEidosEksaminou;
+    private javax.swing.JTextField mathEksamino;
+    private javax.swing.JTextField mathKateuthinsi;
+    private javax.swing.JTextField mathKodikos;
+    private javax.swing.JButton mathNewSubmit;
+    private javax.swing.JTextField mathOnoma;
+    private javax.swing.JPanel newMathPage;
     private javax.swing.JPanel newProfPage;
     private javax.swing.JPanel newStdPage;
-    private javax.swing.JTextField onomaMathimatos;
     private javax.swing.JTextField profIdikotita;
     private javax.swing.JTextField profMail;
     private javax.swing.JButton profNewSubmit;
@@ -771,6 +746,5 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JTextField stdThlefwno;
     private javax.swing.JTextField stdTmhma;
     private javax.swing.JTextField stdUsername;
-    private javax.swing.JButton submitLesson;
     // End of variables declaration//GEN-END:variables
 }

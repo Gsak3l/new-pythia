@@ -1,4 +1,6 @@
-class Mathima {
+import java.io.Serializable;
+
+class Mathima implements Serializable{
     private String onomaMathimatos;
     private int eksamino;
     private String eidosEksaminou;
