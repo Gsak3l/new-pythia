@@ -78,7 +78,7 @@ class Admin extends Account {
     }
 
     public void showLesson() {
-        Mathima m1 = mathima.get(0);
+        Mathima m1 = lesson.get(0);
         System.out.println(m1);
     }
 }
