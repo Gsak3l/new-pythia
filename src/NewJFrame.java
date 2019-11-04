@@ -101,6 +101,9 @@ public class NewJFrame extends javax.swing.JFrame {
         removeCoursePage = new javax.swing.JPanel();
         kodDiagMath = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
+        removeProfPage = new javax.swing.JPanel();
+        usernameKathD = new javax.swing.JTextField();
+        jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.CardLayout());
@@ -621,6 +624,40 @@ public class NewJFrame extends javax.swing.JFrame {
 
         getContentPane().add(removeCoursePage, "card10");
 
+        usernameKathD.setText("Username Kathigiti gia Diagrafi");
+
+        jButton4.setText("Delete");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout removeProfPageLayout = new javax.swing.GroupLayout(removeProfPage);
+        removeProfPage.setLayout(removeProfPageLayout);
+        removeProfPageLayout.setHorizontalGroup(
+            removeProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(removeProfPageLayout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addComponent(usernameKathD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(391, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, removeProfPageLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton4)
+                .addGap(90, 90, 90))
+        );
+        removeProfPageLayout.setVerticalGroup(
+            removeProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(removeProfPageLayout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addComponent(usernameKathD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 241, Short.MAX_VALUE)
+                .addComponent(jButton4)
+                .addGap(144, 144, 144))
+        );
+
+        getContentPane().add(removeProfPage, "card11");
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -871,15 +908,18 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        int amD = Integer.parseInt(amFoititiDiag.getText());
-        admin.deleteStudent(amD);
+        admin.deleteStudent(Integer.parseInt(amFoititiDiag.getText()));
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        int kodikosDiag = Integer.parseInt(kodDiagMath.getText());
-        admin.deleteCourse(kodikosDiag);
+        admin.deleteCourse(Integer.parseInt(kodDiagMath.getText()));
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        admin.deteteProf(usernameKathD.getText());
+    }//GEN-LAST:event_jButton4ActionPerformed
     public void clearLoginFields(){
         jPasswordField1.setText("");
         jTextField1.setText("");
@@ -942,6 +982,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -973,6 +1014,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JButton removeCourse;
     private javax.swing.JPanel removeCoursePage;
     private javax.swing.JPanel removeFoititisPage;
+    private javax.swing.JPanel removeProfPage;
     private javax.swing.JButton removeProfessor;
     private javax.swing.JButton removeStudent;
     private javax.swing.JTextField stdAM;
@@ -985,5 +1027,6 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JTextField stdThlefwno;
     private javax.swing.JTextField stdTmhma;
     private javax.swing.JTextField stdUsername;
+    private javax.swing.JTextField usernameKathD;
     // End of variables declaration//GEN-END:variables
 }

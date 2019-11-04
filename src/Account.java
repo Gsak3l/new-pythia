@@ -165,6 +165,17 @@ class Admin extends Account {
         }
     }
     
+    public void deteteProf(String username) {
+        for(int i = 0; i < professor.size(); i++) {
+            if(professor.get(i).getUsername().equals(username)) {
+                professor.remove(i);
+                System.out.println("Epituxis Diagrafi tou Kathigiti me username: " + username);
+            }else {
+                System.out.println("Apotixis Diagrafi tou Kathigiti me username: " + username);
+            }
+        }
+    }
+    
     public void deleteCourse(int kodM) {
         for(int i = 0; i < lesson.size(); i ++) {
             if(lesson.get(i).getKodikosMathimatos() == kodM) {
