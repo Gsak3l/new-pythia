@@ -93,7 +93,6 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="addStd" alignment="1" min="-2" pref="101" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace max="-2" attributes="0"/>
@@ -103,6 +102,10 @@
                                       <EmptySpace min="-2" pref="136" max="-2" attributes="0"/>
                                       <Component id="addProf" min="-2" max="-2" attributes="0"/>
                                   </Group>
+                              </Group>
+                              <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="addMath" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="addStd" alignment="1" pref="101" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -121,7 +124,9 @@
                   <Component id="addProf" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                   <Component id="addStd" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="306" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="addMath" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="265" max="32767" attributes="0"/>
                   <Component id="adminLogoutButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -156,6 +161,14 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addStdActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="addMath">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Add Course"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addMathActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
@@ -417,10 +430,20 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="509" max="32767" attributes="0"/>
-                  <Component id="profNewSubmit" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <EmptySpace pref="233" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="profNewSubmit" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="profIdikotita" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
               </Group>
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
@@ -447,10 +470,6 @@
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="profOnomateponimo" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace pref="317" max="-2" attributes="0"/>
-                              <Component id="profIdikotita" min="-2" max="-2" attributes="0"/>
-                          </Group>
                       </Group>
                       <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
                   </Group>
@@ -460,8 +479,13 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="438" max="32767" attributes="0"/>
-                  <Component id="profNewSubmit" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="170" max="32767" attributes="0"/>
+                  <Component id="profIdikotita" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+                      <Component id="profNewSubmit" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
@@ -477,10 +501,7 @@
                           <Component id="profOnomateponimo" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="178" pref="178" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="profIdikotita" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="profTilefono" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="profTilefono" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                       <Component id="profTmima" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
@@ -533,9 +554,23 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="profNewSubmitActionPerformed"/>
           </Events>
         </Component>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JList" name="profMathimata">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+          </SubComponents>
+        </Container>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="MathimaPage">
+    <Container class="javax.swing.JPanel" name="newMathPage">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
           <CardConstraints cardName="card8"/>
@@ -545,21 +580,24 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="mathNewSubmit" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+              </Group>
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="onomaMathimatos" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="eksamino" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="eidosEksaminou" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="kodikosMathimatos" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="kateuthinsi" alignment="0" min="-2" pref="74" max="-2" attributes="0"/>
+                      <Component id="mathOnoma" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="mathEksamino" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="mathTypos" alignment="0" max="32767" attributes="0"/>
+                          <Component id="mathTmhma" alignment="0" max="32767" attributes="0"/>
+                          <Component id="mathKodikos" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <Component id="mathDM" alignment="0" min="-2" pref="107" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="484" max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="submitLesson" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                  <EmptySpace pref="479" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -567,70 +605,62 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                  <Component id="onomaMathimatos" min="-2" max="-2" attributes="0"/>
+                  <Component id="mathOnoma" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="eksamino" min="-2" max="-2" attributes="0"/>
+                  <Component id="mathEksamino" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="eidosEksaminou" min="-2" max="-2" attributes="0"/>
+                  <Component id="mathTmhma" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="kodikosMathimatos" min="-2" max="-2" attributes="0"/>
+                  <Component id="mathKodikos" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="kateuthinsi" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="260" max="32767" attributes="0"/>
-                  <Component id="submitLesson" min="-2" max="-2" attributes="0"/>
+                  <Component id="mathTypos" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="mathDM" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="229" max="32767" attributes="0"/>
+                  <Component id="mathNewSubmit" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JTextField" name="onomaMathimatos">
+        <Component class="javax.swing.JTextField" name="mathOnoma">
           <Properties>
             <Property name="text" type="java.lang.String" value="Onoma Mathimatos"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="onomaMathimatosActionPerformed"/>
-          </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="eksamino">
+        <Component class="javax.swing.JTextField" name="mathEksamino">
           <Properties>
             <Property name="text" type="java.lang.String" value="eksamino"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eksaminoActionPerformed"/>
-          </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="eidosEksaminou">
+        <Component class="javax.swing.JTextField" name="mathTmhma">
           <Properties>
-            <Property name="text" type="java.lang.String" value="eidosEksaminou"/>
+            <Property name="text" type="java.lang.String" value="tmhmaMathimatos"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="eidosEksaminouActionPerformed"/>
-          </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="kodikosMathimatos">
+        <Component class="javax.swing.JTextField" name="mathKodikos">
           <Properties>
             <Property name="text" type="java.lang.String" value="kodikosMathimatos"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="kodikosMathimatosActionPerformed"/>
-          </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="kateuthinsi">
+        <Component class="javax.swing.JTextField" name="mathTypos">
           <Properties>
-            <Property name="text" type="java.lang.String" value="kateuthinsi"/>
+            <Property name="text" type="java.lang.String" value="typosMathimatos"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="kateuthinsiActionPerformed"/>
-          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="submitLesson">
+        <Component class="javax.swing.JButton" name="mathNewSubmit">
           <Properties>
             <Property name="text" type="java.lang.String" value="Submit"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="submitLessonActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mathNewSubmitActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="mathDM">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="didaktikesMonades"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

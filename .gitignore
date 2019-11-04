@@ -3,4 +3,8 @@ manifest.mf
 test/
 nbproject/
 build/
+<<<<<<< HEAD
 .idea
+=======
+.idea/
+>>>>>>> e14c4434f6646af2d0a44fb9bcb71b3e9f7c679d
