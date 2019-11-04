@@ -3,21 +3,23 @@ import java.io.Serializable;
 class Mathima implements Serializable{
     private String onomaMathimatos;
     private int eksamino;
-    private String eidosEksaminou;
     private int kodikosMathimatos;
-    private String kateuthinsi;
-
-    public Mathima(String onomaMathimatos, int eksamino, String eidosEksaminou, int kodikosMathimatos, String kateuthinsi) {
+    private String tmhmaMathimatos;
+    private String typosMathimatos;
+    private int didaktikesMonades;
+    
+    public Mathima(String onomaMathimatos, int eksamino, int kodikosMathimatos, String tmhmaMathimatos, String typosMathimatos, int didaktikesMonades) {
         this.onomaMathimatos = onomaMathimatos;
         this.eksamino = eksamino;
-        this.eidosEksaminou = eidosEksaminou;
         this.kodikosMathimatos = kodikosMathimatos;
-        this.kateuthinsi = kateuthinsi;
+        this.tmhmaMathimatos = tmhmaMathimatos;
+        this.typosMathimatos = typosMathimatos;
+        this.didaktikesMonades = didaktikesMonades;
     }
 
     @java.lang.Override
-    public java.lang.String toString() {
-        return "Mathima(" + "onomaMathimatos=" + onomaMathimatos + ", eksamino=" + eksamino + ", eidosEksaminou=" + eidosEksaminou +  ", kodikosMathimatos=" + kodikosMathimatos + ", kateuthinsi=" + kateuthinsi + ")";
+    public String toString() {
+        return "Mathima(" + "onomaMathimatos=" + onomaMathimatos + ", eksamino=" + eksamino + ", kodikosMathimatos=" + kodikosMathimatos +  ", tmhmaMathimatos=" + tmhmaMathimatos + ", typosMathimatos=" + typosMathimatos + "didaktikesMonades" + didaktikesMonades +")";
     }
 
     public String getOnomaMathimatos() {
@@ -32,22 +34,34 @@ class Mathima implements Serializable{
     public void setEksamino(int eksamino) {
         this.eksamino = eksamino;
     }
-    public String getEidosEksaminou() {
-        return eidosEksaminou;
-    }
-    public void setEidosEksaminou(String eidosEksaminou) {
-        this.eidosEksaminou = eidosEksaminou;
-    }
     public int getKodikosMathimatos() {
         return kodikosMathimatos;
     }
     public void setKodikosMathimatos(int kodikosMathimatos) {
         this.kodikosMathimatos = kodikosMathimatos;
     }
-    public String getKateuthinsi() {
-        return kateuthinsi;
+
+    public String getTmhmaMathimatos() {
+        return tmhmaMathimatos;
     }
-    public void setKateuthinsi(String kateuthinsi) {
-        this.kateuthinsi = kateuthinsi;
+
+    public void setTmhmaMathimatos(String tmhmaMathimatos) {
+        this.tmhmaMathimatos = tmhmaMathimatos;
+    }
+
+    public String getTyposMathimatos() {
+        return typosMathimatos;
+    }
+
+    public void setTyposMathimatos(String typosMathimatos) {
+        this.typosMathimatos = typosMathimatos;
+    }
+
+    public int getDidaktikesMonades() {
+        return didaktikesMonades;
+    }
+
+    public void setDidaktikesMonades(int didaktikesMonades) {
+        this.didaktikesMonades = didaktikesMonades;
     }
 }

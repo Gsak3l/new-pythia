@@ -66,14 +66,14 @@ class Admin extends Account {
     }
 
     public void createProf(String usernameProf, String passProf, String mailProf, String onomateponumoProf,
-                           String thlefwnoProf, String idikotitaProf, String tmimaProf) {
-        Kathigitis prof = new Kathigitis(usernameProf, passProf, mailProf, onomateponumoProf, thlefwnoProf, idikotitaProf, tmimaProf);
+                           String thlefwnoProf, String idikotitaProf, String tmimaProf, List<Mathima> mathimataProf) {
+        Kathigitis prof = new Kathigitis(usernameProf, passProf, mailProf, onomateponumoProf, thlefwnoProf, idikotitaProf, tmimaProf, mathimataProf);
         professor.add(prof);
         putProfToList(prof);
     }
 
-    public void createLesson(String lessonName, int lessonEksamino, String eidosEksaminou, int kodikosMathimatos, String kateuthinsi) {
-        Mathima math = new Mathima(lessonName, lessonEksamino, eidosEksaminou, kodikosMathimatos, kateuthinsi);
+    public void createLesson(String lessonName, int lessonEksamino, String lessonTmhma, int kodikosMathimatos, String lessonTypos, int lessonDM) {
+        Mathima math = new Mathima(lessonName, lessonEksamino, kodikosMathimatos, lessonTmhma, lessonTypos, lessonDM);
         lesson.add(math);
         putMathToList(math);
     }
@@ -173,11 +173,13 @@ class Admin extends Account {
 class Kathigitis extends Account {
     private String eidikotita;
     private String tmima;
+    private List<Mathima> mathimata = new ArrayList<>();
 
-    public Kathigitis(String username, String password, String mail, String onomateponumo, String tilefwno, String eidikotita, String tmima) {
+    public Kathigitis(String username, String password, String mail, String onomateponumo, String tilefwno, String eidikotita, String tmima, List<Mathima> mathimata) {
         super(username, password, mail, onomateponumo, tilefwno);
         this.eidikotita = eidikotita;
         this.tmima = tmima;
+        this.mathimata = mathimata;
     }
 
     public String getIdiotita() {
