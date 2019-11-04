@@ -71,17 +71,6 @@ class Admin extends Account {
         professor.add(prof);
         putProfToList(prof);
     }
-    
-    public void deleteStudent(int am){
-        for(int i = 0; i < student.size(); i ++) {
-            if(student.get(i).getAM() == am) {
-                student.remove(i);
-                System.out.println("Epituxis Diagrafi tou Foititi me AM: " + am);
-            }else{
-                System.out.println("O Foititis me AM: " + am + " den vrethike sthn lista me tous foitites");
-            }
-        }
-    }
 
     public void createLesson(String lessonName, int lessonEksamino, String lessonTmhma, int kodikosMathimatos, String lessonTypos, int lessonDM) {
         Mathima math = new Mathima(lessonName, lessonEksamino, kodikosMathimatos, lessonTmhma, lessonTypos, lessonDM);
@@ -161,6 +150,28 @@ class Admin extends Account {
                 System.out.println("ekleisa");
             }catch(IOException ex) {
                 System.err.println("An IOException was caught: " + ex.getMessage());
+            }
+        }
+    }
+    
+    public void deleteStudent(int am){
+        for(int i = 0; i < student.size(); i ++) {
+            if(student.get(i).getAM() == am) {
+                student.remove(i);
+                System.out.println("Epituxis Diagrafi tou Foititi me AM: " + am);
+            }else{
+                System.out.println("O Foititis me AM: " + am + " den vrethike sthn lista me tous foitites");
+            }
+        }
+    }
+    
+    public void deleteCourse(int kodM) {
+        for(int i = 0; i < lesson.size(); i ++) {
+            if(lesson.get(i).getKodikosMathimatos() == kodM) {
+                lesson.remove(i);
+                System.out.println("Epituxis Diagrafi tou Mathimatos me kodiko: " + kodM);
+            }else {
+                System.out.println("Apotuxia diagrafis tou mathimatos me kodiko: " + kodM);
             }
         }
     }
