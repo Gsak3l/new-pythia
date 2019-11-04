@@ -71,6 +71,17 @@ class Admin extends Account {
         professor.add(prof);
         putProfToList(prof);
     }
+    
+    public void deleteStudent(int am){
+        for(int i = 0; i < student.size(); i ++) {
+            if(student.get(i).getAM() == am) {
+                student.remove(i);
+                System.out.println("Epituxis Diagrafi tou Foititi me AM: " + am);
+            }else{
+                System.out.println("O Foititis me AM: " + am + " den vrethike sthn lista me tous foitites");
+            }
+        }
+    }
 
     public void createLesson(String lessonName, int lessonEksamino, String lessonTmhma, int kodikosMathimatos, String lessonTypos, int lessonDM) {
         Mathima math = new Mathima(lessonName, lessonEksamino, kodikosMathimatos, lessonTmhma, lessonTypos, lessonDM);
@@ -206,7 +217,11 @@ class Foititis extends Account {
         this.dieuthinsi = dieuthinsi;
         //this.stoixeiaEggrafis = stoixeiaEggrafis;
     }
-
+    
+    public int getAM(){
+        return this.AM;
+    }
+    
     public String getIdiotita() {
         return "Student";
     }

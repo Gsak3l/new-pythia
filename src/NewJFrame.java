@@ -56,6 +56,9 @@ public class NewJFrame extends javax.swing.JFrame {
         addProf = new javax.swing.JButton();
         addStd = new javax.swing.JButton();
         addMath = new javax.swing.JButton();
+        removeProfessor = new javax.swing.JButton();
+        removeStudent = new javax.swing.JButton();
+        removeCourse = new javax.swing.JButton();
         FoiththsPage = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         foiththsLogoutButton = new javax.swing.JButton();
@@ -92,6 +95,9 @@ public class NewJFrame extends javax.swing.JFrame {
         mathTypos = new javax.swing.JTextField();
         mathNewSubmit = new javax.swing.JButton();
         mathDM = new javax.swing.JTextField();
+        removeFoititis = new javax.swing.JPanel();
+        amFoititiDiag = new javax.swing.JTextField();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.CardLayout());
@@ -160,6 +166,27 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
+        removeProfessor.setText("Remove Professor");
+        removeProfessor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removeProfessorActionPerformed(evt);
+            }
+        });
+
+        removeStudent.setText("Remove Student");
+        removeStudent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removeStudentActionPerformed(evt);
+            }
+        });
+
+        removeCourse.setText("Remove Course");
+        removeCourse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removeCourseActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout AdminPageLayout = new javax.swing.GroupLayout(AdminPage);
         AdminPage.setLayout(AdminPageLayout);
         AdminPageLayout.setHorizontalGroup(
@@ -181,6 +208,11 @@ public class NewJFrame extends javax.swing.JFrame {
                             .addGroup(AdminPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(addMath, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(addStd, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)))
+                        .addGap(35, 35, 35)
+                        .addGroup(AdminPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(removeProfessor)
+                            .addComponent(removeStudent)
+                            .addComponent(removeCourse))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -190,11 +222,17 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addGap(33, 33, 33)
-                .addComponent(addProf)
+                .addGroup(AdminPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(addProf)
+                    .addComponent(removeProfessor))
                 .addGap(28, 28, 28)
-                .addComponent(addStd)
+                .addGroup(AdminPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(addStd)
+                    .addComponent(removeStudent))
                 .addGap(18, 18, 18)
-                .addComponent(addMath)
+                .addGroup(AdminPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(addMath)
+                    .addComponent(removeCourse))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 265, Short.MAX_VALUE)
                 .addComponent(adminLogoutButton)
                 .addContainerGap())
@@ -511,6 +549,41 @@ public class NewJFrame extends javax.swing.JFrame {
 
         getContentPane().add(newMathPage, "card8");
 
+        amFoititiDiag.setText("AM Foititi gia Diagrafi");
+
+        jButton2.setText("Delete");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout removeFoititisLayout = new javax.swing.GroupLayout(removeFoititis);
+        removeFoititis.setLayout(removeFoititisLayout);
+        removeFoititisLayout.setHorizontalGroup(
+            removeFoititisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(removeFoititisLayout.createSequentialGroup()
+                .addGroup(removeFoititisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(removeFoititisLayout.createSequentialGroup()
+                        .addGap(100, 100, 100)
+                        .addComponent(amFoititiDiag, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(removeFoititisLayout.createSequentialGroup()
+                        .addGap(254, 254, 254)
+                        .addComponent(jButton2)))
+                .addContainerGap(277, Short.MAX_VALUE))
+        );
+        removeFoititisLayout.setVerticalGroup(
+            removeFoititisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(removeFoititisLayout.createSequentialGroup()
+                .addGap(79, 79, 79)
+                .addComponent(amFoititiDiag, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(55, 55, 55)
+                .addComponent(jButton2)
+                .addContainerGap(295, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(removeFoititis, "card9");
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -746,6 +819,24 @@ public class NewJFrame extends javax.swing.JFrame {
         getContentPane().repaint();
         getContentPane().revalidate();
     }//GEN-LAST:event_addMathActionPerformed
+
+    private void removeProfessorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeProfessorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_removeProfessorActionPerformed
+
+    private void removeStudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeStudentActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_removeStudentActionPerformed
+
+    private void removeCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeCourseActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_removeCourseActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        int amD = Integer.parseInt(amFoititiDiag.getText());
+        admin.deleteStudent(amD);
+    }//GEN-LAST:event_jButton2ActionPerformed
     public void clearLoginFields(){
         jPasswordField1.setText("");
         jTextField1.setText("");
@@ -803,8 +894,10 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JButton addProf;
     private javax.swing.JButton addStd;
     private javax.swing.JButton adminLogoutButton;
+    private javax.swing.JTextField amFoititiDiag;
     private javax.swing.JButton foiththsLogoutButton;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -832,6 +925,10 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JTextField profTilefono;
     private javax.swing.JTextField profTmima;
     private javax.swing.JTextField profUsername;
+    private javax.swing.JButton removeCourse;
+    private javax.swing.JPanel removeFoititis;
+    private javax.swing.JButton removeProfessor;
+    private javax.swing.JButton removeStudent;
     private javax.swing.JTextField stdAM;
     private javax.swing.JTextField stdDieythinsi;
     private javax.swing.JTextField stdEksamino;
