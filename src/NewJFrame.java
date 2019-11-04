@@ -82,10 +82,11 @@ public class NewJFrame extends javax.swing.JFrame {
         newMathPage = new javax.swing.JPanel();
         mathOnoma = new javax.swing.JTextField();
         mathEksamino = new javax.swing.JTextField();
-        mathEidosEksaminou = new javax.swing.JTextField();
+        mathTmhma = new javax.swing.JTextField();
         mathKodikos = new javax.swing.JTextField();
-        mathKateuthinsi = new javax.swing.JTextField();
+        mathTypos = new javax.swing.JTextField();
         mathNewSubmit = new javax.swing.JButton();
+        mathDM = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.CardLayout());
@@ -440,11 +441,11 @@ public class NewJFrame extends javax.swing.JFrame {
 
         mathEksamino.setText("eksamino");
 
-        mathEidosEksaminou.setText("eidosEksaminou");
+        mathTmhma.setText("tmhmaMathimatos");
 
         mathKodikos.setText("kodikosMathimatos");
 
-        mathKateuthinsi.setText("kateuthinsi");
+        mathTypos.setText("typosMathimatos");
 
         mathNewSubmit.setText("Submit");
         mathNewSubmit.addActionListener(new java.awt.event.ActionListener() {
@@ -453,23 +454,27 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
+        mathDM.setText("didaktikesMonades");
+
         javax.swing.GroupLayout newMathPageLayout = new javax.swing.GroupLayout(newMathPage);
         newMathPage.setLayout(newMathPageLayout);
         newMathPageLayout.setHorizontalGroup(
             newMathPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, newMathPageLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(mathNewSubmit)
+                .addGap(39, 39, 39))
             .addGroup(newMathPageLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(newMathPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(mathOnoma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(mathEksamino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(mathEidosEksaminou, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(mathKodikos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(mathKateuthinsi, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(484, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, newMathPageLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(mathNewSubmit)
-                .addGap(39, 39, 39))
+                    .addGroup(newMathPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(mathTypos, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(mathTmhma, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(mathKodikos, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addComponent(mathDM, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(479, Short.MAX_VALUE))
         );
         newMathPageLayout.setVerticalGroup(
             newMathPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -479,12 +484,14 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(mathEksamino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(mathEidosEksaminou, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(mathTmhma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(mathKodikos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(mathKateuthinsi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 260, Short.MAX_VALUE)
+                .addComponent(mathTypos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(mathDM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 229, Short.MAX_VALUE)
                 .addComponent(mathNewSubmit)
                 .addGap(27, 27, 27))
         );
@@ -633,10 +640,11 @@ public class NewJFrame extends javax.swing.JFrame {
     private void mathNewSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mathNewSubmitActionPerformed
         String onomaMath = mathOnoma.getText();
         int eksamhnoMath = Integer.parseInt(mathEksamino.getText());
-        String eidosMath = mathEidosEksaminou.getText();
+        String tmhmaMath = mathTmhma.getText();
         int kodikosMath = Integer.parseInt(mathKodikos.getText());
-        String kateythinsiMath = mathKateuthinsi.getText();
-        admin.createLesson(onomaMath, eksamhnoMath, eidosMath, kodikosMath, kateythinsiMath);
+        String typosMath = mathTypos.getText();
+        int dmMath = Integer.parseInt(mathDM.getText());
+        admin.createLesson(onomaMath, eksamhnoMath, tmhmaMath, kodikosMath, typosMath, dmMath);
         getContentPane().removeAll();
         getContentPane().repaint();
         getContentPane().revalidate();
@@ -719,12 +727,13 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JButton kathigitisLogoutButton;
-    private javax.swing.JTextField mathEidosEksaminou;
+    private javax.swing.JTextField mathDM;
     private javax.swing.JTextField mathEksamino;
-    private javax.swing.JTextField mathKateuthinsi;
     private javax.swing.JTextField mathKodikos;
     private javax.swing.JButton mathNewSubmit;
     private javax.swing.JTextField mathOnoma;
+    private javax.swing.JTextField mathTmhma;
+    private javax.swing.JTextField mathTypos;
     private javax.swing.JPanel newMathPage;
     private javax.swing.JPanel newProfPage;
     private javax.swing.JPanel newStdPage;
