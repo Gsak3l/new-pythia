@@ -3,3 +3,4 @@ manifest.mf
 test/
 nbproject/
 build/
+.idea
