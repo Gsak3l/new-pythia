@@ -154,13 +154,13 @@ class Admin extends Account {
         }
     }
     
-    public void deleteStudent(int am){
+    public void deleteStudent(String userName){
         for(int i = 0; i < student.size(); i ++) {
-            if(student.get(i).getAM() == am) {
+            if(student.get(i).getUsername().equals(userName)) {
                 student.remove(i);
-                System.out.println("Epituxis Diagrafi tou Foititi me AM: " + am);
+                System.out.println("Epituxis Diagrafi tou Foititi me AM: " + userName);
             }else{
-                System.out.println("O Foititis me AM: " + am + " den vrethike sthn lista me tous foitites");
+                System.out.println("O Foititis me AM: " + userName + " den vrethike sthn lista me tous foitites");
             }
         }
     }
