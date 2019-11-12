@@ -876,7 +876,7 @@ public class NewJFrame extends javax.swing.JFrame {
         int kodikosMath = Integer.parseInt(mathKodikos.getText());
         String typosMath = mathTypos.getText();
         int dmMath = Integer.parseInt(mathDM.getText());
-        admin.createLesson(onomaMath, eksamhnoMath, tmhmaMath, kodikosMath, typosMath, dmMath);
+        admin.createCourse(onomaMath, eksamhnoMath, tmhmaMath, kodikosMath, typosMath, dmMath);
         getContentPane().removeAll();
         getContentPane().repaint();
         getContentPane().revalidate();

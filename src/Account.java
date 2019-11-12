@@ -43,7 +43,7 @@ class Admin extends Account {
     private boolean dilwseis = false;
     private List<Kathigitis> professor = new ArrayList<>();
     private List<Foititis> student = new ArrayList<>();
-    private List<Mathima> lesson = new ArrayList<>();
+    private List<Mathima> course = new ArrayList<>();
 
     public Admin(String username, String password, String mail, String onomateponumo, String tilefwno) {
         super(username, password, mail, onomateponumo, tilefwno);
@@ -72,9 +72,9 @@ class Admin extends Account {
         putProfToList(prof);
     }
 
-    public void createLesson(String lessonName, int lessonEksamino, String lessonTmhma, int kodikosMathimatos, String lessonTypos, int lessonDM) {
-        Mathima math = new Mathima(lessonName, lessonEksamino, kodikosMathimatos, lessonTmhma, lessonTypos, lessonDM);
-        lesson.add(math);
+    public void createCourse(String courseName, int courseEksamino, String courseTmhma, int kodikosMathimatos, String courseTypos, int courseDM) {
+        Mathima math = new Mathima(courseName, courseEksamino, kodikosMathimatos, courseTmhma, courseTypos, courseDM);
+        course.add(math);
         putMathToList(math);
     }
     
@@ -177,9 +177,9 @@ class Admin extends Account {
     }
     
     public void deleteCourse(int kodM) {
-        for(int i = 0; i < lesson.size(); i ++) {
-            if(lesson.get(i).getKodikosMathimatos() == kodM) {
-                lesson.remove(i);
+        for(int i = 0; i < course.size(); i ++) {
+            if(course.get(i).getKodikosMathimatos() == kodM) {
+                course.remove(i);
                 System.out.println("Epituxis Diagrafi tou Mathimatos me kodiko: " + kodM);
             }else {
                 System.out.println("Apotuxia diagrafis tou mathimatos me kodiko: " + kodM);
@@ -197,8 +197,8 @@ class Admin extends Account {
         System.out.println(p1);
     }
 
-    public void showLesson() {
-        Mathima m1 = lesson.get(0);
+    public void showcourse() {
+        Mathima m1 = course.get(0);
         System.out.println(m1);
     }
 }
