@@ -1,7 +1,10 @@
+import java.io.EOFException;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -24,27 +27,48 @@ public class Account implements Serializable {
         this.onomateponumo = onomateponumo;
         this.tilefwno = tilefwno;
     }
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    public String getOnomateponumo() {
+        return onomateponumo;
+    }
+
+    public void setOnomateponumo(String onomateponumo) {
+        this.onomateponumo = onomateponumo;
+    }
+
+    public String getTilefwno() {
+        return tilefwno;
+    }
+
+    public void setTilefwno(String tilefwno) {
+        this.tilefwno = tilefwno;
+    }
 
     public String getIdiotita() {
         return "";
     }
-
     public String getUsername() {
         return username;
     }
-
     public String getPassword() {
         return password;
     }
-
 }
 
 class Admin extends Account {
     private boolean dilwseis = false;
     private List<Kathigitis> professor = new ArrayList<>();
     private List<Foititis> student = new ArrayList<>();
-    private List<Mathima> lesson = new ArrayList<>();
-
+    private List<Mathima> course = new ArrayList<>();
+    private List<Admin> admin = new ArrayList<>();
+    
     public Admin(String username, String password, String mail, String onomateponumo, String tilefwno) {
         super(username, password, mail, onomateponumo, tilefwno);
     }
@@ -72,9 +96,9 @@ class Admin extends Account {
         putProfToList(prof);
     }
 
-    public void createLesson(String lessonName, int lessonEksamino, String lessonTmhma, int kodikosMathimatos, String lessonTypos, int lessonDM) {
-        Mathima math = new Mathima(lessonName, lessonEksamino, kodikosMathimatos, lessonTmhma, lessonTypos, lessonDM);
-        lesson.add(math);
+    public void createCourse(String courseName, int courseEksamino, String courseTmhma, int kodikosMathimatos, String courseTypos, int courseDM) {
+        Mathima math = new Mathima(courseName, courseEksamino, kodikosMathimatos, courseTmhma, courseTypos, courseDM);
+        course.add(math);
         putMathToList(math);
     }
     
@@ -154,13 +178,13 @@ class Admin extends Account {
         }
     }
     
-    public void deleteStudent(int am){
+    public void deleteStudent(String userName){
         for(int i = 0; i < student.size(); i ++) {
-            if(student.get(i).getAM() == am) {
+            if(student.get(i).getUsername().equals(userName)) {
                 student.remove(i);
-                System.out.println("Epituxis Diagrafi tou Foititi me AM: " + am);
+                System.out.println("Epituxis Diagrafi tou Foititi me AM: " + userName);
             }else{
-                System.out.println("O Foititis me AM: " + am + " den vrethike sthn lista me tous foitites");
+                System.out.println("O Foititis me AM: " + userName + " den vrethike sthn lista me tous foitites");
             }
         }
     }
@@ -175,11 +199,103 @@ class Admin extends Account {
             }
         }
     }
-    
+    public void getAccountsFromFile(){
+        student.clear();
+        professor.clear();
+        
+        FileInputStream fi = null;
+        ObjectInputStream oi = null;
+        Account a;
+        
+          try{
+            fi = new FileInputStream(new File("myAccounts.txt"));
+            oi = new ObjectInputStream(fi);
+            
+            while (true){
+                try{
+                    
+                  a = (Account)oi.readObject();
+                  if (a instanceof Foititis){
+                      student.add((Foititis)a);
+                  }else if(a instanceof Kathigitis){
+                      professor.add((Kathigitis)a);
+                  }else{
+                      admin.add((Admin)a);
+                  }
+                }catch (EOFException ex1) {
+                    break; //EOF reached.
+                }catch (IOException ex2) {
+                    System.err.println("An IOException was caught: " + ex2.getMessage());
+                }
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{
+            try{
+                oi.close();
+                fi.close();
+                System.out.println("ekleisa");
+            }catch(IOException ex) {
+                System.err.println("An IOException was caught: " + ex.getMessage());
+            }
+        }
+    }
+    public Foititis updateStd1(String username){
+       getAccountsFromFile();
+        for(int i = 0; i < student.size(); i++) {
+            if(student.get(i).getUsername().equals(username)) {
+               Foititis Std = student.get(i);
+               student.remove(i);
+               return Std;
+            }else{
+                System.out.println("O Foititis den vrethike !");
+            }
+        }
+        return null;
+    }
+    public void updateStd2(String usernameStd, String passStd, String mailStd, String onomateponumoStd,
+                           String thlefwnoStd, int AMstd, String tmhmaStd, int eksaminoStd, String dieythinsiStd){
+               Foititis Std = new Foititis(usernameStd, passStd, mailStd, onomateponumoStd, thlefwnoStd, AMstd, tmhmaStd, eksaminoStd, dieythinsiStd);     
+               student.add(Std);
+               putAccountsToFile();
+    }
+    public void putAccountsToFile(){
+        
+        FileOutputStream f=null;
+        ObjectOutputStream o=null;
+        try {
+            f = new FileOutputStream(new File("myAccounts.txt"));
+            o = new ObjectOutputStream(f);
+            
+            for (Admin admin : this.admin){
+               o.writeObject(admin);
+            }   
+            for (Kathigitis prof : this.professor){
+               o.writeObject(prof);
+            }   
+            for (Foititis std : this.student){
+               o.writeObject(std);
+            }   
+            
+        } catch (IOException ex) {
+            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try{
+                o.close();
+                f.close();
+                System.out.println("ekleisa");
+            }catch(IOException ex) {
+                System.err.println("An IOException was caught: " + ex.getMessage());
+            }
+        }
+        
+    }
     public void deleteCourse(int kodM) {
-        for(int i = 0; i < lesson.size(); i ++) {
-            if(lesson.get(i).getKodikosMathimatos() == kodM) {
-                lesson.remove(i);
+        for(int i = 0; i < course.size(); i ++) {
+            if(course.get(i).getKodikosMathimatos() == kodM) {
+                course.remove(i);
                 System.out.println("Epituxis Diagrafi tou Mathimatos me kodiko: " + kodM);
             }else {
                 System.out.println("Apotuxia diagrafis tou mathimatos me kodiko: " + kodM);
@@ -197,8 +313,8 @@ class Admin extends Account {
         System.out.println(p1);
     }
 
-    public void showLesson() {
-        Mathima m1 = lesson.get(0);
+    public void showcourse() {
+        Mathima m1 = course.get(0);
         System.out.println(m1);
     }
 }
@@ -239,11 +355,37 @@ class Foititis extends Account {
         this.dieuthinsi = dieuthinsi;
         //this.stoixeiaEggrafis = stoixeiaEggrafis;
     }
+
+    public String getTmima() {
+        return tmima;
+    }
+
+    public void setTmima(String tmima) {
+        this.tmima = tmima;
+    }
+
+    public int getEksamino() {
+        return eksamino;
+    }
+
+    public void setEksamino(int eksamino) {
+        this.eksamino = eksamino;
+    }
+
+    public String getDieuthinsi() {
+        return dieuthinsi;
+    }
+
+    public void setDieuthinsi(String dieuthinsi) {
+        this.dieuthinsi = dieuthinsi;
+    }
     
     public int getAM(){
         return this.AM;
     }
-    
+    public void setAM(int AM) {
+        this.AM = AM;
+    }
     public String getIdiotita() {
         return "Student";
     }
