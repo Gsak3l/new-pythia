@@ -162,6 +162,7 @@ public class Admin extends Account {
     public void getAccountsFromFile(){
         student.clear();
         professor.clear();
+        admin.clear();
         
         FileInputStream fi = null;
         ObjectInputStream oi = null;
