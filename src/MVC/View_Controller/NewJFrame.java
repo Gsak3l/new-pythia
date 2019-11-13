@@ -64,6 +64,7 @@ public class NewJFrame extends javax.swing.JFrame {
         addStd = new javax.swing.JButton();
         addMath = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         FoiththsPage = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         foiththsLogoutButton = new javax.swing.JButton();
@@ -115,6 +116,18 @@ public class NewJFrame extends javax.swing.JFrame {
         updateStdMail = new javax.swing.JTextField();
         updateStdButton = new javax.swing.JToggleButton();
         deleteStdButton = new javax.swing.JToggleButton();
+        updateMathPage = new javax.swing.JPanel();
+        updateMathOnoma = new javax.swing.JTextField();
+        updateMathExamino = new javax.swing.JTextField();
+        updateMathKodikos = new javax.swing.JTextField();
+        updateMathTmima = new javax.swing.JTextField();
+        updateMathTupos = new javax.swing.JTextField();
+        updateMathDM = new javax.swing.JTextField();
+        deleteMathButton = new javax.swing.JButton();
+        updateMathButton = new javax.swing.JToggleButton();
+        searchMathPage = new javax.swing.JPanel();
+        searchMathKodikos = new javax.swing.JTextField();
+        searchMathButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.CardLayout());
@@ -190,6 +203,13 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setText("Update Mathima");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout AdminPageLayout = new javax.swing.GroupLayout(AdminPage);
         AdminPage.setLayout(AdminPageLayout);
         AdminPageLayout.setHorizontalGroup(
@@ -213,8 +233,10 @@ public class NewJFrame extends javax.swing.JFrame {
                                     .addComponent(addStd, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)))
                             .addGroup(AdminPageLayout.createSequentialGroup()
                                 .addGap(136, 136, 136)
-                                .addComponent(jButton5)))
-                        .addGap(0, 341, Short.MAX_VALUE)))
+                                .addGroup(AdminPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton5)
+                                    .addComponent(jButton2))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         AdminPageLayout.setVerticalGroup(
@@ -230,7 +252,9 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addComponent(addMath)
                 .addGap(28, 28, 28)
                 .addComponent(jButton5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 214, Short.MAX_VALUE)
+                .addGap(33, 33, 33)
+                .addComponent(jButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 158, Short.MAX_VALUE)
                 .addComponent(adminLogoutButton)
                 .addContainerGap())
         );
@@ -560,13 +584,14 @@ public class NewJFrame extends javax.swing.JFrame {
         searchStdPageLayout.setHorizontalGroup(
             searchStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(searchStdPageLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(searchStdButton)
-                .addContainerGap())
-            .addGroup(searchStdPageLayout.createSequentialGroup()
                 .addContainerGap(431, Short.MAX_VALUE)
-                .addComponent(searchStdUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(92, 92, 92))
+                .addGroup(searchStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, searchStdPageLayout.createSequentialGroup()
+                        .addComponent(searchStdButton)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, searchStdPageLayout.createSequentialGroup()
+                        .addComponent(searchStdUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(92, 92, 92))))
         );
         searchStdPageLayout.setVerticalGroup(
             searchStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -671,6 +696,117 @@ public class NewJFrame extends javax.swing.JFrame {
         );
 
         getContentPane().add(updateStdPage, "card13");
+
+        updateMathOnoma.setText("Onoma");
+
+        updateMathExamino.setText("Examino");
+        updateMathExamino.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateMathExaminoActionPerformed(evt);
+            }
+        });
+
+        updateMathKodikos.setText("Kodikos");
+
+        updateMathTmima.setText("Tmima");
+
+        updateMathTupos.setText("Tupos");
+
+        updateMathDM.setText("Didaktikes monades");
+
+        deleteMathButton.setText("Delete");
+        deleteMathButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteMathButtonActionPerformed(evt);
+            }
+        });
+
+        updateMathButton.setText("Update");
+        updateMathButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateMathButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout updateMathPageLayout = new javax.swing.GroupLayout(updateMathPage);
+        updateMathPage.setLayout(updateMathPageLayout);
+        updateMathPageLayout.setHorizontalGroup(
+            updateMathPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(updateMathPageLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(updateMathPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, updateMathPageLayout.createSequentialGroup()
+                        .addComponent(updateMathButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 446, Short.MAX_VALUE)
+                        .addComponent(deleteMathButton))
+                    .addGroup(updateMathPageLayout.createSequentialGroup()
+                        .addGroup(updateMathPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(updateMathDM, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
+                            .addComponent(updateMathTupos)
+                            .addComponent(updateMathTmima)
+                            .addComponent(updateMathKodikos)
+                            .addComponent(updateMathExamino)
+                            .addComponent(updateMathOnoma))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        updateMathPageLayout.setVerticalGroup(
+            updateMathPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(updateMathPageLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(updateMathOnoma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(updateMathExamino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(updateMathKodikos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(updateMathTmima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(updateMathTupos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(updateMathDM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 193, Short.MAX_VALUE)
+                .addGroup(updateMathPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(deleteMathButton)
+                    .addComponent(updateMathButton))
+                .addContainerGap())
+        );
+
+        getContentPane().add(updateMathPage, "card11");
+
+        searchMathKodikos.setText("Kodikos Mathimatos");
+
+        searchMathButton.setText("Search");
+        searchMathButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchMathButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout searchMathPageLayout = new javax.swing.GroupLayout(searchMathPage);
+        searchMathPage.setLayout(searchMathPageLayout);
+        searchMathPageLayout.setHorizontalGroup(
+            searchMathPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(searchMathPageLayout.createSequentialGroup()
+                .addGap(82, 82, 82)
+                .addComponent(searchMathKodikos, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(401, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, searchMathPageLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(searchMathButton)
+                .addContainerGap())
+        );
+        searchMathPageLayout.setVerticalGroup(
+            searchMathPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(searchMathPageLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(searchMathKodikos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 389, Short.MAX_VALUE)
+                .addComponent(searchMathButton)
+                .addContainerGap())
+        );
+
+        getContentPane().add(searchMathPage, "card12");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -950,8 +1086,55 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_updateStdButtonActionPerformed
 
     private void deleteStdButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteStdButtonActionPerformed
-        admin.deleteStd(std.getUsername());
+        admin.deleteStd();
     }//GEN-LAST:event_deleteStdButtonActionPerformed
+
+    private void updateMathExaminoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateMathExaminoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_updateMathExaminoActionPerformed
+
+    private void searchMathButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchMathButtonActionPerformed
+        
+        int Kodikos = Integer.parseInt(searchMathKodikos.getText());
+        math = admin.searchMath(Kodikos);
+        if (math != null){
+            getContentPane().removeAll();
+            getContentPane().repaint();
+            getContentPane().revalidate();
+            getContentPane().add(updateMathPage);
+            getContentPane().repaint();
+            getContentPane().revalidate();
+            updateMathOnoma.setText(math.getOnomaMathimatos());
+            updateMathExamino.setText(String.valueOf(math.getEksamino()));
+            updateMathKodikos.setText(String.valueOf(math.getKodikosMathimatos()));
+            updateMathTmima.setText(math.getTmhmaMathimatos());
+            updateMathTupos.setText(math.getTyposMathimatos());
+            updateMathDM.setText(String.valueOf(math.getDidaktikesMonades()));
+            
+        } 
+        
+        
+    }//GEN-LAST:event_searchMathButtonActionPerformed
+
+    private void deleteMathButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteMathButtonActionPerformed
+
+        admin.deleteCourse();        
+    }//GEN-LAST:event_deleteMathButtonActionPerformed
+
+    private void updateMathButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateMathButtonActionPerformed
+        admin.updateMath(updateMathOnoma.getText(), Integer.parseInt(updateMathExamino.getText()),updateMathTmima.getText(),Integer.parseInt(updateMathKodikos.getText()),
+                         updateMathTupos.getText(), Integer.parseInt(updateMathDM.getText()));
+        
+    }//GEN-LAST:event_updateMathButtonActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        getContentPane().removeAll();
+        getContentPane().repaint();
+        getContentPane().revalidate();
+        getContentPane().add(searchMathPage);
+        getContentPane().repaint();
+        getContentPane().revalidate();
+    }//GEN-LAST:event_jButton2ActionPerformed
     public void clearLoginFields(){
         jPasswordField1.setText("");
         jTextField1.setText("");
@@ -999,6 +1182,7 @@ public class NewJFrame extends javax.swing.JFrame {
     Admin admin;
     Foititis std;
     Kathigitis prof;
+    Mathima math;
     FileOutputStream f = null;
     ObjectOutputStream o = null;
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1009,9 +1193,11 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JButton addProf;
     private javax.swing.JButton addStd;
     private javax.swing.JButton adminLogoutButton;
+    private javax.swing.JButton deleteMathButton;
     private javax.swing.JToggleButton deleteStdButton;
     private javax.swing.JButton foiththsLogoutButton;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -1040,6 +1226,9 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JTextField profTilefono;
     private javax.swing.JTextField profTmima;
     private javax.swing.JTextField profUsername;
+    private javax.swing.JButton searchMathButton;
+    private javax.swing.JTextField searchMathKodikos;
+    private javax.swing.JPanel searchMathPage;
     private javax.swing.JButton searchStdButton;
     private javax.swing.JPanel searchStdPage;
     private javax.swing.JTextField searchStdUsername;
@@ -1053,6 +1242,14 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JTextField stdThlefwno;
     private javax.swing.JTextField stdTmhma;
     private javax.swing.JTextField stdUsername;
+    private javax.swing.JToggleButton updateMathButton;
+    private javax.swing.JTextField updateMathDM;
+    private javax.swing.JTextField updateMathExamino;
+    private javax.swing.JTextField updateMathKodikos;
+    private javax.swing.JTextField updateMathOnoma;
+    private javax.swing.JPanel updateMathPage;
+    private javax.swing.JTextField updateMathTmima;
+    private javax.swing.JTextField updateMathTupos;
     private javax.swing.JTextField updateStdAM;
     private javax.swing.JToggleButton updateStdButton;
     private javax.swing.JTextField updateStdDieuthinsi;
