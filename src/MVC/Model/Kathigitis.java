@@ -24,6 +24,30 @@ public class Kathigitis extends Account {
         this.mathimata = mathimata;
     }
 
+    public String getEidikotita() {
+        return eidikotita;
+    }
+
+    public void setEidikotita(String eidikotita) {
+        this.eidikotita = eidikotita;
+    }
+
+    public String getTmima() {
+        return tmima;
+    }
+
+    public void setTmima(String tmima) {
+        this.tmima = tmima;
+    }
+
+    public List<Mathima> getMathimata() {
+        return mathimata;
+    }
+
+    public void setMathimata(List<Mathima> mathimata) {
+        this.mathimata = mathimata;
+    }
+    
     public String getIdiotita() {
         return "Professor";
     }

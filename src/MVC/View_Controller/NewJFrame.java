@@ -54,9 +54,9 @@ public class NewJFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        usernameLogin = new javax.swing.JTextField();
+        passwordLogin = new javax.swing.JPasswordField();
+        loginButton = new javax.swing.JButton();
         AdminPage = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         adminLogoutButton = new javax.swing.JButton();
@@ -65,6 +65,7 @@ public class NewJFrame extends javax.swing.JFrame {
         addMath = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         FoiththsPage = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         foiththsLogoutButton = new javax.swing.JButton();
@@ -109,7 +110,7 @@ public class NewJFrame extends javax.swing.JFrame {
         updateStdOnomatep = new javax.swing.JTextField();
         updateStdTilefono = new javax.swing.JTextField();
         updateStdAM = new javax.swing.JTextField();
-        updateStdTmina = new javax.swing.JTextField();
+        updateStdTmima = new javax.swing.JTextField();
         updateStdExamino = new javax.swing.JTextField();
         updateStdDieuthinsi = new javax.swing.JTextField();
         updateStdPassword = new javax.swing.JTextField();
@@ -128,14 +129,29 @@ public class NewJFrame extends javax.swing.JFrame {
         searchMathPage = new javax.swing.JPanel();
         searchMathKodikos = new javax.swing.JTextField();
         searchMathButton = new javax.swing.JButton();
+        searchProfPage = new javax.swing.JPanel();
+        searchProfUsername = new javax.swing.JTextField();
+        searchProfButton = new javax.swing.JButton();
+        updateProfPage = new javax.swing.JPanel();
+        updateProfMail = new javax.swing.JTextField();
+        updateProfPassword = new javax.swing.JTextField();
+        updateProfTilefono = new javax.swing.JTextField();
+        updateProfOnomatep = new javax.swing.JTextField();
+        updateProfUsername = new javax.swing.JTextField();
+        updateProfTmima = new javax.swing.JTextField();
+        updateProfEidikothta = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        updateProfMathimata = new javax.swing.JList<>();
+        updateProfButton = new javax.swing.JToggleButton();
+        deleteProfButton = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.CardLayout());
 
-        jButton1.setText("Login");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        loginButton.setText("Login");
+        loginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                loginButtonActionPerformed(evt);
             }
         });
 
@@ -146,21 +162,21 @@ public class NewJFrame extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(115, 115, 115)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton1)
+                    .addComponent(loginButton)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                        .addComponent(jPasswordField1)))
+                        .addComponent(usernameLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                        .addComponent(passwordLogin)))
                 .addContainerGap(381, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(79, 79, 79)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(usernameLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(passwordLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
+                .addComponent(loginButton)
                 .addContainerGap(301, Short.MAX_VALUE))
         );
 
@@ -210,6 +226,13 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("Update Professor");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout AdminPageLayout = new javax.swing.GroupLayout(AdminPage);
         AdminPage.setLayout(AdminPageLayout);
         AdminPageLayout.setHorizontalGroup(
@@ -233,9 +256,10 @@ public class NewJFrame extends javax.swing.JFrame {
                                     .addComponent(addStd, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)))
                             .addGroup(AdminPageLayout.createSequentialGroup()
                                 .addGap(136, 136, 136)
-                                .addGroup(AdminPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(AdminPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jButton5)
-                                    .addComponent(jButton2))))
+                                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -254,7 +278,9 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addComponent(jButton5)
                 .addGap(33, 33, 33)
                 .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 158, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
                 .addComponent(adminLogoutButton)
                 .addContainerGap())
         );
@@ -613,7 +639,7 @@ public class NewJFrame extends javax.swing.JFrame {
 
         updateStdAM.setText("AM");
 
-        updateStdTmina.setText("Tmima");
+        updateStdTmima.setText("Tmima");
 
         updateStdExamino.setText("Examino");
 
@@ -650,7 +676,7 @@ public class NewJFrame extends javax.swing.JFrame {
                     .addComponent(updateStdOnomatep)
                     .addComponent(updateStdTilefono)
                     .addComponent(updateStdAM)
-                    .addComponent(updateStdTmina)
+                    .addComponent(updateStdTmima)
                     .addComponent(updateStdExamino, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
                     .addComponent(updateStdUsername))
                 .addContainerGap(453, Short.MAX_VALUE))
@@ -680,7 +706,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(updateStdAM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(updateStdTmina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(updateStdTmima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(updateStdExamino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -700,11 +726,6 @@ public class NewJFrame extends javax.swing.JFrame {
         updateMathOnoma.setText("Onoma");
 
         updateMathExamino.setText("Examino");
-        updateMathExamino.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                updateMathExaminoActionPerformed(evt);
-            }
-        });
 
         updateMathKodikos.setText("Kodikos");
 
@@ -808,10 +829,127 @@ public class NewJFrame extends javax.swing.JFrame {
 
         getContentPane().add(searchMathPage, "card12");
 
+        searchProfUsername.setText("Kodikos Mathimatos");
+
+        searchProfButton.setText("Search");
+        searchProfButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchProfButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout searchProfPageLayout = new javax.swing.GroupLayout(searchProfPage);
+        searchProfPage.setLayout(searchProfPageLayout);
+        searchProfPageLayout.setHorizontalGroup(
+            searchProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(searchProfPageLayout.createSequentialGroup()
+                .addGap(82, 82, 82)
+                .addComponent(searchProfUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(401, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, searchProfPageLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(searchProfButton)
+                .addContainerGap())
+        );
+        searchProfPageLayout.setVerticalGroup(
+            searchProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(searchProfPageLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(searchProfUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 389, Short.MAX_VALUE)
+                .addComponent(searchProfButton)
+                .addContainerGap())
+        );
+
+        getContentPane().add(searchProfPage, "card13");
+
+        updateProfMail.setText("Mail");
+
+        updateProfPassword.setText("Password");
+
+        updateProfTilefono.setText("Tilefono");
+
+        updateProfOnomatep.setText("Onomateponimo");
+
+        updateProfUsername.setText("Username");
+
+        updateProfTmima.setText("Tmima");
+
+        updateProfEidikothta.setText("Eidikothta");
+
+        jScrollPane2.setViewportView(updateProfMathimata);
+
+        updateProfButton.setText("Update");
+        updateProfButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateProfButtonActionPerformed(evt);
+            }
+        });
+
+        deleteProfButton.setText("Delete");
+        deleteProfButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteProfButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout updateProfPageLayout = new javax.swing.GroupLayout(updateProfPage);
+        updateProfPage.setLayout(updateProfPageLayout);
+        updateProfPageLayout.setHorizontalGroup(
+            updateProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(updateProfPageLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(updateProfButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(deleteProfButton)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, updateProfPageLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addGroup(updateProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(updateProfPassword)
+                    .addComponent(updateProfMail)
+                    .addComponent(updateProfOnomatep)
+                    .addComponent(updateProfTilefono)
+                    .addComponent(updateProfTmima)
+                    .addComponent(updateProfEidikothta)
+                    .addComponent(updateProfUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(106, 106, 106))
+        );
+        updateProfPageLayout.setVerticalGroup(
+            updateProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, updateProfPageLayout.createSequentialGroup()
+                .addContainerGap(57, Short.MAX_VALUE)
+                .addComponent(updateProfUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(updateProfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(updateProfMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(updateProfOnomatep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(updateProfTilefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56)
+                .addGroup(updateProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(updateProfPageLayout.createSequentialGroup()
+                        .addComponent(updateProfTmima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(updateProfEidikothta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23)
+                .addGroup(updateProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(updateProfButton)
+                    .addComponent(deleteProfButton))
+                .addContainerGap())
+        );
+
+        getContentPane().add(updateProfPage, "card14");
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
 //        Account admin = new Admin("it174890", "633818", "it174890@it.teithe.gr", "Γιώργος Στίνης", "2310574479");
 //        Account kathigitis = new Kathigitis("daddy", "keftedaki", "dad@it.teithe.gr", "SallaDaddy", "6948855476", "Μαθηματικός", "Μηχανικών Πληροφορικής");
 //        Account foithths = new Foititis("ego", "555", "ego@gmail.com", "ego memena", "", 174891, "Διοικηση", 5, "Λαχανά 22");
@@ -828,8 +966,8 @@ public class NewJFrame extends javax.swing.JFrame {
             fi = new FileInputStream(new File("myAccounts.txt"));
             oi = new ObjectInputStream(fi);
             Account a1;
-            String usernameTextfield = jTextField1.getText();
-            char[] passwordTextfield = jPasswordField1.getPassword();
+            String usernameTextfield = usernameLogin.getText();
+            char[] passwordTextfield = passwordLogin.getPassword();
             clearLoginFields();
             while (true){
                 try{
@@ -879,7 +1017,7 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         }
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_loginButtonActionPerformed
 
     private void kathigitisLogoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kathigitisLogoutButtonActionPerformed
         goToHomePage();
@@ -1056,8 +1194,8 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void searchStdButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchStdButtonActionPerformed
 
-        String Username = searchStdUsername.getText();
-        std = admin.searchStd(Username);
+        String username = searchStdUsername.getText();
+        std = admin.searchStd(username);
         if (std != null){
             getContentPane().removeAll();
             getContentPane().repaint();
@@ -1065,13 +1203,13 @@ public class NewJFrame extends javax.swing.JFrame {
             getContentPane().add(updateStdPage);
             getContentPane().repaint();
             getContentPane().revalidate();
-            updateStdUsername.setText(Username);
+            updateStdUsername.setText(username);
             updateStdPassword.setText(std.getPassword());
             updateStdMail.setText(std.getMail());
             updateStdOnomatep.setText(std.getOnomateponumo());
             updateStdTilefono.setText(std.getTilefwno());
             updateStdAM.setText(String.valueOf(std.getAM()));
-            updateStdTmina.setText(std.getTmima());
+            updateStdTmima.setText(std.getTmima());
             updateStdExamino.setText(String.valueOf(std.getEksamino()));
             updateStdDieuthinsi.setText(std.getDieuthinsi());
         }
@@ -1081,7 +1219,7 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void updateStdButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateStdButtonActionPerformed
         admin.updateStd(updateStdUsername.getText(), updateStdPassword.getText(),updateStdMail.getText(),updateStdMail.getText(),
-                         updateStdTilefono.getText(), Integer.parseInt(updateStdAM.getText()),updateStdTmina.getText(),
+                         updateStdTilefono.getText(), Integer.parseInt(updateStdAM.getText()),updateStdTmima.getText(),
                          Integer.parseInt(updateStdExamino.getText()),updateStdDieuthinsi.getText());
     }//GEN-LAST:event_updateStdButtonActionPerformed
 
@@ -1089,14 +1227,10 @@ public class NewJFrame extends javax.swing.JFrame {
         admin.deleteStd();
     }//GEN-LAST:event_deleteStdButtonActionPerformed
 
-    private void updateMathExaminoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateMathExaminoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_updateMathExaminoActionPerformed
-
     private void searchMathButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchMathButtonActionPerformed
         
-        int Kodikos = Integer.parseInt(searchMathKodikos.getText());
-        math = admin.searchMath(Kodikos);
+        int kodikos = Integer.parseInt(searchMathKodikos.getText());
+        math = admin.searchMath(kodikos);
         if (math != null){
             getContentPane().removeAll();
             getContentPane().repaint();
@@ -1117,7 +1251,6 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_searchMathButtonActionPerformed
 
     private void deleteMathButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteMathButtonActionPerformed
-
         admin.deleteCourse();        
     }//GEN-LAST:event_deleteMathButtonActionPerformed
 
@@ -1135,9 +1268,130 @@ public class NewJFrame extends javax.swing.JFrame {
         getContentPane().repaint();
         getContentPane().revalidate();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void searchProfButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchProfButtonActionPerformed
+        String username = searchProfUsername.getText();
+        prof = admin.searchProf(username);
+        if (prof != null){
+            getContentPane().removeAll();
+            getContentPane().repaint();
+            getContentPane().revalidate();
+            getContentPane().add(updateProfPage);
+            getContentPane().repaint();
+            getContentPane().revalidate();
+            updateProfUsername.setText(username);
+            updateProfPassword.setText(prof.getPassword());
+            updateProfMail.setText(prof.getMail());
+            updateProfOnomatep.setText(prof.getOnomateponumo());
+            updateProfTilefono.setText(prof.getTilefwno());
+            updateProfTmima.setText(prof.getTmima());
+            updateProfEidikothta.setText(String.valueOf(prof.getEidikotita()));
+            FileInputStream fi = null;
+            ObjectInputStream oi = null;
+            List<Mathima> mathimata = new ArrayList<>();
+            try{
+                fi = new FileInputStream(new File("myCourses.txt"));
+                oi = new ObjectInputStream(fi);
+                while (true){
+                    try{
+                        mathimata.add((Mathima)oi.readObject());
+                    }catch (EOFException ex1) {
+                        break; //EOF reached.
+                    }catch (IOException ex2) {
+                        System.err.println("An IOException was caught: " + ex2.getMessage());
+                    }
+                }
+            } catch (IOException ex) {
+                Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }finally{
+                try{
+                    oi.close();
+                    fi.close();
+                    System.out.println("ekleisa");
+                }catch(IOException ex) {
+                    System.err.println("An IOException was caught: " + ex.getMessage());
+                }
+            }
+            DefaultListModel listModel = new DefaultListModel();
+            List<Mathima> mathimataProf = new ArrayList<>();
+            mathimataProf = prof.getMathimata();
+            for (Mathima mathima : mathimata) {
+                listModel.addElement(mathima.getOnomaMathimatos());
+            }
+            updateProfMathimata.setModel(listModel);
+            int[] selectedIndices = new int[mathimataProf.size()];
+            for (int i = 0; i < mathimataProf.size(); i++){
+                for (int k = 0; k < updateProfMathimata.getModel().getSize(); k++){
+                    System.out.println(updateProfMathimata.getModel().getElementAt(k)+"\n");
+                    System.out.println(mathimataProf.get(i).getOnomaMathimatos());
+                    if (mathimataProf.get(i).getOnomaMathimatos().equals(updateProfMathimata.getModel().getElementAt(k)))
+                        selectedIndices[i] = k;
+                }
+            }
+            updateProfMathimata.setSelectedIndices(selectedIndices);
+        }
+    }//GEN-LAST:event_searchProfButtonActionPerformed
+
+    private void updateProfButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateProfButtonActionPerformed
+        int[] selectedIx = updateProfMathimata.getSelectedIndices();
+        FileInputStream fi = null;
+        ObjectInputStream oi = null;
+        List<Mathima> mathimata = new ArrayList<>();
+        try{
+            fi = new FileInputStream(new File("myCourses.txt"));
+            oi = new ObjectInputStream(fi);
+            while (true){
+                try{
+                    mathimata.add((Mathima)oi.readObject());
+                }catch (EOFException ex1) {
+                    break; //EOF reached.
+                }catch (IOException ex2) {
+                    System.err.println("An IOException was caught: " + ex2.getMessage());
+                }
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{
+            try{
+                oi.close();
+                fi.close();
+                System.out.println("ekleisa");
+            }catch(IOException ex) {
+                System.err.println("An IOException was caught: " + ex.getMessage());
+            }
+        }
+        List<Mathima> updateMathimataForProf = new ArrayList<>();
+        for (int i : selectedIx){
+            String math = updateProfMathimata.getModel().getElementAt(i);
+            for (Mathima mathima : mathimata){
+                if (math.equals(mathima.getOnomaMathimatos())){
+                    updateMathimataForProf.add(mathima);
+                }
+            }            
+        }
+        admin.updateProf(updateProfUsername.getText(), updateProfPassword.getText(),updateProfMail.getText(),updateProfMail.getText(),
+                         updateProfTilefono.getText(), updateProfTmima.getText(),updateProfEidikothta.getText(), updateMathimataForProf);
+    }//GEN-LAST:event_updateProfButtonActionPerformed
+
+    private void deleteProfButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteProfButtonActionPerformed
+        admin.deleteProf();
+    }//GEN-LAST:event_deleteProfButtonActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        getContentPane().removeAll();
+        getContentPane().repaint();
+        getContentPane().revalidate();
+        getContentPane().add(searchProfPage);
+        getContentPane().repaint();
+        getContentPane().revalidate();
+    }//GEN-LAST:event_jButton1ActionPerformed
     public void clearLoginFields(){
-        jPasswordField1.setText("");
-        jTextField1.setText("");
+        passwordLogin.setText("");
+        usernameLogin.setText("");
     }
     public void goToHomePage(){
         getContentPane().removeAll();
@@ -1194,6 +1448,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JButton addStd;
     private javax.swing.JButton adminLogoutButton;
     private javax.swing.JButton deleteMathButton;
+    private javax.swing.JToggleButton deleteProfButton;
     private javax.swing.JToggleButton deleteStdButton;
     private javax.swing.JButton foiththsLogoutButton;
     private javax.swing.JButton jButton1;
@@ -1203,10 +1458,10 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JButton kathigitisLogoutButton;
+    private javax.swing.JButton loginButton;
     private javax.swing.JTextField mathDM;
     private javax.swing.JTextField mathEksamino;
     private javax.swing.JTextField mathKodikos;
@@ -1217,6 +1472,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel newMathPage;
     private javax.swing.JPanel newProfPage;
     private javax.swing.JPanel newStdPage;
+    private javax.swing.JPasswordField passwordLogin;
     private javax.swing.JTextField profIdikotita;
     private javax.swing.JTextField profMail;
     private javax.swing.JList<String> profMathimata;
@@ -1229,6 +1485,9 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JButton searchMathButton;
     private javax.swing.JTextField searchMathKodikos;
     private javax.swing.JPanel searchMathPage;
+    private javax.swing.JButton searchProfButton;
+    private javax.swing.JPanel searchProfPage;
+    private javax.swing.JTextField searchProfUsername;
     private javax.swing.JButton searchStdButton;
     private javax.swing.JPanel searchStdPage;
     private javax.swing.JTextField searchStdUsername;
@@ -1250,6 +1509,16 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel updateMathPage;
     private javax.swing.JTextField updateMathTmima;
     private javax.swing.JTextField updateMathTupos;
+    private javax.swing.JToggleButton updateProfButton;
+    private javax.swing.JTextField updateProfEidikothta;
+    private javax.swing.JTextField updateProfMail;
+    private javax.swing.JList<String> updateProfMathimata;
+    private javax.swing.JTextField updateProfOnomatep;
+    private javax.swing.JPanel updateProfPage;
+    private javax.swing.JTextField updateProfPassword;
+    private javax.swing.JTextField updateProfTilefono;
+    private javax.swing.JTextField updateProfTmima;
+    private javax.swing.JTextField updateProfUsername;
     private javax.swing.JTextField updateStdAM;
     private javax.swing.JToggleButton updateStdButton;
     private javax.swing.JTextField updateStdDieuthinsi;
@@ -1259,7 +1528,8 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel updateStdPage;
     private javax.swing.JTextField updateStdPassword;
     private javax.swing.JTextField updateStdTilefono;
-    private javax.swing.JTextField updateStdTmina;
+    private javax.swing.JTextField updateStdTmima;
     private javax.swing.JTextField updateStdUsername;
+    private javax.swing.JTextField usernameLogin;
     // End of variables declaration//GEN-END:variables
 }

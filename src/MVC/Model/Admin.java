@@ -142,15 +142,8 @@ public class Admin extends Account {
         putAccountsToFile();
     }
     
-    public void deteteProf(String username) {
-        for(int i = 0; i < professor.size(); i++) {
-            if(professor.get(i).getUsername().equals(username)) {
-                professor.remove(i);
-                System.out.println("Epituxis Diagrafi tou Kathigiti me username: " + username);
-            }else {
-                System.out.println("Apotixis Diagrafi tou Kathigiti me username: " + username);
-            }
-        }
+    public void deleteProf() {
+        putAccountsToFile();
     }
     
     public void getAccountsFromFile(){
@@ -260,15 +253,37 @@ public class Admin extends Account {
         System.out.println("To Mathima den vrethike !");
         return null;
     }
+    
+    public Kathigitis searchProf(String username){
+        getAccountsFromFile();
+        for(int i = 0; i < professor.size(); i++) {
+            if(professor.get(i).getUsername().equals(username)) {
+               Kathigitis prof = professor.get(i);
+               professor.remove(i);
+               return prof;
+            }
+        }
+        System.out.println("O Kathigitis den vrethike !");
+        return null;
+    }
+    
     public void updateMath(String courseName, int courseEksamino, String courseTmhma, int kodikosMathimatos, String courseTypos, int courseDM){
         Mathima math = new Mathima(courseName,courseEksamino,kodikosMathimatos,courseTmhma,courseTypos,courseDM);
         course.add(math);
         putMathimataToFile();
     }
+    
     public void updateStd(String usernameStd, String passStd, String mailStd, String onomateponumoStd,
                            String thlefwnoStd, int AMstd, String tmhmaStd, int eksaminoStd, String dieythinsiStd){
-        Foititis Std = new Foititis(usernameStd, passStd, mailStd, onomateponumoStd, thlefwnoStd, AMstd, tmhmaStd, eksaminoStd, dieythinsiStd);     
-        student.add(Std);
+        Foititis std = new Foititis(usernameStd, passStd, mailStd, onomateponumoStd, thlefwnoStd, AMstd, tmhmaStd, eksaminoStd, dieythinsiStd);     
+        student.add(std);
+        putAccountsToFile();
+    }
+    
+    public void updateProf(String usernameProf, String passProf, String mailProf, String onomateponumoProf,
+                           String thlefwnoProf, String tmhmaProf, String eidikothtaProf, List<Mathima> mathimataProf){
+        Kathigitis prof = new Kathigitis(usernameProf, passProf, mailProf, onomateponumoProf, thlefwnoProf, tmhmaProf, eidikothtaProf, mathimataProf);     
+        professor.add(prof);
         putAccountsToFile();
     }
     
