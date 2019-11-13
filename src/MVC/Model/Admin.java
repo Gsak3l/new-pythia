@@ -139,12 +139,6 @@ public class Admin extends Account {
     }
     
     public void deleteStd(String userName){
-        for(int i = 0; i < student.size(); i ++) {
-            if(student.get(i).getUsername().equals(userName)) {
-                student.remove(i);
-                System.out.println("Epituxis Diagrafi tou Foititi me AM: " + userName);
-            }
-        }
         putAccountsToFile();
     }
     
@@ -211,10 +205,9 @@ public class Admin extends Account {
                Foititis std = student.get(i);
                student.remove(i);
                return std;
-            }else{
-                System.out.println("O Foititis den vrethike !");
             }
         }
+        System.out.println("O Foititis den vrethike !");
         return null;
     }
     
