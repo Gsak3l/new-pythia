@@ -1,4 +1,11 @@
+package MVC.View_Controller;
 
+
+import MVC.Model.Mathima;
+import MVC.Model.Kathigitis;
+import MVC.Model.Foititis;
+import MVC.Model.Account;
+import MVC.Model.Admin;
 import java.awt.CardLayout;
 import java.io.BufferedReader;
 import java.io.EOFException;
@@ -105,18 +112,21 @@ public class NewJFrame extends javax.swing.JFrame {
         removeProfPage = new javax.swing.JPanel();
         usernameKathD = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
-        updateStd = new javax.swing.JPanel();
-        UpdStdPassword = new javax.swing.JTextField();
-        UpdStdMail = new javax.swing.JTextField();
-        UpdStdOnomatep = new javax.swing.JTextField();
-        UpdStdTilefono = new javax.swing.JTextField();
-        UpdStdAM = new javax.swing.JTextField();
-        UpdStdTmina = new javax.swing.JTextField();
-        UpdStdExamino = new javax.swing.JTextField();
-        UpdStdUsername = new javax.swing.JTextField();
-        UpdStdUpdate = new javax.swing.JToggleButton();
-        UpdStdSearch = new javax.swing.JButton();
-        UpdStdDieuthinsi = new javax.swing.JTextField();
+        searchStdPage = new javax.swing.JPanel();
+        searchStdUsername = new javax.swing.JTextField();
+        searchStdButton = new javax.swing.JButton();
+        updateStdPage = new javax.swing.JPanel();
+        updateStdUsername = new javax.swing.JTextField();
+        updateStdOnomatep = new javax.swing.JTextField();
+        updateStdTilefono = new javax.swing.JTextField();
+        updateStdAM = new javax.swing.JTextField();
+        updateStdTmina = new javax.swing.JTextField();
+        updateStdExamino = new javax.swing.JTextField();
+        updateStdDieuthinsi = new javax.swing.JTextField();
+        updateStdPassword = new javax.swing.JTextField();
+        updateStdMail = new javax.swing.JTextField();
+        updateStdButton = new javax.swing.JToggleButton();
+        deleteStdButton = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.CardLayout());
@@ -684,97 +694,131 @@ public class NewJFrame extends javax.swing.JFrame {
 
         getContentPane().add(removeProfPage, "card11");
 
-        UpdStdPassword.setText("Password");
+        searchStdUsername.setText("Username");
 
-        UpdStdMail.setText("Mail");
-
-        UpdStdOnomatep.setText("Onomateponimo");
-
-        UpdStdTilefono.setText("Tilefono");
-
-        UpdStdAM.setText("AM");
-
-        UpdStdTmina.setText("Tmima");
-
-        UpdStdExamino.setText("Examino");
-
-        UpdStdUsername.setText("Username");
-
-        UpdStdUpdate.setText("Update");
-        UpdStdUpdate.addActionListener(new java.awt.event.ActionListener() {
+        searchStdButton.setText("Search");
+        searchStdButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UpdStdUpdateActionPerformed(evt);
+                searchStdButtonActionPerformed(evt);
             }
         });
 
-        UpdStdSearch.setText("Search");
-        UpdStdSearch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UpdStdSearchActionPerformed(evt);
-            }
-        });
-
-        UpdStdDieuthinsi.setText("Dieuthinsi");
-
-        javax.swing.GroupLayout updateStdLayout = new javax.swing.GroupLayout(updateStd);
-        updateStd.setLayout(updateStdLayout);
-        updateStdLayout.setHorizontalGroup(
-            updateStdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(updateStdLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(UpdStdUpdate)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(UpdStdSearch)
+        javax.swing.GroupLayout searchStdPageLayout = new javax.swing.GroupLayout(searchStdPage);
+        searchStdPage.setLayout(searchStdPageLayout);
+        searchStdPageLayout.setHorizontalGroup(
+            searchStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(searchStdPageLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(searchStdButton)
                 .addContainerGap())
-            .addGroup(updateStdLayout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addGroup(updateStdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(updateStdLayout.createSequentialGroup()
-                        .addGroup(updateStdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(UpdStdPassword, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
-                            .addComponent(UpdStdMail, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
-                        .addComponent(UpdStdUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(92, 92, 92))
-                    .addGroup(updateStdLayout.createSequentialGroup()
-                        .addGroup(updateStdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(UpdStdDieuthinsi, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(UpdStdOnomatep, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
-                            .addComponent(UpdStdTilefono, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(UpdStdAM, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(UpdStdTmina, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(UpdStdExamino, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(searchStdPageLayout.createSequentialGroup()
+                .addContainerGap(431, Short.MAX_VALUE)
+                .addComponent(searchStdUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(92, 92, 92))
         );
-        updateStdLayout.setVerticalGroup(
-            updateStdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(updateStdLayout.createSequentialGroup()
+        searchStdPageLayout.setVerticalGroup(
+            searchStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(searchStdPageLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addGroup(updateStdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(UpdStdPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(UpdStdUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(UpdStdMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(UpdStdOnomatep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(UpdStdTilefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(UpdStdAM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(UpdStdTmina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(UpdStdExamino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(UpdStdDieuthinsi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                .addGroup(updateStdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(UpdStdUpdate)
-                    .addComponent(UpdStdSearch))
+                .addComponent(searchStdUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 398, Short.MAX_VALUE)
+                .addComponent(searchStdButton)
                 .addContainerGap())
         );
 
-        getContentPane().add(updateStd, "card12");
+        getContentPane().add(searchStdPage, "card12");
+
+        updateStdUsername.setText("Username");
+
+        updateStdOnomatep.setText("Onomateponimo");
+
+        updateStdTilefono.setText("Tilefono");
+
+        updateStdAM.setText("AM");
+
+        updateStdTmina.setText("Tmima");
+
+        updateStdExamino.setText("Examino");
+
+        updateStdDieuthinsi.setText("Dieuthinsi");
+
+        updateStdPassword.setText("Password");
+
+        updateStdMail.setText("Mail");
+
+        updateStdButton.setText("Update");
+        updateStdButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateStdButtonActionPerformed(evt);
+            }
+        });
+
+        deleteStdButton.setText("Delete");
+        deleteStdButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteStdButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout updateStdPageLayout = new javax.swing.GroupLayout(updateStdPage);
+        updateStdPage.setLayout(updateStdPageLayout);
+        updateStdPageLayout.setHorizontalGroup(
+            updateStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(updateStdPageLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addGroup(updateStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(updateStdPassword)
+                    .addComponent(updateStdMail, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                    .addComponent(updateStdDieuthinsi)
+                    .addComponent(updateStdOnomatep)
+                    .addComponent(updateStdTilefono)
+                    .addComponent(updateStdAM)
+                    .addComponent(updateStdTmina)
+                    .addComponent(updateStdExamino, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
+                    .addComponent(updateStdUsername))
+                .addContainerGap(393, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, updateStdPageLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(deleteStdButton)
+                .addContainerGap())
+            .addGroup(updateStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(updateStdPageLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(updateStdButton)
+                    .addContainerGap(459, Short.MAX_VALUE)))
+        );
+        updateStdPageLayout.setVerticalGroup(
+            updateStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, updateStdPageLayout.createSequentialGroup()
+                .addContainerGap(62, Short.MAX_VALUE)
+                .addComponent(updateStdUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(updateStdPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(updateStdMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(updateStdOnomatep, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(updateStdTilefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(updateStdAM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(updateStdTmina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(updateStdExamino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(updateStdDieuthinsi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41)
+                .addComponent(deleteStdButton)
+                .addContainerGap())
+            .addGroup(updateStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(updateStdPageLayout.createSequentialGroup()
+                    .addContainerGap(427, Short.MAX_VALUE)
+                    .addComponent(updateStdButton)
+                    .addContainerGap()))
+        );
+
+        getContentPane().add(updateStdPage, "card13");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1043,30 +1087,46 @@ public class NewJFrame extends javax.swing.JFrame {
         getContentPane().removeAll();
         getContentPane().repaint();
         getContentPane().revalidate();
-        getContentPane().add(updateStd);
+        getContentPane().add(searchStdPage);
         getContentPane().repaint();
         getContentPane().revalidate();
         
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void UpdStdSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdStdSearchActionPerformed
-        
-       String Username = UpdStdUsername.getText();
-       Foititis Std = admin.updateStd1(Username);
-       UpdStdPassword.setText(Std.getPassword());
-       UpdStdMail.setText(Std.getMail());
-       UpdStdMail.setText(Std.getOnomateponumo());
-       UpdStdTilefono.setText(Std.getTilefwno());
-       UpdStdAM.setText(String.valueOf(Std.getAM()));
-       UpdStdTmina.setText(Std.getTmima());
-       UpdStdExamino.setText(String.valueOf(Std.getEksamino()));
-       UpdStdDieuthinsi.setText(Std.getDieuthinsi());
-       
-    }//GEN-LAST:event_UpdStdSearchActionPerformed
+    private void searchStdButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchStdButtonActionPerformed
 
-    private void UpdStdUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdStdUpdateActionPerformed
-        admin.updateStd2(UpdStdUsername.getText(),UpdStdPassword.getText(),UpdStdMail.getText(),UpdStdMail.getText(), UpdStdTilefono.getText(), Integer.parseInt(UpdStdAM.getText()),UpdStdTmina.getText(),Integer.parseInt(UpdStdExamino.getText()),UpdStdDieuthinsi.getText());
-    }//GEN-LAST:event_UpdStdUpdateActionPerformed
+        String Username = searchStdUsername.getText();
+        std = admin.searchStd(Username);
+        if (std != null){
+            getContentPane().removeAll();
+            getContentPane().repaint();
+            getContentPane().revalidate();
+            getContentPane().add(updateStdPage);
+            getContentPane().repaint();
+            getContentPane().revalidate();
+            updateStdUsername.setText(Username);
+            updateStdPassword.setText(std.getPassword());
+            updateStdMail.setText(std.getMail());
+            updateStdOnomatep.setText(std.getOnomateponumo());
+            updateStdTilefono.setText(std.getTilefwno());
+            updateStdAM.setText(String.valueOf(std.getAM()));
+            updateStdTmina.setText(std.getTmima());
+            updateStdExamino.setText(String.valueOf(std.getEksamino()));
+            updateStdDieuthinsi.setText(std.getDieuthinsi());
+        }
+        
+       
+    }//GEN-LAST:event_searchStdButtonActionPerformed
+
+    private void updateStdButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateStdButtonActionPerformed
+        admin.updateStd(updateStdUsername.getText(), updateStdPassword.getText(),updateStdMail.getText(),updateStdMail.getText(),
+                         updateStdTilefono.getText(), Integer.parseInt(updateStdAM.getText()),updateStdTmina.getText(),
+                         Integer.parseInt(updateStdExamino.getText()),updateStdDieuthinsi.getText());
+    }//GEN-LAST:event_updateStdButtonActionPerformed
+
+    private void deleteStdButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteStdButtonActionPerformed
+        admin.deleteStudent(std.getUsername());
+    }//GEN-LAST:event_deleteStdButtonActionPerformed
     public void clearLoginFields(){
         jPasswordField1.setText("");
         jTextField1.setText("");
@@ -1120,22 +1180,12 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel AdminPage;
     private javax.swing.JPanel FoiththsPage;
     private javax.swing.JPanel KathigitisPage;
-    private javax.swing.JTextField UpdStdAM;
-    private javax.swing.JTextField UpdStdDieuthinsi;
-    private javax.swing.JTextField UpdStdExamino;
-    private javax.swing.JTextField UpdStdMail;
-    private javax.swing.JTextField UpdStdOnomatep;
-    private javax.swing.JTextField UpdStdPassword;
-    private javax.swing.JButton UpdStdSearch;
-    private javax.swing.JTextField UpdStdTilefono;
-    private javax.swing.JTextField UpdStdTmina;
-    private javax.swing.JToggleButton UpdStdUpdate;
-    private javax.swing.JTextField UpdStdUsername;
     private javax.swing.JButton addMath;
     private javax.swing.JButton addProf;
     private javax.swing.JButton addStd;
     private javax.swing.JButton adminLogoutButton;
     private javax.swing.JTextField amFoititiDiag;
+    private javax.swing.JToggleButton deleteStdButton;
     private javax.swing.JButton foiththsLogoutButton;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -1176,6 +1226,9 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel removeProfPage;
     private javax.swing.JButton removeProfessor;
     private javax.swing.JButton removeStudent;
+    private javax.swing.JButton searchStdButton;
+    private javax.swing.JPanel searchStdPage;
+    private javax.swing.JTextField searchStdUsername;
     private javax.swing.JTextField stdAM;
     private javax.swing.JTextField stdDieythinsi;
     private javax.swing.JTextField stdEksamino;
@@ -1186,7 +1239,17 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JTextField stdThlefwno;
     private javax.swing.JTextField stdTmhma;
     private javax.swing.JTextField stdUsername;
-    private javax.swing.JPanel updateStd;
+    private javax.swing.JTextField updateStdAM;
+    private javax.swing.JToggleButton updateStdButton;
+    private javax.swing.JTextField updateStdDieuthinsi;
+    private javax.swing.JTextField updateStdExamino;
+    private javax.swing.JTextField updateStdMail;
+    private javax.swing.JTextField updateStdOnomatep;
+    private javax.swing.JPanel updateStdPage;
+    private javax.swing.JTextField updateStdPassword;
+    private javax.swing.JTextField updateStdTilefono;
+    private javax.swing.JTextField updateStdTmina;
+    private javax.swing.JTextField updateStdUsername;
     private javax.swing.JTextField usernameKathD;
     // End of variables declaration//GEN-END:variables
 }

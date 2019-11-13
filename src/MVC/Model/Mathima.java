@@ -1,6 +1,8 @@
+package MVC.Model;
+
 import java.io.Serializable;
 
-class Mathima implements Serializable{
+public class Mathima implements Serializable{
     private String onomaMathimatos;
     private int eksamino;
     private int kodikosMathimatos;

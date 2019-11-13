@@ -872,7 +872,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="updateStd">
+    <Container class="javax.swing.JPanel" name="searchStdPage">
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
           <CardConstraints cardName="card12"/>
@@ -883,36 +883,14 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="UpdStdUpdate" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Component id="UpdStdSearch" min="-2" max="-2" attributes="0"/>
+                  <Component id="searchStdButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="UpdStdPassword" alignment="0" pref="94" max="32767" attributes="0"/>
-                              <Component id="UpdStdMail" alignment="0" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace pref="128" max="32767" attributes="0"/>
-                          <Component id="UpdStdUsername" min="-2" pref="73" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="UpdStdDieuthinsi" alignment="0" max="32767" attributes="0"/>
-                              <Component id="UpdStdOnomatep" alignment="0" pref="94" max="32767" attributes="0"/>
-                              <Component id="UpdStdTilefono" alignment="0" max="32767" attributes="0"/>
-                              <Component id="UpdStdAM" alignment="0" max="32767" attributes="0"/>
-                              <Component id="UpdStdTmina" alignment="0" max="32767" attributes="0"/>
-                              <Component id="UpdStdExamino" alignment="0" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
+                  <EmptySpace pref="431" max="32767" attributes="0"/>
+                  <Component id="searchStdUsername" min="-2" pref="73" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -920,95 +898,165 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="UpdStdPassword" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="UpdStdUsername" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                  <Component id="UpdStdMail" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="UpdStdOnomatep" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="UpdStdTilefono" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="UpdStdAM" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="UpdStdTmina" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="UpdStdExamino" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="UpdStdDieuthinsi" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="28" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="UpdStdUpdate" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="UpdStdSearch" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="searchStdUsername" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="398" max="32767" attributes="0"/>
+                  <Component id="searchStdButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JTextField" name="UpdStdPassword">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Password"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="UpdStdMail">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Mail"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="UpdStdOnomatep">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Onomateponimo"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="UpdStdTilefono">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Tilefono"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="UpdStdAM">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="AM"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="UpdStdTmina">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Tmima"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="UpdStdExamino">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Examino"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="UpdStdUsername">
+        <Component class="javax.swing.JTextField" name="searchStdUsername">
           <Properties>
             <Property name="text" type="java.lang.String" value="Username"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JToggleButton" name="UpdStdUpdate">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Update"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UpdStdUpdateActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="UpdStdSearch">
+        <Component class="javax.swing.JButton" name="searchStdButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="Search"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UpdStdSearchActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="searchStdButtonActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="UpdStdDieuthinsi">
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="updateStdPage">
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+          <CardConstraints cardName="card13"/>
+        </Constraint>
+      </Constraints>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="updateStdPassword" alignment="0" max="32767" attributes="0"/>
+                      <Component id="updateStdMail" alignment="0" pref="94" max="32767" attributes="0"/>
+                      <Component id="updateStdDieuthinsi" alignment="0" max="32767" attributes="0"/>
+                      <Component id="updateStdOnomatep" alignment="0" max="32767" attributes="0"/>
+                      <Component id="updateStdTilefono" alignment="0" max="32767" attributes="0"/>
+                      <Component id="updateStdAM" alignment="0" max="32767" attributes="0"/>
+                      <Component id="updateStdTmina" alignment="0" max="32767" attributes="0"/>
+                      <Component id="updateStdExamino" alignment="0" pref="94" max="32767" attributes="0"/>
+                      <Component id="updateStdUsername" alignment="0" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="393" max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="deleteStdButton" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="updateStdButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="459" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace pref="62" max="32767" attributes="0"/>
+                  <Component id="updateStdUsername" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="updateStdPassword" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                  <Component id="updateStdMail" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="updateStdOnomatep" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="updateStdTilefono" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="updateStdAM" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="updateStdTmina" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="updateStdExamino" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="updateStdDieuthinsi" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                  <Component id="deleteStdButton" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace pref="427" max="32767" attributes="0"/>
+                      <Component id="updateStdButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JTextField" name="updateStdUsername">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Username"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="updateStdOnomatep">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Onomateponimo"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="updateStdTilefono">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Tilefono"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="updateStdAM">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="AM"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="updateStdTmina">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Tmima"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="updateStdExamino">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Examino"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="updateStdDieuthinsi">
           <Properties>
             <Property name="text" type="java.lang.String" value="Dieuthinsi"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="updateStdPassword">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Password"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="updateStdMail">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Mail"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JToggleButton" name="updateStdButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Update"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updateStdButtonActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JToggleButton" name="deleteStdButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Delete"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deleteStdButtonActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
