@@ -143,8 +143,6 @@ public class Admin extends Account {
             if(student.get(i).getUsername().equals(userName)) {
                 student.remove(i);
                 System.out.println("Epituxis Diagrafi tou Foititi me AM: " + userName);
-            }else{
-                System.out.println("O Foititis me AM: " + userName + " den vrethike sthn lista me tous foitites");
             }
         }
         putAccountsToFile();
