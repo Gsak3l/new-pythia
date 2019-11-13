@@ -138,7 +138,7 @@ public class Admin extends Account {
         }
     }
     
-    public void deleteStudent(String userName){
+    public void deleteStd(String userName){
         for(int i = 0; i < student.size(); i ++) {
             if(student.get(i).getUsername().equals(userName)) {
                 student.remove(i);

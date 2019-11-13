@@ -1070,7 +1070,7 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        admin.deleteStudent(amFoititiDiag.getText());
+        admin.deleteStd(amFoititiDiag.getText());
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -1125,7 +1125,7 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_updateStdButtonActionPerformed
 
     private void deleteStdButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteStdButtonActionPerformed
-        admin.deleteStudent(std.getUsername());
+        admin.deleteStd(std.getUsername());
     }//GEN-LAST:event_deleteStdButtonActionPerformed
     public void clearLoginFields(){
         jPasswordField1.setText("");
