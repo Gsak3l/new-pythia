@@ -23,6 +23,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /*
@@ -950,25 +951,15 @@ public class NewJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-//        Account admin = new Admin("it174890", "633818", "it174890@it.teithe.gr", "Γιώργος Στίνης", "2310574479");
-//        Account kathigitis = new Kathigitis("daddy", "keftedaki", "dad@it.teithe.gr", "SallaDaddy", "6948855476", "Μαθηματικός", "Μηχανικών Πληροφορικής");
-//        Account foithths = new Foititis("ego", "555", "ego@gmail.com", "ego memena", "", 174891, "Διοικηση", 5, "Λαχανά 22");
         FileInputStream fi=null;
         ObjectInputStream oi=null;
         try {
-//            f = new FileOutputStream(new File("myAccounts.txt"), true);
-//            o = new ObjectOutputStream(f);
-//            o.writeObject(admin);
-//            o.writeObject(kathigitis);
-//            o.writeObject(foithths);
-//            o.close();
-//            f.close();
             fi = new FileInputStream(new File("myAccounts.txt"));
             oi = new ObjectInputStream(fi);
             Account a1;
             String usernameTextfield = usernameLogin.getText();
             char[] passwordTextfield = passwordLogin.getPassword();
-            clearLoginFields();
+            
             while (true){
                 try{
                     a1=(Account)oi.readObject();
@@ -1000,25 +991,44 @@ public class NewJFrame extends javax.swing.JFrame {
                 }catch (EOFException ex1) {
                     break; //EOF reached.
                 }catch (IOException ex2) {
-                    System.err.println("An IOException was caught: " + ex2.getMessage());
+                    resetAccountFile();
+                    JOptionPane.showMessageDialog(null, "File was reset");
+                    loginButtonActionPerformed(evt);
+                    break;
+                }catch (ClassNotFoundException ex) {
+                    System.out.println("Ex1");
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-        }catch (IOException ex) {
-            System.err.println("An IOException was caught: " + ex.getMessage());
-        }catch (ClassNotFoundException ex) {
-            System.out.println("Geia");
+        } catch (IOException ex) {
+            resetAccountFile();
+            JOptionPane.showMessageDialog(null, "Someone changed the file manually, File is resetting!");
         }finally{
             try{
                 oi.close();
                 fi.close();
                 System.out.println("ekleisa");
-            }catch(IOException ex) {
-                System.err.println("An IOException was caught: " + ex.getMessage());
+            } catch (IOException ex) {
+                Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
             }
+            clearLoginFields();
         }
         
     }//GEN-LAST:event_loginButtonActionPerformed
 
+    public void resetAccountFile(){
+        Account admin = new Admin("it174890", "633818", "it174890@it.teithe.gr", "Γιώργος Στίνης", "2310574479");
+        try{
+            f = new FileOutputStream(new File("myAccounts.txt"));
+            o = new ObjectOutputStream(f);
+            o.writeObject(admin);
+            o.close();
+            f.close();
+        } catch (IOException ex) {
+            Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     private void kathigitisLogoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kathigitisLogoutButtonActionPerformed
         goToHomePage();
     }//GEN-LAST:event_kathigitisLogoutButtonActionPerformed
@@ -1193,7 +1203,6 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void searchStdButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchStdButtonActionPerformed
-
         String username = searchStdUsername.getText();
         std = admin.searchStd(username);
         if (std != null){
@@ -1213,8 +1222,6 @@ public class NewJFrame extends javax.swing.JFrame {
             updateStdExamino.setText(String.valueOf(std.getEksamino()));
             updateStdDieuthinsi.setText(std.getDieuthinsi());
         }
-        
-       
     }//GEN-LAST:event_searchStdButtonActionPerformed
 
     private void updateStdButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateStdButtonActionPerformed
