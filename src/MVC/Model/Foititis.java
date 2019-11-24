@@ -36,7 +36,7 @@ public class Foititis extends Account {
     public void addDhlwsh(List<Mathima> mathimataDhlwshs) {
         Dhlwsh dhlwsh = new Dhlwsh();
         if(this.getEksamino()%2 == 0) {
-            dhlwsh.eisagwgiDhlwsh('Earino', this, mathimataDhlwshs);
+            dhlwsh.eisagwgiDhlwsh("Earino", this, mathimataDhlwshs);
         }
     }
     
