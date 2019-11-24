@@ -138,19 +138,12 @@ public class Admin extends Account {
         }
     }
     
-    public void deleteStd(String userName){
+    public void deleteStd(){
         putAccountsToFile();
     }
     
-    public void deteteProf(String username) {
-        for(int i = 0; i < professor.size(); i++) {
-            if(professor.get(i).getUsername().equals(username)) {
-                professor.remove(i);
-                System.out.println("Epituxis Diagrafi tou Kathigiti me username: " + username);
-            }else {
-                System.out.println("Apotixis Diagrafi tou Kathigiti me username: " + username);
-            }
-        }
+    public void deleteProf() {
+        putAccountsToFile();
     }
     
     public void getAccountsFromFile(){
@@ -197,6 +190,43 @@ public class Admin extends Account {
             }
         }
     }
+    public void getMathimataFromFile(){
+        
+        course.clear();
+        
+        FileInputStream fi = null;
+        ObjectInputStream oi = null;
+        Mathima m;
+        
+          try{
+            fi = new FileInputStream(new File("myCourses.txt"));
+            oi = new ObjectInputStream(fi);
+            
+            while (true){
+                try{
+                    
+                  m = (Mathima)oi.readObject();
+                  course.add(m);
+                }catch (EOFException ex1) {
+                    break; //EOF reached.
+                }catch (IOException ex2) {
+                    System.err.println("An IOException was caught: " + ex2.getMessage());
+                }
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{
+            try{
+                oi.close();
+                fi.close();
+                System.out.println("ekleisa");
+            }catch(IOException ex) {
+                System.err.println("An IOException was caught: " + ex.getMessage());
+            }
+        }
+    }
     
     public Foititis searchStd(String username){
         getAccountsFromFile();
@@ -211,10 +241,49 @@ public class Admin extends Account {
         return null;
     }
     
+    public Mathima searchMath(int Kodikos){
+        getMathimataFromFile();
+        for(int i = 0; i < course.size(); i++) {
+            if(course.get(i).getKodikosMathimatos() == Kodikos) {
+               Mathima math = course.get(i);
+               course.remove(i);
+               return math;
+            }
+        }
+        System.out.println("To Mathima den vrethike !");
+        return null;
+    }
+    
+    public Kathigitis searchProf(String username){
+        getAccountsFromFile();
+        for(int i = 0; i < professor.size(); i++) {
+            if(professor.get(i).getUsername().equals(username)) {
+               Kathigitis prof = professor.get(i);
+               professor.remove(i);
+               return prof;
+            }
+        }
+        System.out.println("O Kathigitis den vrethike !");
+        return null;
+    }
+    
+    public void updateMath(String courseName, int courseEksamino, String courseTmhma, int kodikosMathimatos, String courseTypos, int courseDM){
+        Mathima math = new Mathima(courseName,courseEksamino,kodikosMathimatos,courseTmhma,courseTypos,courseDM);
+        course.add(math);
+        putMathimataToFile();
+    }
+    
     public void updateStd(String usernameStd, String passStd, String mailStd, String onomateponumoStd,
                            String thlefwnoStd, int AMstd, String tmhmaStd, int eksaminoStd, String dieythinsiStd){
-        Foititis Std = new Foititis(usernameStd, passStd, mailStd, onomateponumoStd, thlefwnoStd, AMstd, tmhmaStd, eksaminoStd, dieythinsiStd);     
-        student.add(Std);
+        Foititis std = new Foititis(usernameStd, passStd, mailStd, onomateponumoStd, thlefwnoStd, AMstd, tmhmaStd, eksaminoStd, dieythinsiStd);     
+        student.add(std);
+        putAccountsToFile();
+    }
+    
+    public void updateProf(String usernameProf, String passProf, String mailProf, String onomateponumoProf,
+                           String thlefwnoProf, String tmhmaProf, String eidikothtaProf, List<Mathima> mathimataProf){
+        Kathigitis prof = new Kathigitis(usernameProf, passProf, mailProf, onomateponumoProf, thlefwnoProf, tmhmaProf, eidikothtaProf, mathimataProf);     
+        professor.add(prof);
         putAccountsToFile();
     }
     
@@ -250,17 +319,36 @@ public class Admin extends Account {
         
     }
     
-    public void deleteCourse(int kodM) {
-        for(int i = 0; i < course.size(); i ++) {
-            if(course.get(i).getKodikosMathimatos() == kodM) {
-                course.remove(i);
-                System.out.println("Epituxis Diagrafi tou Mathimatos me kodiko: " + kodM);
-            }else {
-                System.out.println("Apotuxia diagrafis tou mathimatos me kodiko: " + kodM);
+    public void putMathimataToFile(){
+        
+        FileOutputStream f=null;
+        ObjectOutputStream o=null;
+        try {
+            f = new FileOutputStream(new File("myCourses.txt"));
+            o = new ObjectOutputStream(f);
+            
+            for (Mathima math : this.course){
+               o.writeObject(math);
+            }   
+                      
+        } catch (IOException ex) {
+            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try{
+                o.close();
+                f.close();
+                System.out.println("ekleisa");
+            }catch(IOException ex) {
+                System.err.println("An IOException was caught: " + ex.getMessage());
             }
         }
+        
     }
-    
+       
+    public void deleteCourse(){
+        putMathimataToFile();
+    }
+        
     public void showStd() {
         Foititis f1 = student.get(0);
         System.out.println(f1);

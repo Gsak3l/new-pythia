@@ -5,16 +5,21 @@
  */
 package MVC.Model;
 
-/**
- *
- * @author stini
- */
 public class Foititis extends Account {
     private int AM;
     private String tmima;
     private int eksamino;
     private String dieuthinsi;
-    //private StoixeiaEggrafis stoixeiaEggrafis;
+    private StoixeiaEggrafis stoixeiaEggrafis = null;
+
+    public Foititis(String username, String password, String mail, String onomateponumo, String tilefwno, int AM, String tmima, int eksamino, String dieuthinsi, StoixeiaEggrafis stoixeiaEggrafis) {
+        super(username, password, mail, onomateponumo, tilefwno);
+        this.AM = AM;
+        this.tmima = tmima;
+        this.eksamino = eksamino;
+        this.dieuthinsi = dieuthinsi;
+        this.stoixeiaEggrafis = stoixeiaEggrafis;
+    }
 
     public Foititis(String username, String password, String mail, String onomateponumo, String tilefwno, int AM, String tmima, int eksamino, String dieuthinsi) {
         super(username, password, mail, onomateponumo, tilefwno);
@@ -22,9 +27,8 @@ public class Foititis extends Account {
         this.tmima = tmima;
         this.eksamino = eksamino;
         this.dieuthinsi = dieuthinsi;
-        //this.stoixeiaEggrafis = stoixeiaEggrafis;
     }
-
+    
     public String getTmima() {
         return tmima;
     }
