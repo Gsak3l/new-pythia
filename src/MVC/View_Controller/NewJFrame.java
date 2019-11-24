@@ -1011,6 +1011,11 @@ public class NewJFrame extends javax.swing.JFrame {
         jScrollPane7.setViewportView(mathimataList0);
 
         prosthikhDhlwshsStd.setText("Προσθήκη στην Δήλωση");
+        prosthikhDhlwshsStd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                prosthikhDhlwshsStdActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout dhlwshStdPageLayout = new javax.swing.GroupLayout(dhlwshStdPage);
         dhlwshStdPage.setLayout(dhlwshStdPageLayout);
@@ -1589,6 +1594,69 @@ public class NewJFrame extends javax.swing.JFrame {
         getContentPane().revalidate();
         
     }//GEN-LAST:event_dhlwshStdActionPerformed
+
+    private void prosthikhDhlwshsStdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prosthikhDhlwshsStdActionPerformed
+        // TODO add your handling code here:
+        int[] selectedIx = mathimataList0.getSelectedIndices();
+        int[] selectedIIx = mathimataList1.getSelectedIndices();
+        int[] selectedIIIx = mathimataList2.getSelectedIndices();
+        int[] selectedIVx = mathimataList3.getSelectedIndices();
+        int[] selectedVx = mathimataList4.getSelectedIndices();
+        
+        FileInputStream fi = null;
+        ObjectInputStream oi = null;
+        List<Mathima> mathimata = new ArrayList<>();
+        try{
+            fi = new FileInputStream(new File("myCourses.txt"));
+            oi = new ObjectInputStream(fi);
+            while (true){
+                try{
+                    mathimata.add((Mathima)oi.readObject());
+                }catch (EOFException ex1) {
+                    break; //EOF reached.
+                }catch (IOException ex2) {
+                    System.err.println("An IOException was caught: " + ex2.getMessage());
+                }
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{
+            try{
+                oi.close();
+                fi.close();
+                System.out.println("ekleisa");
+            }catch(IOException ex) {
+                System.err.println("An IOException was caught: " + ex.getMessage());
+            }
+        }
+        List<Mathima> mathimataForStd = new ArrayList<>();
+        List <String> math = new ArrayList<>();
+        for (int i : selectedIx){
+            math.add(mathimataList0.getModel().getElementAt(i));
+        }
+        for (int i : selectedIIx){
+            math.add(mathimataList1.getModel().getElementAt(i));
+        };
+        for (int i : selectedIIIx){
+            math.add(mathimataList2.getModel().getElementAt(i));
+        };
+        for (int i : selectedIVx){
+            math.add(mathimataList3.getModel().getElementAt(i));
+        };
+        for (int i : selectedVx){
+            math.add(mathimataList4.getModel().getElementAt(i));
+        };
+        for(Mathima mathima : mathimata) {
+            for(String mathStr : math) {
+                if (math.equals(mathima.getOnomaMathimatos())){
+                    mathimataForStd.add(mathima);
+                }
+            }
+        }
+        std.addDhlwsh(mathimataForStd);
+    }//GEN-LAST:event_prosthikhDhlwshsStdActionPerformed
     public void clearLoginFields(){
         passwordLogin.setText("");
         usernameLogin.setText("");
