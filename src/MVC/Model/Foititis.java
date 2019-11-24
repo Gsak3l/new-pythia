@@ -40,6 +40,7 @@ public class Foititis extends Account {
         }else {
             dhlwsh.eisagwgiDhlwsh("Xeimerino", this, mathimataDhlwshs);
         }
+        dilwsi.add(dhlwsh);
     }
     
     public String getTmima() {
