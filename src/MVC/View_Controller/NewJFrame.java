@@ -1002,7 +1002,7 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         } catch (IOException ex) {
             resetAccountFile();
-            JOptionPane.showMessageDialog(null, "Someone changed the file manually, File is resetting!");
+            JOptionPane.showMessageDialog(null, "Someone changed or removed the file manually, File is resetting! Sign in as an admin");
         }finally{
             try{
                 oi.close();
@@ -1017,7 +1017,7 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_loginButtonActionPerformed
 
     public void resetAccountFile(){
-        Account admin = new Admin("it174890", "633818", "it174890@it.teithe.gr", "Γιώργος Στίνης", "2310574479");
+        Account admin = new Admin("admin", "admin", "admin@it.teithe.gr", "Γιώργος Στίνης", "2310555555");
         try{
             f = new FileOutputStream(new File("myAccounts.txt"));
             o = new ObjectOutputStream(f);
