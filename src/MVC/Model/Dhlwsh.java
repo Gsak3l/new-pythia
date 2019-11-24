@@ -11,6 +11,10 @@ public class Dhlwsh {
     public void eisagwgiDhlwsh(String eidosEksaminou, Foititis std, List<Mathima> mathimata) {
         this.eidosEksaminou = eidosEksaminou;
         this.std = std;
+        for(Mathima mathima : mathimata) {
+            dhlwmenaMathimata.add(new DhlwmenoMathima(std, mathima));
+        }
     }
+    
     
 }
