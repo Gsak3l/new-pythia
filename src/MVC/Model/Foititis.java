@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package MVC.Model;
 
 import java.util.ArrayList;
@@ -37,7 +32,8 @@ public class Foititis extends Account {
         Dhlwsh dhlwsh = new Dhlwsh();
         if(this.getEksamino()%2 == 0) {
             dhlwsh.eisagwgiDhlwsh("Earino", this, mathimataDhlwshs);
-        }else {
+        }
+        else {
             dhlwsh.eisagwgiDhlwsh("Xeimerino", this, mathimataDhlwshs);
         }
         dilwsi.add(dhlwsh);
@@ -74,13 +70,17 @@ public class Foititis extends Account {
     public int getAM(){
         return this.AM;
     }
+    
     public void setAM(int AM) {
         this.AM = AM;
     }
+    
+    @Override
     public String getIdiotita() {
         return "Student";
     }
 
+    @Override
     public String toString() {
         return this.getUsername();
     }

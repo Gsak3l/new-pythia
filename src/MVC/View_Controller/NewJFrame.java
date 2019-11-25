@@ -1,19 +1,14 @@
 package MVC.View_Controller;
 
-
 import MVC.Model.Mathima;
 import MVC.Model.Kathigitis;
 import MVC.Model.Foititis;
 import MVC.Model.Account;
 import MVC.Model.Admin;
-import java.awt.CardLayout;
-import java.io.BufferedReader;
 import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -24,27 +19,14 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author stini
- */
 public class NewJFrame extends javax.swing.JFrame {
-
     /**
      * Creates new form NewJFrame
      */
     public NewJFrame() {
         initComponents();
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -349,12 +331,6 @@ public class NewJFrame extends javax.swing.JFrame {
 
         jLabel7.setText("Dieuthinsi : ");
 
-        ShowAmStd.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ShowAmStdActionPerformed(evt);
-            }
-        });
-
         jLabel8.setText("Stoixia Eggrafis :");
 
         javax.swing.GroupLayout FoiththsPageLayout = new javax.swing.GroupLayout(FoiththsPage);
@@ -384,9 +360,8 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGroup(FoiththsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(ShowDieuthinsiStd)
                     .addComponent(ShowTmimaStd)
-                    .addGroup(FoiththsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(ShowExaminoStd, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
-                        .addComponent(ShowAmStd, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addComponent(ShowExaminoStd, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
+                    .addComponent(ShowAmStd)
                     .addComponent(ShowStoixiaEggrafisStd, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE))
                 .addContainerGap(282, Short.MAX_VALUE))
         );
@@ -459,11 +434,6 @@ public class NewJFrame extends javax.swing.JFrame {
         getContentPane().add(KathigitisPage, "card5");
 
         stdUsername.setText("Username :");
-        stdUsername.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                stdUsernameActionPerformed(evt);
-            }
-        });
 
         stdPassword.setText("Password :");
 
@@ -480,11 +450,6 @@ public class NewJFrame extends javax.swing.JFrame {
         stdDieythinsi.setText("Dieythinsi :");
 
         stdThlefwno.setText("Thlefono :");
-        stdThlefwno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                stdThlefwnoActionPerformed(evt);
-            }
-        });
 
         stdNewSubmit.setText("Submit");
         stdNewSubmit.addActionListener(new java.awt.event.ActionListener() {
@@ -1204,7 +1169,6 @@ public class NewJFrame extends javax.swing.JFrame {
             Account a1;
             String usernameTextfield = usernameLogin.getText();
             char[] passwordTextfield = passwordLogin.getPassword();
-            
             while (true){
                 try{
                     a1=(Account)oi.readObject();
@@ -1221,6 +1185,13 @@ public class NewJFrame extends javax.swing.JFrame {
                         switch (a1.getIdiotita()) {
                             case "Administrator":
                                 getContentPane().add(AdminPage);
+                                if(admin.getDilwseis()){
+                                    DhloseisEnable.setText("Periodos Diloseon");
+                                    System.out.println(admin.getDilwseis());
+                                }else{
+                                    DhloseisEnable.setText("Enable Diloseis");
+                                    System.out.println(admin.getDilwseis());
+                                }
                                 break;
                             case "Professor":
                                 getContentPane().add(KathigitisPage);
@@ -1265,7 +1236,6 @@ public class NewJFrame extends javax.swing.JFrame {
             }
             clearLoginFields();
         }
-        
     }//GEN-LAST:event_loginButtonActionPerformed
 
     public void resetAccountFile(){
@@ -1360,7 +1330,6 @@ public class NewJFrame extends javax.swing.JFrame {
                 }
             }            
         }
-        
         String usernameProf = profUsername.getText();
         String passWordProf = profPassword.getText();
         String mailProf = profMail.getText();
@@ -1451,7 +1420,6 @@ public class NewJFrame extends javax.swing.JFrame {
         getContentPane().add(searchStdPage);
         getContentPane().repaint();
         getContentPane().revalidate();
-        
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void searchStdButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchStdButtonActionPerformed
@@ -1487,7 +1455,6 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_deleteStdButtonActionPerformed
 
     private void searchMathButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchMathButtonActionPerformed
-        
         int kodikos = Integer.parseInt(searchMathKodikos.getText());
         math = admin.searchMath(kodikos);
         if (math != null){
@@ -1503,10 +1470,7 @@ public class NewJFrame extends javax.swing.JFrame {
             updateMathTmima.setText(math.getTmhmaMathimatos());
             updateMathTupos.setText(math.getTyposMathimatos());
             updateMathDM.setText(String.valueOf(math.getDidaktikesMonades()));
-            
         } 
-        
-        
     }//GEN-LAST:event_searchMathButtonActionPerformed
 
     private void deleteMathButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteMathButtonActionPerformed
@@ -1516,7 +1480,6 @@ public class NewJFrame extends javax.swing.JFrame {
     private void updateMathButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateMathButtonActionPerformed
         admin.updateMath(updateMathOnoma.getText(), Integer.parseInt(updateMathExamino.getText()),updateMathTmima.getText(),Integer.parseInt(updateMathKodikos.getText()),
                          updateMathTupos.getText(), Integer.parseInt(updateMathDM.getText()));
-        
     }//GEN-LAST:event_updateMathButtonActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -1651,109 +1614,106 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void dhlwshStdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dhlwshStdActionPerformed
         getAdmin();
-        
         if(admin.getDilwseis() == false){
             JOptionPane.showMessageDialog(null,
             "Den einai periodos diloseon",
             "Inane warning",
             JOptionPane.WARNING_MESSAGE);
-        }else if(admin.getDilwseis()== true){
+        }
+        else if(admin.getDilwseis()== true){
             System.out.println(admin.getDilwseis());
-        FileInputStream fi = null;
-        ObjectInputStream oi = null;
-        List<Mathima> mathimata = new ArrayList<>();
-        try{
-            fi = new FileInputStream(new File("myCourses.txt"));
-            oi = new ObjectInputStream(fi);
-            while (true){
-                try{
-                    mathimata.add((Mathima)oi.readObject());
-                }catch (EOFException ex1) {
-                    break; //EOF reached.
-                }catch (IOException ex2) {
-                    System.err.println("An IOException was caught: " + ex2.getMessage());
-                }
-            }
-        } catch (IOException ex) {
-            Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }finally{
+            FileInputStream fi = null;
+            ObjectInputStream oi = null;
+            List<Mathima> mathimata = new ArrayList<>();
             try{
-                oi.close();
-                fi.close();
-                System.out.println("ekleisa");
-            }catch(IOException ex) {
-                System.err.println("An IOException was caught: " + ex.getMessage());
-            }
-        }
-        DefaultListModel listModel[] = new DefaultListModel[5];
-        for(int i = 0; i < listModel.length; i ++) {
-            listModel[i] = new DefaultListModel();
-        }
-        for(Mathima mathima: mathimata) {
-            if(std.getEksamino()%2 == 0 && mathima.getEksamino()%2 == 0){
-                switch(mathima.getEksamino()) {
-                    case 2:
-                        listModel[0].addElement(mathima.getOnomaMathimatos());
-                        break;
-                    case 4:
-                        listModel[1].addElement(mathima.getOnomaMathimatos());
-                        break;
-                    case 6:
-                        listModel[2].addElement(mathima.getOnomaMathimatos());
-                        break;
-                    case 8:
-                        listModel[3].addElement(mathima.getOnomaMathimatos());
-                        break;
-                    case 10: 
-                        listModel[4].addElement(mathima.getOnomaMathimatos());
-                        break;
+                fi = new FileInputStream(new File("myCourses.txt"));
+                oi = new ObjectInputStream(fi);
+                while (true){
+                    try{
+                        mathimata.add((Mathima)oi.readObject());
+                    }catch (EOFException ex1) {
+                        break; //EOF reached.
+                    }catch (IOException ex2) {
+                        System.err.println("An IOException was caught: " + ex2.getMessage());
+                    }
                 }
-                
-            }else if(std.getEksamino()%2 != 0 && mathima.getEksamino()%2 != 0){
-                switch(mathima.getEksamino()) {
-                    case 1:
-                        listModel[0].addElement(mathima.getOnomaMathimatos());
-                        break;
-                    case 3:
-                        listModel[1].addElement(mathima.getOnomaMathimatos());
-                        break;
-                    case 5:
-                        listModel[2].addElement(mathima.getOnomaMathimatos());
-                        break;
-                    case 7:
-                        listModel[3].addElement(mathima.getOnomaMathimatos());
-                        break;
-                    case 9: 
-                        listModel[4].addElement(mathima.getOnomaMathimatos());
-                        break;
-                }   
-            }    
-        }
-        mathimataList0.setModel(listModel[0]);
-        mathimataList1.setModel(listModel[1]);
-        mathimataList2.setModel(listModel[2]);
-        mathimataList3.setModel(listModel[3]);
-        mathimataList4.setModel(listModel[4]);
-        
-        getContentPane().removeAll();
-        getContentPane().repaint();
-        getContentPane().revalidate();
-        getContentPane().add(dhlwshStdPage);
-        getContentPane().repaint();
-        getContentPane().revalidate();
+            } catch (IOException ex) {
+                Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }finally{
+                try{
+                    oi.close();
+                    fi.close();
+                    System.out.println("ekleisa");
+                }catch(IOException ex) {
+                    System.err.println("An IOException was caught: " + ex.getMessage());
+                }
+            }
+            DefaultListModel listModel[] = new DefaultListModel[5];
+            for(int i = 0; i < listModel.length; i ++) {
+                listModel[i] = new DefaultListModel();
+            }
+            for(Mathima mathima: mathimata) {
+                if(std.getEksamino()%2 == 0 && mathima.getEksamino()%2 == 0){
+                    switch(mathima.getEksamino()) {
+                        case 2:
+                            listModel[0].addElement(mathima.getOnomaMathimatos());
+                            break;
+                        case 4:
+                            listModel[1].addElement(mathima.getOnomaMathimatos());
+                            break;
+                        case 6:
+                            listModel[2].addElement(mathima.getOnomaMathimatos());
+                            break;
+                        case 8:
+                            listModel[3].addElement(mathima.getOnomaMathimatos());
+                            break;
+                        case 10: 
+                            listModel[4].addElement(mathima.getOnomaMathimatos());
+                            break;
+                    }
+                }
+                else if(std.getEksamino()%2 != 0 && mathima.getEksamino()%2 != 0){
+                    switch(mathima.getEksamino()) {
+                        case 1:
+                            listModel[0].addElement(mathima.getOnomaMathimatos());
+                            break;
+                        case 3:
+                            listModel[1].addElement(mathima.getOnomaMathimatos());
+                            break;
+                        case 5:
+                            listModel[2].addElement(mathima.getOnomaMathimatos());
+                            break;
+                        case 7:
+                            listModel[3].addElement(mathima.getOnomaMathimatos());
+                            break;
+                        case 9: 
+                            listModel[4].addElement(mathima.getOnomaMathimatos());
+                            break;
+                    }   
+                }    
+            }
+            mathimataList0.setModel(listModel[0]);
+            mathimataList1.setModel(listModel[1]);
+            mathimataList2.setModel(listModel[2]);
+            mathimataList3.setModel(listModel[3]);
+            mathimataList4.setModel(listModel[4]);
+            getContentPane().removeAll();
+            getContentPane().repaint();
+            getContentPane().revalidate();
+            getContentPane().add(dhlwshStdPage);
+            getContentPane().repaint();
+            getContentPane().revalidate();
         }
     }//GEN-LAST:event_dhlwshStdActionPerformed
 
     private void prosthikhDhlwshsStdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prosthikhDhlwshsStdActionPerformed
-        // TODO add your handling code here:
         int[] selectedIx = mathimataList0.getSelectedIndices();
         int[] selectedIIx = mathimataList1.getSelectedIndices();
         int[] selectedIIIx = mathimataList2.getSelectedIndices();
         int[] selectedIVx = mathimataList3.getSelectedIndices();
         int[] selectedVx = mathimataList4.getSelectedIndices();
-        
         FileInputStream fi = null;
         ObjectInputStream oi = null;
         List<Mathima> mathimata = new ArrayList<>();
@@ -1769,9 +1729,9 @@ public class NewJFrame extends javax.swing.JFrame {
                     System.err.println("An IOException was caught: " + ex2.getMessage());
                 }
             }
-        } catch (IOException ex) {
+        }catch (IOException ex) {
             Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
+        }catch (ClassNotFoundException ex) {
             Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
         }finally{
             try{
@@ -1789,19 +1749,19 @@ public class NewJFrame extends javax.swing.JFrame {
         }
         for (int i : selectedIIx){
             math.add(mathimataList1.getModel().getElementAt(i));
-        };
+        }
         for (int i : selectedIIIx){
             math.add(mathimataList2.getModel().getElementAt(i));
-        };
+        }
         for (int i : selectedIVx){
             math.add(mathimataList3.getModel().getElementAt(i));
-        };
+        }
         for (int i : selectedVx){
             math.add(mathimataList4.getModel().getElementAt(i));
-        };
+        }
         for(Mathima mathima : mathimata) {
             for(String mathStr : math) {
-                if (math.equals(mathima.getOnomaMathimatos())){
+                if (mathStr.equals(mathima.getOnomaMathimatos())){
                     mathimataForStd.add(mathima);
                 }
             }
@@ -1809,20 +1769,8 @@ public class NewJFrame extends javax.swing.JFrame {
         std.addDhlwsh(mathimataForStd);
     }//GEN-LAST:event_prosthikhDhlwshsStdActionPerformed
 
-    private void ShowAmStdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowAmStdActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ShowAmStdActionPerformed
-
-    private void stdUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stdUsernameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_stdUsernameActionPerformed
-
-    private void stdThlefwnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stdThlefwnoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_stdThlefwnoActionPerformed
-
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-         getContentPane().removeAll();
+        getContentPane().removeAll();
         getContentPane().repaint();
         getContentPane().revalidate();
         getContentPane().add(AdminPage);
@@ -1831,7 +1779,7 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-         getContentPane().removeAll();
+        getContentPane().removeAll();
         getContentPane().repaint();
         getContentPane().revalidate();
         getContentPane().add(AdminPage);
@@ -1840,7 +1788,7 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-         getContentPane().removeAll();
+        getContentPane().removeAll();
         getContentPane().repaint();
         getContentPane().revalidate();
         getContentPane().add(AdminPage);
@@ -1876,15 +1824,13 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void DhloseisEnableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DhloseisEnableActionPerformed
-       
         if(admin.updateDhlwseis()){
            DhloseisEnable.setText("Periodos Diloseon");
            System.out.println(admin.getDilwseis());
-       }else{
+        }else{
            DhloseisEnable.setText("Enable Diloseis");
            System.out.println(admin.getDilwseis());
-       }
-           
+        }
     }//GEN-LAST:event_DhloseisEnableActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
@@ -1895,27 +1841,26 @@ public class NewJFrame extends javax.swing.JFrame {
         getContentPane().repaint();
         getContentPane().revalidate();
     }//GEN-LAST:event_jButton10ActionPerformed
+    
     public void clearLoginFields(){
         passwordLogin.setText("");
         usernameLogin.setText("");
     }
+    
     public void getAdmin(){
-        
         FileInputStream fi=null;
         ObjectInputStream oi=null;
         try {
             fi = new FileInputStream(new File("myAccounts.txt"));
             oi = new ObjectInputStream(fi);
             Account a1;
-                       
             while (true){
                 try{
                     a1=(Account)oi.readObject();
                     if(a1 instanceof Admin){
                         admin = (Admin)a1;
                     }
-                    }
-                catch (EOFException ex1) {
+                }catch (EOFException ex1) {
                     break; //EOF reached.
                 }catch (IOException ex2) {
                   System.err.println("An IOException was caught: " + ex2.getMessage());
@@ -1933,9 +1878,9 @@ public class NewJFrame extends javax.swing.JFrame {
             } catch (IOException ex) {
                 Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
         }
     }
+    
     public void goToHomePage(){
         getContentPane().removeAll();
         getContentPane().repaint();
@@ -1948,7 +1893,6 @@ public class NewJFrame extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) { 
-        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -1971,18 +1915,19 @@ public class NewJFrame extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(NewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
             new NewJFrame().setVisible(true);
         });
     }
+    
     Admin admin ;
     Foititis std;
     Kathigitis prof;
     Mathima math;
     FileOutputStream f = null;
     ObjectOutputStream o = null;
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AdminPage;
     private javax.swing.JButton DhloseisEnable;

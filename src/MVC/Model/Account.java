@@ -44,9 +44,11 @@ public class Account implements Serializable {
     public String getIdiotita() {
         return "";
     }
+    
     public String getUsername() {
         return username;
     }
+    
     public String getPassword() {
         return password;
     }

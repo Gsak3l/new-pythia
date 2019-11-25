@@ -27,18 +27,23 @@ public class Mathima implements Serializable{
     public String getOnomaMathimatos() {
         return onomaMathimatos;
     }
+    
     public void setOnomaMathimatos(String onomaMathimatos) {
         this.onomaMathimatos = onomaMathimatos;
     }
+    
     public int getEksamino() {
         return eksamino;
     }
+    
     public void setEksamino(int eksamino) {
         this.eksamino = eksamino;
     }
+    
     public int getKodikosMathimatos() {
         return kodikosMathimatos;
     }
+    
     public void setKodikosMathimatos(int kodikosMathimatos) {
         this.kodikosMathimatos = kodikosMathimatos;
     }

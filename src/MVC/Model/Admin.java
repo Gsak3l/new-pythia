@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package MVC.Model;
 
 import MVC.View_Controller.NewJFrame;
@@ -18,10 +13,6 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author stini
- */
 public class Admin extends Account {
     private boolean dilwseis = true;
     private List<Kathigitis> professor = new ArrayList<>();
@@ -31,10 +22,6 @@ public class Admin extends Account {
     
     public Admin(String username, String password, String mail, String onomateponumo, String tilefwno) {
         super(username, password, mail, onomateponumo, tilefwno);
-    }
-
-    public boolean isDilwseis() {
-        return dilwseis;
     }
 
     public void setDilwseis(boolean dilwseis) {
@@ -157,26 +144,19 @@ public class Admin extends Account {
     public void getAccountsFromFile(){
         student.clear();
         professor.clear();
-        admin = null;
-        
         FileInputStream fi = null;
         ObjectInputStream oi = null;
         Account a;
-        
           try{
             fi = new FileInputStream(new File("myAccounts.txt"));
             oi = new ObjectInputStream(fi);
-            
             while (true){
                 try{
-                    
                   a = (Account)oi.readObject();
                   if (a instanceof Foititis){
                       student.add((Foititis)a);
                   }else if(a instanceof Kathigitis){
                       professor.add((Kathigitis)a);
-                  }else{
-                      admin = (Admin)a;
                   }
                 }catch (EOFException ex1) {
                     break; //EOF reached.
@@ -199,20 +179,15 @@ public class Admin extends Account {
         }
     }
     public void getMathimataFromFile(){
-        
         course.clear();
-        
         FileInputStream fi = null;
         ObjectInputStream oi = null;
         Mathima m;
-        
           try{
             fi = new FileInputStream(new File("myCourses.txt"));
             oi = new ObjectInputStream(fi);
-            
             while (true){
                 try{
-                    
                   m = (Mathima)oi.readObject();
                   course.add(m);
                 }catch (EOFException ex1) {
@@ -296,23 +271,18 @@ public class Admin extends Account {
     }
     
     public void putAccountsToFile(){
-        
         FileOutputStream f=null;
         ObjectOutputStream o=null;
         try {
             f = new FileOutputStream(new File("myAccounts.txt"));
             o = new ObjectOutputStream(f);
-            
-            
-               o.writeObject(admin);
-             
+            o.writeObject(this);
             for (Kathigitis prof : this.professor){
                o.writeObject(prof);
             }   
             for (Foititis std : this.student){
                o.writeObject(std);
             }   
-            
         } catch (IOException ex) {
             Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
@@ -324,21 +294,17 @@ public class Admin extends Account {
                 System.err.println("An IOException was caught: " + ex.getMessage());
             }
         }
-        
     }
     
     public void putMathimataToFile(){
-        
         FileOutputStream f=null;
         ObjectOutputStream o=null;
         try {
             f = new FileOutputStream(new File("myCourses.txt"));
             o = new ObjectOutputStream(f);
-            
             for (Mathima math : this.course){
                o.writeObject(math);
             }   
-                      
         } catch (IOException ex) {
             Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
@@ -350,7 +316,6 @@ public class Admin extends Account {
                 System.err.println("An IOException was caught: " + ex.getMessage());
             }
         }
-        
     }
        
     public void deleteCourse(){
@@ -371,17 +336,16 @@ public class Admin extends Account {
         Mathima m1 = course.get(0);
         System.out.println(m1);
     }
+    
     public boolean updateDhlwseis(){
         getAccountsFromFile();
-        
-             if(admin.getDilwseis()){
-                admin.setDilwseis(false);
-        }else{
-            admin.setDilwseis(true);
+        if(this.getDilwseis()){
+            this.setDilwseis(false);
         }
-        
+        else{
+            this.setDilwseis(true);
+        }
         putAccountsToFile();
-        this.setDilwseis(admin.getDilwseis());
-        return admin.getDilwseis();
+        return this.getDilwseis();
     }
 }

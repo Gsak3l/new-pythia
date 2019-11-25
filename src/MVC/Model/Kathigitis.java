@@ -1,17 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package MVC.Model;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author stini
- */
 public class Kathigitis extends Account {
     private String eidikotita;
     private String tmima;
@@ -48,10 +39,12 @@ public class Kathigitis extends Account {
         this.mathimata = mathimata;
     }
     
+    @Override
     public String getIdiotita() {
         return "Professor";
     }
 
+    @Override
     public String toString() {
         return this.getUsername();
     }
