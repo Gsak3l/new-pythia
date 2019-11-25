@@ -23,16 +23,24 @@ import java.util.logging.Logger;
  * @author stini
  */
 public class Admin extends Account {
-    private boolean dilwseis = false;
+    private boolean dilwseis = true;
     private List<Kathigitis> professor = new ArrayList<>();
     private List<Foititis> student = new ArrayList<>();
     private List<Mathima> course = new ArrayList<>();
-    private List<Admin> admin = new ArrayList<>();
+    private Admin admin ;
     
     public Admin(String username, String password, String mail, String onomateponumo, String tilefwno) {
         super(username, password, mail, onomateponumo, tilefwno);
     }
 
+    public boolean isDilwseis() {
+        return dilwseis;
+    }
+
+    public void setDilwseis(boolean dilwseis) {
+        this.dilwseis = dilwseis;
+    }
+    
     public boolean getDilwseis() {
         return dilwseis;
     }
@@ -149,7 +157,7 @@ public class Admin extends Account {
     public void getAccountsFromFile(){
         student.clear();
         professor.clear();
-        admin.clear();
+        admin = null;
         
         FileInputStream fi = null;
         ObjectInputStream oi = null;
@@ -168,7 +176,7 @@ public class Admin extends Account {
                   }else if(a instanceof Kathigitis){
                       professor.add((Kathigitis)a);
                   }else{
-                      admin.add((Admin)a);
+                      admin = (Admin)a;
                   }
                 }catch (EOFException ex1) {
                     break; //EOF reached.
@@ -295,9 +303,9 @@ public class Admin extends Account {
             f = new FileOutputStream(new File("myAccounts.txt"));
             o = new ObjectOutputStream(f);
             
-            for (Admin admin : this.admin){
+            
                o.writeObject(admin);
-            }   
+             
             for (Kathigitis prof : this.professor){
                o.writeObject(prof);
             }   
@@ -362,5 +370,18 @@ public class Admin extends Account {
     public void showcourse() {
         Mathima m1 = course.get(0);
         System.out.println(m1);
+    }
+    public boolean updateDhlwseis(){
+        getAccountsFromFile();
+        
+             if(admin.getDilwseis()){
+                admin.setDilwseis(false);
+        }else{
+            admin.setDilwseis(true);
+        }
+        
+        putAccountsToFile();
+        this.setDilwseis(admin.getDilwseis());
+        return admin.getDilwseis();
     }
 }

@@ -47,6 +47,10 @@ public class Foititis extends Account {
         return tmima;
     }
 
+    public StoixeiaEggrafis getStoixeiaEggrafis() {
+        return stoixeiaEggrafis;
+    }
+    
     public void setTmima(String tmima) {
         this.tmima = tmima;
     }

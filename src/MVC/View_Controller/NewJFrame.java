@@ -67,10 +67,21 @@ public class NewJFrame extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        DhloseisEnable = new javax.swing.JButton();
         FoiththsPage = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         foiththsLogoutButton = new javax.swing.JButton();
         dhlwshStd = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        ShowAmStd = new javax.swing.JTextField();
+        ShowExaminoStd = new javax.swing.JTextField();
+        ShowTmimaStd = new javax.swing.JTextField();
+        ShowDieuthinsiStd = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        ShowStoixiaEggrafisStd = new javax.swing.JTextField();
         KathigitisPage = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         kathigitisLogoutButton = new javax.swing.JButton();
@@ -85,6 +96,7 @@ public class NewJFrame extends javax.swing.JFrame {
         stdDieythinsi = new javax.swing.JTextField();
         stdThlefwno = new javax.swing.JTextField();
         stdNewSubmit = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         newProfPage = new javax.swing.JPanel();
         profOnomateponimo = new javax.swing.JTextField();
         profMail = new javax.swing.JTextField();
@@ -96,6 +108,7 @@ public class NewJFrame extends javax.swing.JFrame {
         profNewSubmit = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         profMathimata = new javax.swing.JList<>();
+        jButton4 = new javax.swing.JButton();
         newMathPage = new javax.swing.JPanel();
         mathOnoma = new javax.swing.JTextField();
         mathEksamino = new javax.swing.JTextField();
@@ -104,9 +117,11 @@ public class NewJFrame extends javax.swing.JFrame {
         mathTypos = new javax.swing.JTextField();
         mathNewSubmit = new javax.swing.JButton();
         mathDM = new javax.swing.JTextField();
+        jButton6 = new javax.swing.JButton();
         searchStdPage = new javax.swing.JPanel();
         searchStdUsername = new javax.swing.JTextField();
         searchStdButton = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
         updateStdPage = new javax.swing.JPanel();
         updateStdUsername = new javax.swing.JTextField();
         updateStdOnomatep = new javax.swing.JTextField();
@@ -131,9 +146,11 @@ public class NewJFrame extends javax.swing.JFrame {
         searchMathPage = new javax.swing.JPanel();
         searchMathKodikos = new javax.swing.JTextField();
         searchMathButton = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
         searchProfPage = new javax.swing.JPanel();
         searchProfUsername = new javax.swing.JTextField();
         searchProfButton = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
         updateProfPage = new javax.swing.JPanel();
         updateProfMail = new javax.swing.JTextField();
         updateProfPassword = new javax.swing.JTextField();
@@ -158,6 +175,7 @@ public class NewJFrame extends javax.swing.JFrame {
         jScrollPane7 = new javax.swing.JScrollPane();
         mathimataList0 = new javax.swing.JList<>();
         prosthikhDhlwshsStd = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.CardLayout());
@@ -247,54 +265,60 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
+        DhloseisEnable.setText("Enable Diloseis");
+        DhloseisEnable.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DhloseisEnableActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout AdminPageLayout = new javax.swing.GroupLayout(AdminPage);
         AdminPage.setLayout(AdminPageLayout);
         AdminPageLayout.setHorizontalGroup(
             AdminPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AdminPageLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(adminLogoutButton)
+                .addGap(80, 80, 80))
             .addGroup(AdminPageLayout.createSequentialGroup()
                 .addGroup(AdminPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AdminPageLayout.createSequentialGroup()
-                        .addContainerGap(519, Short.MAX_VALUE)
-                        .addComponent(adminLogoutButton))
                     .addGroup(AdminPageLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1))
+                    .addGroup(AdminPageLayout.createSequentialGroup()
+                        .addGap(97, 97, 97)
                         .addGroup(AdminPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(AdminPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, AdminPageLayout.createSequentialGroup()
-                                    .addContainerGap()
-                                    .addComponent(jLabel1))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, AdminPageLayout.createSequentialGroup()
-                                    .addGap(136, 136, 136)
-                                    .addComponent(addProf))
-                                .addGroup(AdminPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(addMath, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(addStd, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)))
-                            .addGroup(AdminPageLayout.createSequentialGroup()
-                                .addGap(136, 136, 136)
-                                .addGroup(AdminPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton5)
-                                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                            .addComponent(jButton1)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton5)
+                            .addComponent(addMath, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(addStd, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(addProf)))
+                    .addGroup(AdminPageLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(DhloseisEnable)))
+                .addContainerGap(382, Short.MAX_VALUE))
         );
         AdminPageLayout.setVerticalGroup(
             AdminPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AdminPageLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(33, 33, 33)
+                .addGap(43, 43, 43)
                 .addComponent(addProf)
-                .addGap(28, 28, 28)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(addStd)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(addMath)
-                .addGap(28, 28, 28)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton5)
-                .addGap(33, 33, 33)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton2)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
+                .addComponent(DhloseisEnable)
+                .addGap(29, 29, 29)
                 .addComponent(adminLogoutButton)
                 .addContainerGap())
         );
@@ -317,34 +341,84 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setText("AM :");
+
+        jLabel5.setText("Examino : ");
+
+        jLabel6.setText("Tmima : ");
+
+        jLabel7.setText("Dieuthinsi : ");
+
+        ShowAmStd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ShowAmStdActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setText("Stoixia Eggrafis :");
+
         javax.swing.GroupLayout FoiththsPageLayout = new javax.swing.GroupLayout(FoiththsPage);
         FoiththsPage.setLayout(FoiththsPageLayout);
         FoiththsPageLayout.setHorizontalGroup(
             FoiththsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(FoiththsPageLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(FoiththsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FoiththsPageLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(FoiththsPageLayout.createSequentialGroup()
+                        .addComponent(dhlwshStd)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(foiththsLogoutButton))
                     .addGroup(FoiththsPageLayout.createSequentialGroup()
-                        .addGap(155, 155, 155)
                         .addComponent(jLabel2)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(FoiththsPageLayout.createSequentialGroup()
-                .addGap(225, 225, 225)
-                .addComponent(dhlwshStd)
-                .addContainerGap(242, Short.MAX_VALUE))
+                .addGap(63, 63, 63)
+                .addGroup(FoiththsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8))
+                .addGap(68, 68, 68)
+                .addGroup(FoiththsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(ShowDieuthinsiStd)
+                    .addComponent(ShowTmimaStd)
+                    .addGroup(FoiththsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(ShowExaminoStd, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
+                        .addComponent(ShowAmStd, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addComponent(ShowStoixiaEggrafisStd, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE))
+                .addContainerGap(282, Short.MAX_VALUE))
         );
         FoiththsPageLayout.setVerticalGroup(
             FoiththsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(FoiththsPageLayout.createSequentialGroup()
-                .addGap(70, 70, 70)
+                .addContainerGap()
                 .addComponent(jLabel2)
-                .addGap(122, 122, 122)
-                .addComponent(dhlwshStd)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 209, Short.MAX_VALUE)
-                .addComponent(foiththsLogoutButton)
+                .addGap(43, 43, 43)
+                .addGroup(FoiththsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(ShowAmStd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(FoiththsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(ShowExaminoStd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(FoiththsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(ShowTmimaStd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(FoiththsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(ShowDieuthinsiStd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(FoiththsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(ShowStoixiaEggrafisStd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 198, Short.MAX_VALUE)
+                .addGroup(FoiththsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(foiththsLogoutButton)
+                    .addComponent(dhlwshStd))
                 .addContainerGap())
         );
 
@@ -363,44 +437,54 @@ public class NewJFrame extends javax.swing.JFrame {
         KathigitisPage.setLayout(KathigitisPageLayout);
         KathigitisPageLayout.setHorizontalGroup(
             KathigitisPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(KathigitisPageLayout.createSequentialGroup()
-                .addGap(139, 139, 139)
-                .addComponent(jLabel3)
-                .addContainerGap(406, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, KathigitisPageLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(519, Short.MAX_VALUE)
                 .addComponent(kathigitisLogoutButton)
                 .addContainerGap())
+            .addGroup(KathigitisPageLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         KathigitisPageLayout.setVerticalGroup(
             KathigitisPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(KathigitisPageLayout.createSequentialGroup()
-                .addGap(106, 106, 106)
+                .addContainerGap()
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 318, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 413, Short.MAX_VALUE)
                 .addComponent(kathigitisLogoutButton)
                 .addContainerGap())
         );
 
         getContentPane().add(KathigitisPage, "card5");
 
-        stdUsername.setText("jTextField2");
+        stdUsername.setText("Username :");
+        stdUsername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                stdUsernameActionPerformed(evt);
+            }
+        });
 
-        stdPassword.setText("jTextField3");
+        stdPassword.setText("Password :");
 
-        stdMail.setText("jTextField4");
+        stdMail.setText("Mail :");
 
-        stdOnomaEponymo.setText("jTextField4");
+        stdOnomaEponymo.setText("Onomateponymo :");
 
-        stdAM.setText("jTextField4");
+        stdAM.setText("AM :");
 
-        stdTmhma.setText("jTextField4");
+        stdTmhma.setText("Tmima :");
 
-        stdEksamino.setText("jTextField4");
+        stdEksamino.setText("Examino :");
 
-        stdDieythinsi.setText("jTextField4");
+        stdDieythinsi.setText("Dieythinsi :");
 
-        stdThlefwno.setText("jTextField4");
+        stdThlefwno.setText("Thlefono :");
+        stdThlefwno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                stdThlefwnoActionPerformed(evt);
+            }
+        });
 
         stdNewSubmit.setText("Submit");
         stdNewSubmit.addActionListener(new java.awt.event.ActionListener() {
@@ -409,41 +493,38 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setText("Back");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout newStdPageLayout = new javax.swing.GroupLayout(newStdPage);
         newStdPage.setLayout(newStdPageLayout);
         newStdPageLayout.setHorizontalGroup(
             newStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, newStdPageLayout.createSequentialGroup()
-                .addGroup(newStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(newStdPageLayout.createSequentialGroup()
-                        .addGroup(newStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(newStdPageLayout.createSequentialGroup()
-                                .addGap(48, 48, 48)
-                                .addComponent(stdUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, newStdPageLayout.createSequentialGroup()
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(newStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(stdAM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(stdEksamino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(stdThlefwno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(258, 258, 258)))
-                        .addComponent(stdPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(newStdPageLayout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addComponent(stdMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(stdOnomaEponymo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(newStdPageLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(newStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(stdDieythinsi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(stdTmhma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(140, 140, 140))
+                .addContainerGap()
+                .addComponent(jButton3)
+                .addGap(34, 531, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, newStdPageLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(stdNewSubmit)
-                .addGap(34, 34, 34))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(newStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(stdEksamino)
+                    .addComponent(stdUsername, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE)
+                    .addComponent(stdMail)
+                    .addComponent(stdThlefwno)
+                    .addComponent(stdAM))
+                .addGap(193, 193, 193)
+                .addGroup(newStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(newStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(stdOnomaEponymo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(stdPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(stdNewSubmit, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(stdTmhma, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(stdDieythinsi, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(140, 140, 140))
         );
         newStdPageLayout.setVerticalGroup(
             newStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -451,44 +532,43 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGap(44, 44, 44)
                 .addGroup(newStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(stdUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(stdPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(33, 33, 33)
+                    .addComponent(stdOnomaEponymo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(newStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(stdMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(stdOnomaEponymo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(83, 83, 83)
-                .addComponent(stdThlefwno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(75, 75, 75)
+                    .addComponent(stdPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(newStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(stdTmhma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(stdAM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(newStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(newStdPageLayout.createSequentialGroup()
-                        .addGap(72, 72, 72)
-                        .addComponent(stdDieythinsi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(newStdPageLayout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addComponent(stdEksamino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(stdNewSubmit)
+                    .addComponent(stdThlefwno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(stdTmhma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(newStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(stdAM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(stdDieythinsi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(stdEksamino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 204, Short.MAX_VALUE)
+                .addGroup(newStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(stdNewSubmit)
+                    .addComponent(jButton3))
                 .addGap(36, 36, 36))
         );
 
         getContentPane().add(newStdPage, "card6");
 
-        profOnomateponimo.setText("jTextField4");
+        profOnomateponimo.setText("Onomateponumo :");
 
-        profMail.setText("jTextField4");
+        profMail.setText("Mail :");
 
-        profPassword.setText("jTextField3");
+        profPassword.setText("Password :");
 
-        profUsername.setText("jTextField2");
+        profUsername.setText("Username :");
 
-        profIdikotita.setText("jTextField4");
+        profIdikotita.setText("Idikotita :");
 
-        profTilefono.setText("jTextField4");
+        profTilefono.setText("Thlefono :");
 
-        profTmima.setText("jTextField4");
+        profTmima.setText("Tmima :");
 
         profNewSubmit.setText("Submit");
         profNewSubmit.addActionListener(new java.awt.event.ActionListener() {
@@ -499,67 +579,65 @@ public class NewJFrame extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(profMathimata);
 
+        jButton4.setText("Back");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout newProfPageLayout = new javax.swing.GroupLayout(newProfPage);
         newProfPage.setLayout(newProfPageLayout);
         newProfPageLayout.setHorizontalGroup(
             newProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(newProfPageLayout.createSequentialGroup()
-                .addContainerGap(235, Short.MAX_VALUE)
+                .addGap(38, 38, 38)
                 .addGroup(newProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, newProfPageLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(profNewSubmit)
-                        .addGap(18, 18, 18))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, newProfPageLayout.createSequentialGroup()
-                        .addComponent(profIdikotita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(109, 109, 109))))
-            .addGroup(newProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(newProfPageLayout.createSequentialGroup()
-                    .addGap(108, 108, 108)
-                    .addGroup(newProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(newProfPageLayout.createSequentialGroup()
-                            .addGroup(newProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(newProfPageLayout.createSequentialGroup()
-                                    .addComponent(profUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, newProfPageLayout.createSequentialGroup()
-                                    .addGroup(newProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(profTilefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(profTmima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(258, 258, 258)))
-                            .addComponent(profPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(newProfPageLayout.createSequentialGroup()
-                            .addComponent(profMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(profOnomateponimo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGap(108, 108, 108)))
+                    .addGroup(newProfPageLayout.createSequentialGroup()
+                        .addGroup(newProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(profUsername, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
+                            .addComponent(profMail)
+                            .addComponent(profTilefono)
+                            .addComponent(profTmima))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(newProfPageLayout.createSequentialGroup()
+                        .addGroup(newProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(profOnomateponimo, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(profPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(profIdikotita, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(newProfPageLayout.createSequentialGroup()
+                .addGap(0, 20, Short.MAX_VALUE)
+                .addComponent(jButton4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(73, 73, 73)
+                .addComponent(profNewSubmit)
+                .addGap(24, 24, 24))
         );
         newProfPageLayout.setVerticalGroup(
             newProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, newProfPageLayout.createSequentialGroup()
-                .addContainerGap(170, Short.MAX_VALUE)
+                .addContainerGap(56, Short.MAX_VALUE)
+                .addComponent(profTmima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(profUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(profMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(profTilefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(profIdikotita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(141, 141, 141)
+                .addGap(18, 18, 18)
+                .addComponent(profPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(profOnomateponimo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
                 .addGroup(newProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(profNewSubmit))
+                    .addComponent(profNewSubmit)
+                    .addComponent(jButton4))
                 .addContainerGap())
-            .addGroup(newProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(newProfPageLayout.createSequentialGroup()
-                    .addGap(75, 75, 75)
-                    .addGroup(newProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(profUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(profPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(33, 33, 33)
-                    .addGroup(newProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(profMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(profOnomateponimo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(178, 178, 178)
-                    .addComponent(profTilefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(60, 60, 60)
-                    .addComponent(profTmima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         getContentPane().add(newProfPage, "card7");
@@ -583,25 +661,34 @@ public class NewJFrame extends javax.swing.JFrame {
 
         mathDM.setText("didaktikesMonades");
 
+        jButton6.setText("Back");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout newMathPageLayout = new javax.swing.GroupLayout(newMathPage);
         newMathPage.setLayout(newMathPageLayout);
         newMathPageLayout.setHorizontalGroup(
             newMathPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, newMathPageLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(mathNewSubmit)
-                .addGap(39, 39, 39))
             .addGroup(newMathPageLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(newMathPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(mathOnoma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(mathEksamino, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(newMathPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(mathTypos, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(mathTmhma, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(mathKodikos, javax.swing.GroupLayout.Alignment.LEADING))
-                    .addComponent(mathDM, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(479, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, newMathPageLayout.createSequentialGroup()
+                        .addComponent(jButton6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(mathNewSubmit))
+                    .addGroup(newMathPageLayout.createSequentialGroup()
+                        .addGroup(newMathPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(mathOnoma, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
+                            .addComponent(mathEksamino, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(mathTmhma)
+                            .addComponent(mathKodikos)
+                            .addComponent(mathTypos)
+                            .addComponent(mathDM))
+                        .addGap(0, 469, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         newMathPageLayout.setVerticalGroup(
             newMathPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -618,9 +705,11 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addComponent(mathTypos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(mathDM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 229, Short.MAX_VALUE)
-                .addComponent(mathNewSubmit)
-                .addGap(27, 27, 27))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 237, Short.MAX_VALUE)
+                .addGroup(newMathPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton6)
+                    .addComponent(mathNewSubmit))
+                .addGap(19, 19, 19))
         );
 
         getContentPane().add(newMathPage, "card8");
@@ -634,17 +723,27 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
+        jButton7.setText("Back");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout searchStdPageLayout = new javax.swing.GroupLayout(searchStdPage);
         searchStdPage.setLayout(searchStdPageLayout);
         searchStdPageLayout.setHorizontalGroup(
             searchStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(searchStdPageLayout.createSequentialGroup()
-                .addContainerGap(431, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(searchStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, searchStdPageLayout.createSequentialGroup()
+                        .addComponent(jButton7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(searchStdButton)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, searchStdPageLayout.createSequentialGroup()
+                        .addGap(0, 421, Short.MAX_VALUE)
                         .addComponent(searchStdUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(92, 92, 92))))
         );
@@ -654,7 +753,9 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addComponent(searchStdUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 398, Short.MAX_VALUE)
-                .addComponent(searchStdButton)
+                .addGroup(searchStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(searchStdButton)
+                    .addComponent(jButton7))
                 .addContainerGap())
         );
 
@@ -833,6 +934,13 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
+        jButton8.setText("Back");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout searchMathPageLayout = new javax.swing.GroupLayout(searchMathPage);
         searchMathPage.setLayout(searchMathPageLayout);
         searchMathPageLayout.setHorizontalGroup(
@@ -842,7 +950,9 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addComponent(searchMathKodikos, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(401, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, searchMathPageLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(jButton8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(searchMathButton)
                 .addContainerGap())
         );
@@ -852,7 +962,9 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addComponent(searchMathKodikos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 389, Short.MAX_VALUE)
-                .addComponent(searchMathButton)
+                .addGroup(searchMathPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(searchMathButton)
+                    .addComponent(jButton8))
                 .addContainerGap())
         );
 
@@ -867,6 +979,13 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
+        jButton9.setText("Back");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout searchProfPageLayout = new javax.swing.GroupLayout(searchProfPage);
         searchProfPage.setLayout(searchProfPageLayout);
         searchProfPageLayout.setHorizontalGroup(
@@ -876,7 +995,9 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addComponent(searchProfUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(401, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, searchProfPageLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(jButton9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(searchProfButton)
                 .addContainerGap())
         );
@@ -886,7 +1007,9 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addComponent(searchProfUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 389, Short.MAX_VALUE)
-                .addComponent(searchProfButton)
+                .addGroup(searchProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(searchProfButton)
+                    .addComponent(jButton9))
                 .addContainerGap())
         );
 
@@ -1017,26 +1140,38 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
+        jButton10.setText("Back");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout dhlwshStdPageLayout = new javax.swing.GroupLayout(dhlwshStdPage);
         dhlwshStdPage.setLayout(dhlwshStdPageLayout);
         dhlwshStdPageLayout.setHorizontalGroup(
             dhlwshStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(dhlwshStdPageLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dhlwshStdPageLayout.createSequentialGroup()
                 .addContainerGap(287, Short.MAX_VALUE)
                 .addComponent(prosthikhDhlwshsStd)
                 .addGap(162, 162, 162))
+            .addGroup(dhlwshStdPageLayout.createSequentialGroup()
+                .addGroup(dhlwshStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(dhlwshStdPageLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(dhlwshStdPageLayout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(jButton10)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         dhlwshStdPageLayout.setVerticalGroup(
             dhlwshStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1050,7 +1185,9 @@ public class NewJFrame extends javax.swing.JFrame {
                     .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(120, 120, 120)
                 .addComponent(prosthikhDhlwshsStd)
-                .addContainerGap(161, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
+                .addComponent(jButton10)
+                .addGap(21, 21, 21))
         );
 
         getContentPane().add(dhlwshStdPage, "card15");
@@ -1090,6 +1227,11 @@ public class NewJFrame extends javax.swing.JFrame {
                                 break;
                             case "Student":
                                 getContentPane().add(FoiththsPage);
+                                ShowAmStd.setText(String.valueOf(std.getAM()));
+                                ShowExaminoStd.setText(String.valueOf(std.getEksamino()));
+                                ShowDieuthinsiStd.setText(std.getDieuthinsi()); 
+                                ShowTmimaStd.setText(std.getTmima());
+                                ShowStoixiaEggrafisStd.setText(String.valueOf(std.getStoixeiaEggrafis()));
                                 break;
                             default:
                                 break;
@@ -1508,6 +1650,15 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void dhlwshStdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dhlwshStdActionPerformed
+        getAdmin();
+        
+        if(admin.getDilwseis() == false){
+            JOptionPane.showMessageDialog(null,
+            "Den einai periodos diloseon",
+            "Inane warning",
+            JOptionPane.WARNING_MESSAGE);
+        }else if(admin.getDilwseis()== true){
+            System.out.println(admin.getDilwseis());
         FileInputStream fi = null;
         ObjectInputStream oi = null;
         List<Mathima> mathimata = new ArrayList<>();
@@ -1592,7 +1743,7 @@ public class NewJFrame extends javax.swing.JFrame {
         getContentPane().add(dhlwshStdPage);
         getContentPane().repaint();
         getContentPane().revalidate();
-        
+        }
     }//GEN-LAST:event_dhlwshStdActionPerformed
 
     private void prosthikhDhlwshsStdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_prosthikhDhlwshsStdActionPerformed
@@ -1657,9 +1808,133 @@ public class NewJFrame extends javax.swing.JFrame {
         }
         std.addDhlwsh(mathimataForStd);
     }//GEN-LAST:event_prosthikhDhlwshsStdActionPerformed
+
+    private void ShowAmStdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowAmStdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ShowAmStdActionPerformed
+
+    private void stdUsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stdUsernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_stdUsernameActionPerformed
+
+    private void stdThlefwnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stdThlefwnoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_stdThlefwnoActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+         getContentPane().removeAll();
+        getContentPane().repaint();
+        getContentPane().revalidate();
+        getContentPane().add(AdminPage);
+        getContentPane().repaint();
+        getContentPane().revalidate();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+         getContentPane().removeAll();
+        getContentPane().repaint();
+        getContentPane().revalidate();
+        getContentPane().add(AdminPage);
+        getContentPane().repaint();
+        getContentPane().revalidate();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+         getContentPane().removeAll();
+        getContentPane().repaint();
+        getContentPane().revalidate();
+        getContentPane().add(AdminPage);
+        getContentPane().repaint();
+        getContentPane().revalidate();
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        getContentPane().removeAll();
+        getContentPane().repaint();
+        getContentPane().revalidate();
+        getContentPane().add(AdminPage);
+        getContentPane().repaint();
+        getContentPane().revalidate();
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        getContentPane().removeAll();
+        getContentPane().repaint();
+        getContentPane().revalidate();
+        getContentPane().add(AdminPage);
+        getContentPane().repaint();
+        getContentPane().revalidate();
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        getContentPane().removeAll();
+        getContentPane().repaint();
+        getContentPane().revalidate();
+        getContentPane().add(AdminPage);
+        getContentPane().repaint();
+        getContentPane().revalidate();
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void DhloseisEnableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DhloseisEnableActionPerformed
+       
+        if(admin.updateDhlwseis()){
+           DhloseisEnable.setText("Periodos Diloseon");
+           System.out.println(admin.getDilwseis());
+       }else{
+           DhloseisEnable.setText("Enable Diloseis");
+           System.out.println(admin.getDilwseis());
+       }
+           
+    }//GEN-LAST:event_DhloseisEnableActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        getContentPane().removeAll();
+        getContentPane().repaint();
+        getContentPane().revalidate();
+        getContentPane().add(FoiththsPage);
+        getContentPane().repaint();
+        getContentPane().revalidate();
+    }//GEN-LAST:event_jButton10ActionPerformed
     public void clearLoginFields(){
         passwordLogin.setText("");
         usernameLogin.setText("");
+    }
+    public void getAdmin(){
+        
+        FileInputStream fi=null;
+        ObjectInputStream oi=null;
+        try {
+            fi = new FileInputStream(new File("myAccounts.txt"));
+            oi = new ObjectInputStream(fi);
+            Account a1;
+                       
+            while (true){
+                try{
+                    a1=(Account)oi.readObject();
+                    if(a1 instanceof Admin){
+                        admin = (Admin)a1;
+                    }
+                    }
+                catch (EOFException ex1) {
+                    break; //EOF reached.
+                }catch (IOException ex2) {
+                  System.err.println("An IOException was caught: " + ex2.getMessage());
+                }catch (ClassNotFoundException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{
+            try{
+                oi.close();
+                fi.close();
+                System.out.println("ekleisa");
+            } catch (IOException ex) {
+                Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+        }
     }
     public void goToHomePage(){
         getContentPane().removeAll();
@@ -1672,7 +1947,8 @@ public class NewJFrame extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String args[]) { 
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -1701,7 +1977,7 @@ public class NewJFrame extends javax.swing.JFrame {
             new NewJFrame().setVisible(true);
         });
     }
-    Admin admin;
+    Admin admin ;
     Foititis std;
     Kathigitis prof;
     Mathima math;
@@ -1709,8 +1985,14 @@ public class NewJFrame extends javax.swing.JFrame {
     ObjectOutputStream o = null;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AdminPage;
+    private javax.swing.JButton DhloseisEnable;
     private javax.swing.JPanel FoiththsPage;
     private javax.swing.JPanel KathigitisPage;
+    private javax.swing.JTextField ShowAmStd;
+    private javax.swing.JTextField ShowDieuthinsiStd;
+    private javax.swing.JTextField ShowExaminoStd;
+    private javax.swing.JTextField ShowStoixiaEggrafisStd;
+    private javax.swing.JTextField ShowTmimaStd;
     private javax.swing.JButton addMath;
     private javax.swing.JButton addProf;
     private javax.swing.JButton addStd;
@@ -1722,11 +2004,23 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel dhlwshStdPage;
     private javax.swing.JButton foiththsLogoutButton;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
