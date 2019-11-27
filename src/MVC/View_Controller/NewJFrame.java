@@ -105,6 +105,7 @@ public class NewJFrame extends javax.swing.JFrame {
         mathNewSubmit = new javax.swing.JButton();
         mathDM = new javax.swing.JTextField();
         jButton6 = new javax.swing.JButton();
+        proapaitoumenaMaths = new javax.swing.JComboBox<>();
         searchStdPage = new javax.swing.JPanel();
         searchStdUsername = new javax.swing.JTextField();
         searchStdButton = new javax.swing.JButton();
@@ -694,7 +695,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGroup(newMathPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, newMathPageLayout.createSequentialGroup()
                         .addComponent(jButton6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 456, Short.MAX_VALUE)
                         .addComponent(mathNewSubmit))
                     .addGroup(newMathPageLayout.createSequentialGroup()
                         .addGroup(newMathPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -703,8 +704,9 @@ public class NewJFrame extends javax.swing.JFrame {
                             .addComponent(mathTmhma)
                             .addComponent(mathKodikos)
                             .addComponent(mathTypos)
-                            .addComponent(mathDM))
-                        .addGap(0, 469, Short.MAX_VALUE)))
+                            .addComponent(mathDM)
+                            .addComponent(proapaitoumenaMaths, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         newMathPageLayout.setVerticalGroup(
@@ -722,7 +724,9 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addComponent(mathTypos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(mathDM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 237, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(proapaitoumenaMaths, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 199, Short.MAX_VALUE)
                 .addGroup(newMathPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton6)
                     .addComponent(mathNewSubmit))
@@ -1467,7 +1471,12 @@ public class NewJFrame extends javax.swing.JFrame {
         int kodikosMath = Integer.parseInt(mathKodikos.getText());
         String typosMath = mathTypos.getText();
         int dmMath = Integer.parseInt(mathDM.getText());
-        admin.createCourse(onomaMath, eksamhnoMath, tmhmaMath, kodikosMath, typosMath, dmMath);
+        String proapMath = null;
+        if (proapaitoumenaMaths.getSelectedItem() != null){
+            proapMath = String.valueOf(proapaitoumenaMaths.getSelectedItem());
+            System.out.println("geia");
+        }
+        admin.createCourse(onomaMath, eksamhnoMath, tmhmaMath, kodikosMath, typosMath, dmMath, proapMath);
         getContentPane().removeAll();
         getContentPane().repaint();
         getContentPane().revalidate();
@@ -1477,6 +1486,41 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_mathNewSubmitActionPerformed
 
     private void addMathActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMathActionPerformed
+        proapaitoumenaMaths.removeAllItems();
+        FileInputStream fi = null;
+        ObjectInputStream oi = null;
+        List<Mathima> mathimata = new ArrayList<>();
+        File f = new File("myCourses.txt");
+        if (f.exists()){
+            try{
+                fi = new FileInputStream(f);
+                oi = new ObjectInputStream(fi);
+                while (true){
+                    try{
+                        mathimata.add((Mathima)oi.readObject());
+                    }catch (EOFException ex1) {
+                        break; //EOF reached.
+                    }catch (IOException ex2) {
+                        System.err.println("An IOException was caught: " + ex2.getMessage());
+                    }
+                }
+            }catch (IOException ex) {
+                Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }catch (ClassNotFoundException ex) {
+                Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }finally{
+                try{
+                    oi.close();
+                    fi.close();
+                    System.out.println("ekleisa");
+                }catch(IOException ex) {
+                    System.err.println("An IOException was caught: " + ex.getMessage());
+                }
+            }
+            for (Mathima math : mathimata){
+                proapaitoumenaMaths.addItem(math.getOnomaMathimatos());
+            }
+        }
         getContentPane().removeAll();
         getContentPane().repaint();
         getContentPane().revalidate();
@@ -2092,6 +2136,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel newProfPage;
     private javax.swing.JPanel newStdPage;
     private javax.swing.JPasswordField passwordLogin;
+    private javax.swing.JComboBox<String> proapaitoumenaMaths;
     private javax.swing.JTextField profIdikotita;
     private javax.swing.JTextField profMail;
     private javax.swing.JList<String> profMathimata;

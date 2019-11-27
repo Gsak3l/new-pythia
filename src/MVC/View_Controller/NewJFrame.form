@@ -762,7 +762,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jButton6" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="456" max="32767" attributes="0"/>
                           <Component id="mathNewSubmit" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
@@ -773,8 +773,9 @@
                               <Component id="mathKodikos" alignment="0" max="32767" attributes="0"/>
                               <Component id="mathTypos" alignment="0" max="32767" attributes="0"/>
                               <Component id="mathDM" alignment="0" max="32767" attributes="0"/>
+                              <Component id="proapaitoumenaMaths" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace min="0" pref="469" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -796,7 +797,9 @@
                   <Component id="mathTypos" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="mathDM" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="237" max="32767" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="proapaitoumenaMaths" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="199" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jButton6" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="mathNewSubmit" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -852,6 +855,11 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton6ActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="proapaitoumenaMaths">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>

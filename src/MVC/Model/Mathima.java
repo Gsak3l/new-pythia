@@ -1,6 +1,8 @@
 package MVC.Model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Mathima implements Serializable{
     private String onomaMathimatos;
@@ -9,6 +11,7 @@ public class Mathima implements Serializable{
     private String tmhmaMathimatos;
     private String typosMathimatos;
     private int didaktikesMonades;
+    private List<Mathima> proapaitoumena = new ArrayList<>();
     
     public Mathima(String onomaMathimatos, int eksamino, int kodikosMathimatos, String tmhmaMathimatos, String typosMathimatos, int didaktikesMonades) {
         this.onomaMathimatos = onomaMathimatos;
@@ -19,6 +22,16 @@ public class Mathima implements Serializable{
         this.didaktikesMonades = didaktikesMonades;
     }
 
+    public Mathima(String onomaMathimatos, int eksamino, int kodikosMathimatos, String tmhmaMathimatos, String typosMathimatos, int didaktikesMonades, Mathima proapaitoumena) {
+        this.onomaMathimatos = onomaMathimatos;
+        this.eksamino = eksamino;
+        this.kodikosMathimatos = kodikosMathimatos;
+        this.tmhmaMathimatos = tmhmaMathimatos;
+        this.typosMathimatos = typosMathimatos;
+        this.didaktikesMonades = didaktikesMonades;
+        this.proapaitoumena.add(proapaitoumena);
+    }
+    
     @java.lang.Override
     public String toString() {
         return "Mathima(" + "onomaMathimatos=" + onomaMathimatos + ", eksamino=" + eksamino + ", kodikosMathimatos=" + kodikosMathimatos +  ", tmhmaMathimatos=" + tmhmaMathimatos + ", typosMathimatos=" + typosMathimatos + "didaktikesMonades" + didaktikesMonades +")";

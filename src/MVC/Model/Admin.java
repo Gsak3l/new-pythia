@@ -51,8 +51,50 @@ public class Admin extends Account {
         putProfToList(prof);
     }
 
-    public void createCourse(String courseName, int courseEksamino, String courseTmhma, int kodikosMathimatos, String courseTypos, int courseDM) {
-        Mathima math = new Mathima(courseName, courseEksamino, kodikosMathimatos, courseTmhma, courseTypos, courseDM);
+    public void createCourse(String courseName, int courseEksamino, String courseTmhma, int kodikosMathimatos, String courseTypos, int courseDM, String proapMath) {
+        Mathima math;
+        if (proapMath!=null){
+            System.out.println("proapMath = "+proapMath);
+            FileInputStream fi = null;
+            ObjectInputStream oi = null;
+            List<Mathima> mathimata = new ArrayList<>();
+            try{
+                fi = new FileInputStream(new File("myCourses.txt"));
+                oi = new ObjectInputStream(fi);
+                while (true){
+                    try{
+                        mathimata.add((Mathima)oi.readObject());
+                    }catch (EOFException ex1) {
+                        break; //EOF reached.
+                    }catch (IOException ex2) {
+                        System.err.println("An IOException was caught: " + ex2.getMessage());
+                    }
+                }
+            } catch (IOException ex) {
+                Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }finally{
+                try{
+                    oi.close();
+                    fi.close();
+                    System.out.println("ekleisa");
+                }catch(IOException ex) {
+                    System.err.println("An IOException was caught: " + ex.getMessage());
+                }
+            }
+            Mathima proap=null;
+            for (Mathima m : mathimata){
+                if(m.getOnomaMathimatos().equals(proapMath)){
+                    proap = m;
+                    break;
+                }
+            }
+            math = new Mathima(courseName, courseEksamino, kodikosMathimatos, courseTmhma, courseTypos, courseDM, proap);
+        }
+        else{
+            math = new Mathima(courseName, courseEksamino, kodikosMathimatos, courseTmhma, courseTypos, courseDM);
+        }
         course.add(math);
         putMathToList(math);
     }
