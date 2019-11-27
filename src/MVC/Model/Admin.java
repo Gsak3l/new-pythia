@@ -58,17 +58,33 @@ public class Admin extends Account {
     }
     
     private void putStdToList(Foititis std) {
-        FileOutputStream f=null;
-        AppendingObjectOutputStream o=null;
+        FileOutputStream f = null;
+        AppendingObjectOutputStream ao = null;
+        ObjectOutputStream o = null;
         try {
-            f = new FileOutputStream(new File("myAccounts.txt"), true);
-            o = new AppendingObjectOutputStream(f);
-            o.writeObject(std);
+            File file = new File("Foithtes.txt");
+            if (file.exists()  && !file.isDirectory()){
+                System.out.println("Yparxo");
+                f = new FileOutputStream(file, true);
+                ao = new AppendingObjectOutputStream(f);
+                ao.writeObject(std);
+            }
+            else if (!file.exists()){
+                System.out.println("Den yparxo");
+                f = new FileOutputStream(file, true);
+                o = new ObjectOutputStream(f);
+                o.writeObject(std);
+            }
         } catch (IOException ex) {
             Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             try{
-                o.close();
+                if (o == null){
+                    ao.close();
+                }
+                else {
+                    o.close();
+                }
                 f.close();
                 System.out.println("ekleisa");
             }catch(IOException ex) {
@@ -78,17 +94,33 @@ public class Admin extends Account {
     }
 
     private void putProfToList(Kathigitis prof) {
-        FileOutputStream f=null;
-        AppendingObjectOutputStream o=null;
+        FileOutputStream f = null;
+        AppendingObjectOutputStream ao = null;
+        ObjectOutputStream o = null;
         try {
-            f = new FileOutputStream(new File("myAccounts.txt"), true);
-            o = new AppendingObjectOutputStream(f);
-            o.writeObject(prof);
+            File file = new File("Professors.txt");
+            if (file.exists()  && !file.isDirectory()){
+                System.out.println("Yparxo");
+                f = new FileOutputStream(file, true);
+                ao = new AppendingObjectOutputStream(f);
+                ao.writeObject(prof);
+            }
+            else if (!file.exists()){
+                System.out.println("Den yparxo");
+                f = new FileOutputStream(file, true);
+                o = new ObjectOutputStream(f);
+                o.writeObject(prof);
+            }
         } catch (IOException ex) {
             Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             try{
-                o.close();
+                if (o == null){
+                    ao.close();
+                }
+                else {
+                    o.close();
+                }
                 f.close();
                 System.out.println("ekleisa");
             }catch(IOException ex) {
@@ -134,28 +166,60 @@ public class Admin extends Account {
     }
     
     public void deleteStd(){
-        putAccountsToFile();
+        putStdToFile();
     }
     
     public void deleteProf() {
-        putAccountsToFile();
+        putProfToFile();
     }
     
-    public void getAccountsFromFile(){
+    public void getStdFromFile(){
         student.clear();
-        professor.clear();
         FileInputStream fi = null;
         ObjectInputStream oi = null;
         Account a;
           try{
-            fi = new FileInputStream(new File("myAccounts.txt"));
+            fi = new FileInputStream(new File("Foithtes.txt"));
             oi = new ObjectInputStream(fi);
             while (true){
                 try{
                   a = (Account)oi.readObject();
                   if (a instanceof Foititis){
                       student.add((Foititis)a);
-                  }else if(a instanceof Kathigitis){
+                  }
+                }catch (EOFException ex1) {
+                    break; //EOF reached.
+                }catch (IOException ex2) {
+                    System.err.println("An IOException was caught: " + ex2.getMessage());
+                }
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{
+            try{
+                oi.close();
+                fi.close();
+                System.out.println("ekleisa");
+            }catch(IOException ex) {
+                System.err.println("An IOException was caught: " + ex.getMessage());
+            }
+        }
+    }
+  
+    public void getProfFromFile(){
+        professor.clear();
+        FileInputStream fi = null;
+        ObjectInputStream oi = null;
+        Account a;
+          try{
+            fi = new FileInputStream(new File("Foithtes.txt"));
+            oi = new ObjectInputStream(fi);
+            while (true){
+                try{
+                  a = (Account)oi.readObject();
+                  if (a instanceof Foititis){
                       professor.add((Kathigitis)a);
                   }
                 }catch (EOFException ex1) {
@@ -178,6 +242,7 @@ public class Admin extends Account {
             }
         }
     }
+    
     public void getMathimataFromFile(){
         course.clear();
         FileInputStream fi = null;
@@ -210,9 +275,9 @@ public class Admin extends Account {
             }
         }
     }
-    
+        
     public Foititis searchStd(String username){
-        getAccountsFromFile();
+        getStdFromFile();
         for(int i = 0; i < student.size(); i++) {
             if(student.get(i).getUsername().equals(username)) {
                Foititis std = student.get(i);
@@ -238,7 +303,7 @@ public class Admin extends Account {
     }
     
     public Kathigitis searchProf(String username){
-        getAccountsFromFile();
+        getProfFromFile();
         for(int i = 0; i < professor.size(); i++) {
             if(professor.get(i).getUsername().equals(username)) {
                Kathigitis prof = professor.get(i);
@@ -260,28 +325,46 @@ public class Admin extends Account {
                            String thlefwnoStd, int AMstd, String tmhmaStd, int eksaminoStd, String dieythinsiStd){
         Foititis std = new Foititis(usernameStd, passStd, mailStd, onomateponumoStd, thlefwnoStd, AMstd, tmhmaStd, eksaminoStd, dieythinsiStd);     
         student.add(std);
-        putAccountsToFile();
+        putStdToFile();
     }
     
     public void updateProf(String usernameProf, String passProf, String mailProf, String onomateponumoProf,
                            String thlefwnoProf, String tmhmaProf, String eidikothtaProf, List<Mathima> mathimataProf){
         Kathigitis prof = new Kathigitis(usernameProf, passProf, mailProf, onomateponumoProf, thlefwnoProf, tmhmaProf, eidikothtaProf, mathimataProf);     
         professor.add(prof);
-        putAccountsToFile();
+        putProfToFile();
     }
     
-    public void putAccountsToFile(){
+    public void putStdToFile(){
         FileOutputStream f=null;
         ObjectOutputStream o=null;
         try {
-            f = new FileOutputStream(new File("myAccounts.txt"));
-            o = new ObjectOutputStream(f);
-            o.writeObject(this);
-            for (Kathigitis prof : this.professor){
-               o.writeObject(prof);
-            }   
+            f = new FileOutputStream(new File("Foithtes.txt"));
+            o = new ObjectOutputStream(f);  
             for (Foititis std : this.student){
                o.writeObject(std);
+            }   
+        } catch (IOException ex) {
+            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try{
+                o.close();
+                f.close();
+                System.out.println("ekleisa");
+            }catch(IOException ex) {
+                System.err.println("An IOException was caught: " + ex.getMessage());
+            }
+        }
+    }
+   
+    public void putProfToFile(){
+        FileOutputStream f=null;
+        ObjectOutputStream o=null;
+        try {
+            f = new FileOutputStream(new File("Professors.txt"));
+            o = new ObjectOutputStream(f);
+            for (Kathigitis prof : this.professor){
+               o.writeObject(prof);
             }   
         } catch (IOException ex) {
             Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
@@ -317,35 +400,39 @@ public class Admin extends Account {
             }
         }
     }
-       
+    
+    public void putAdminToFile(){
+        FileOutputStream f=null;
+        ObjectOutputStream o=null;
+        try {
+            f = new FileOutputStream(new File("Admin.txt"));
+            o = new ObjectOutputStream(f);
+            o.writeObject(this);
+        } catch (IOException ex) {
+            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            try{
+                o.close();
+                f.close();
+                System.out.println("ekleisa");
+            }catch(IOException ex) {
+                System.err.println("An IOException was caught: " + ex.getMessage());
+            }
+        }
+    }
+    
     public void deleteCourse(){
         putMathimataToFile();
     }
-        
-    public void showStd() {
-        Foititis f1 = student.get(0);
-        System.out.println(f1);
-    }
 
-    public void showProf() {
-        Kathigitis p1 = professor.get(0);
-        System.out.println(p1);
-    }
-
-    public void showcourse() {
-        Mathima m1 = course.get(0);
-        System.out.println(m1);
-    }
-    
     public boolean updateDhlwseis(){
-        getAccountsFromFile();
         if(this.getDilwseis()){
             this.setDilwseis(false);
         }
         else{
             this.setDilwseis(true);
         }
-        putAccountsToFile();
+        putAdminToFile();
         return this.getDilwseis();
     }
 }

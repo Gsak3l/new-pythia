@@ -12,6 +12,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -36,6 +37,10 @@ public class NewJFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel2 = new javax.swing.JPanel();
+        jButton11 = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         usernameLogin = new javax.swing.JTextField();
         passwordLogin = new javax.swing.JPasswordField();
@@ -161,6 +166,53 @@ public class NewJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.CardLayout());
+
+        jButton11.setText("Login As Admin");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
+
+        jButton12.setText("Login As Student");
+        jButton12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton12ActionPerformed(evt);
+            }
+        });
+
+        jButton13.setText("Login As Professor");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(187, 187, 187)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jButton13)
+                    .addComponent(jButton11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(288, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(139, 139, 139)
+                .addComponent(jButton11)
+                .addGap(18, 18, 18)
+                .addComponent(jButton12)
+                .addGap(18, 18, 18)
+                .addComponent(jButton13)
+                .addContainerGap(228, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(jPanel2, "card16");
 
         loginButton.setText("Login");
         loginButton.addActionListener(new java.awt.event.ActionListener() {
@@ -1164,8 +1216,21 @@ public class NewJFrame extends javax.swing.JFrame {
         FileInputStream fi=null;
         ObjectInputStream oi=null;
         try {
-            fi = new FileInputStream(new File("myAccounts.txt"));
-            oi = new ObjectInputStream(fi);
+            switch(loginAs){
+                case "Admin":
+                    fi = new FileInputStream(new File("Admin.txt"));
+                    oi = new ObjectInputStream(fi);
+                    break;
+                case "Student":
+                    fi = new FileInputStream(new File("Foithtes.txt"));
+                    oi = new ObjectInputStream(fi);
+                    break;
+                case "Professor":
+                    fi = new FileInputStream(new File("Professors.txt"));
+                    oi = new ObjectInputStream(fi);
+                    System.out.println("eftasa");
+                    break;
+            }
             Account a1;
             String usernameTextfield = usernameLogin.getText();
             char[] passwordTextfield = passwordLogin.getPassword();
@@ -1176,6 +1241,8 @@ public class NewJFrame extends javax.swing.JFrame {
                         admin = (Admin)a1;
                     } else if(a1 instanceof Foititis) {
                         std = (Foititis)a1; 
+                    } else if(a1 instanceof Kathigitis){
+                        prof = (Kathigitis)a1;
                     }
                     char[] passwordArray = a1.getPassword().toCharArray();
                     if(Arrays.equals(passwordTextfield, passwordArray) && a1.getUsername().equals(usernameTextfield)){
@@ -1225,7 +1292,7 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         } catch (IOException ex) {
             resetAccountFile();
-            JOptionPane.showMessageDialog(null, "Someone changed or removed the file manually, File is resetting! Sign in as an admin");
+            JOptionPane.showMessageDialog(null, "Someone changed or removed the file manually, File is resetting! Contact an admin");
         }finally{
             try{
                 oi.close();
@@ -1241,11 +1308,16 @@ public class NewJFrame extends javax.swing.JFrame {
     public void resetAccountFile(){
         Account admin = new Admin("admin", "admin", "admin@it.teithe.gr", "Γιώργος Στίνης", "2310555555");
         try{
-            f = new FileOutputStream(new File("myAccounts.txt"));
+            f = new FileOutputStream(new File("Admin.txt"));
             o = new ObjectOutputStream(f);
             o.writeObject(admin);
             o.close();
             f.close();
+            File f = new File("Foithtes.txt");
+            f.delete();
+            f = new File("Professors.txt");
+            f.delete();
+            
         } catch (IOException ex) {
             Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -1841,6 +1913,21 @@ public class NewJFrame extends javax.swing.JFrame {
         getContentPane().repaint();
         getContentPane().revalidate();
     }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        loginAs = "Admin";
+        goToLoginPage();
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        loginAs = "Student";
+        goToLoginPage();
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        loginAs = "Professor";
+        goToLoginPage();
+    }//GEN-LAST:event_jButton13ActionPerformed
     
     public void clearLoginFields(){
         passwordLogin.setText("");
@@ -1851,7 +1938,7 @@ public class NewJFrame extends javax.swing.JFrame {
         FileInputStream fi=null;
         ObjectInputStream oi=null;
         try {
-            fi = new FileInputStream(new File("myAccounts.txt"));
+            fi = new FileInputStream(new File("Admin.txt"));
             oi = new ObjectInputStream(fi);
             Account a1;
             while (true){
@@ -1882,6 +1969,15 @@ public class NewJFrame extends javax.swing.JFrame {
     }
     
     public void goToHomePage(){
+        getContentPane().removeAll();
+        getContentPane().repaint();
+        getContentPane().revalidate();
+        getContentPane().add(jPanel2);
+        getContentPane().repaint();
+        getContentPane().revalidate();
+    }
+    
+    public void goToLoginPage(){
         getContentPane().removeAll();
         getContentPane().repaint();
         getContentPane().revalidate();
@@ -1927,7 +2023,7 @@ public class NewJFrame extends javax.swing.JFrame {
     Mathima math;
     FileOutputStream f = null;
     ObjectOutputStream o = null;
-    
+    String loginAs;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AdminPage;
     private javax.swing.JButton DhloseisEnable;
@@ -1950,6 +2046,9 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JButton foiththsLogoutButton;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -1967,6 +2066,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
