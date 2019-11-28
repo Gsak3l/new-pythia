@@ -8,8 +8,8 @@ public class Kathigitis extends Account {
     private String tmima;
     private List<Mathima> mathimata = new ArrayList<>();
 
-    public Kathigitis(String username, String password, String mail, String onomateponumo, String tilefwno, String eidikotita, String tmima, List<Mathima> mathimata) {
-        super(username, password, mail, onomateponumo, tilefwno);
+    public Kathigitis(String username, String password, String onomateponumo, String eidikotita, String tmima, List<Mathima> mathimata) {
+        super(username, password, onomateponumo);
         this.eidikotita = eidikotita;
         this.tmima = tmima;
         this.mathimata = mathimata;

@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup1">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup2">
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -236,7 +242,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="addMath">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Add Course"/>
+            <Property name="text" type="java.lang.String" value="Add Mathima"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addMathActionPerformed"/>
@@ -303,21 +309,9 @@
               </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="ShowDieuthinsiStd" alignment="0" max="32767" attributes="0"/>
-                      <Component id="ShowTmimaStd" alignment="0" max="32767" attributes="0"/>
-                      <Component id="ShowExaminoStd" alignment="0" pref="65" max="32767" attributes="0"/>
-                      <Component id="ShowAmStd" alignment="0" max="32767" attributes="0"/>
-                      <Component id="ShowStoixiaEggrafisStd" pref="102" max="32767" attributes="0"/>
-                  </Group>
+                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="127" max="-2" attributes="0"/>
+                  <Component id="ShowAmStd" min="-2" pref="102" max="-2" attributes="0"/>
                   <EmptySpace pref="282" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -332,27 +326,7 @@
                       <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="ShowAmStd" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="ShowExaminoStd" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="ShowTmimaStd" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="ShowDieuthinsiStd" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="ShowStoixiaEggrafisStd" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="198" max="32767" attributes="0"/>
+                  <EmptySpace pref="350" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="foiththsLogoutButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="dhlwshStd" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -389,35 +363,7 @@
             <Property name="text" type="java.lang.String" value="AM :"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel5">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Examino : "/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel6">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Tmima : "/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel7">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Dieuthinsi : "/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JTextField" name="ShowAmStd">
-        </Component>
-        <Component class="javax.swing.JTextField" name="ShowExaminoStd">
-        </Component>
-        <Component class="javax.swing.JTextField" name="ShowTmimaStd">
-        </Component>
-        <Component class="javax.swing.JTextField" name="ShowDieuthinsiStd">
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabel8">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Stoixia Eggrafis :"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="ShowStoixiaEggrafisStd">
         </Component>
       </SubComponents>
     </Container>
@@ -489,21 +435,14 @@
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                      <Component id="stdEksamino" max="32767" attributes="0"/>
                       <Component id="stdUsername" pref="71" max="32767" attributes="0"/>
-                      <Component id="stdMail" max="32767" attributes="0"/>
-                      <Component id="stdThlefwno" max="32767" attributes="0"/>
                       <Component id="stdAM" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="193" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="stdOnomaEponymo" alignment="1" min="-2" pref="104" max="-2" attributes="0"/>
-                          <Component id="stdPassword" alignment="0" min="-2" pref="70" max="-2" attributes="0"/>
-                          <Component id="stdNewSubmit" alignment="1" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="stdTmhma" min="-2" pref="59" max="-2" attributes="0"/>
-                      <Component id="stdDieythinsi" min="-2" pref="71" max="-2" attributes="0"/>
+                      <Component id="stdOnomaEponymo" alignment="1" min="-2" pref="104" max="-2" attributes="0"/>
+                      <Component id="stdPassword" alignment="0" min="-2" pref="70" max="-2" attributes="0"/>
+                      <Component id="stdNewSubmit" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
               </Group>
@@ -519,22 +458,10 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="stdMail" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="stdPassword" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="stdThlefwno" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="stdTmhma" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="stdAM" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="stdDieythinsi" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="stdEksamino" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="204" max="32767" attributes="0"/>
+                  <EmptySpace pref="311" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="stdNewSubmit" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -555,11 +482,6 @@
             <Property name="text" type="java.lang.String" value="Password :"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="stdMail">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Mail :"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JTextField" name="stdOnomaEponymo">
           <Properties>
             <Property name="text" type="java.lang.String" value="Onomateponymo :"/>
@@ -568,26 +490,6 @@
         <Component class="javax.swing.JTextField" name="stdAM">
           <Properties>
             <Property name="text" type="java.lang.String" value="AM :"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="stdTmhma">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Tmima :"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="stdEksamino">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Examino :"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="stdDieythinsi">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Dieythinsi :"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="stdThlefwno">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Thlefono :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="stdNewSubmit">
@@ -619,35 +521,32 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jButton4" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="profNewSubmit" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="profUsername" alignment="0" pref="72" max="32767" attributes="0"/>
-                              <Component id="profMail" alignment="0" max="32767" attributes="0"/>
-                              <Component id="profTilefono" alignment="0" max="32767" attributes="0"/>
                               <Component id="profTmima" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
                               <Component id="profOnomateponimo" min="-2" pref="103" max="-2" attributes="0"/>
                               <Component id="profPassword" min="-2" pref="72" max="-2" attributes="0"/>
                               <Component id="profIdikotita" min="-2" pref="76" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="300" max="32767" attributes="0"/>
                       </Group>
                   </Group>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="0" pref="20" max="32767" attributes="0"/>
-                  <Component id="jButton4" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="101" max="32767" attributes="0"/>
-                  <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
-                  <Component id="profNewSubmit" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -658,21 +557,18 @@
                   <Component id="profTmima" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="profUsername" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="profMail" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="profTilefono" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="profIdikotita" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="profPassword" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="profOnomateponimo" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-                      <Component id="profNewSubmit" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton4" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="profNewSubmit" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButton4" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -683,11 +579,6 @@
         <Component class="javax.swing.JTextField" name="profOnomateponimo">
           <Properties>
             <Property name="text" type="java.lang.String" value="Onomateponumo :"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="profMail">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Mail :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="profPassword">
@@ -703,11 +594,6 @@
         <Component class="javax.swing.JTextField" name="profIdikotita">
           <Properties>
             <Property name="text" type="java.lang.String" value="Idikotita :"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="profTilefono">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Thlefono :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="profTmima">
@@ -766,14 +652,17 @@
                           <Component id="mathNewSubmit" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="mathOnoma" alignment="0" pref="107" max="32767" attributes="0"/>
-                              <Component id="mathEksamino" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
-                              <Component id="mathTmhma" alignment="0" max="32767" attributes="0"/>
-                              <Component id="mathKodikos" alignment="0" max="32767" attributes="0"/>
-                              <Component id="mathTypos" alignment="0" max="32767" attributes="0"/>
-                              <Component id="mathDM" alignment="0" max="32767" attributes="0"/>
-                              <Component id="proapaitoumenaMaths" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="mathOnoma" alignment="0" pref="107" max="32767" attributes="0"/>
+                                  <Component id="mathKodikos" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Component id="jScrollPane8" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
@@ -788,18 +677,15 @@
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Component id="mathOnoma" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="mathEksamino" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="mathTmhma" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="mathKodikos" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="mathTypos" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="mathDM" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="proapaitoumenaMaths" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="199" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jRadioButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jRadioButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                  <Component id="jScrollPane8" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="91" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jButton6" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="mathNewSubmit" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -815,24 +701,9 @@
             <Property name="text" type="java.lang.String" value="Onoma Mathimatos"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="mathEksamino">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="eksamino"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="mathTmhma">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="tmhmaMathimatos"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JTextField" name="mathKodikos">
           <Properties>
             <Property name="text" type="java.lang.String" value="kodikosMathimatos"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="mathTypos">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="typosMathimatos"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="mathNewSubmit">
@@ -843,11 +714,6 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mathNewSubmitActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="mathDM">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="didaktikesMonades"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JButton" name="jButton6">
           <Properties>
             <Property name="text" type="java.lang.String" value="Back"/>
@@ -856,11 +722,42 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton6ActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JComboBox" name="proapaitoumenaMaths">
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-          </AuxValues>
+        <Component class="javax.swing.JRadioButton" name="jRadioButton1">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="buttonGroup1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Theoria"/>
+          </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jRadioButton1ItemStateChanged"/>
+          </Events>
         </Component>
+        <Component class="javax.swing.JRadioButton" name="jRadioButton2">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="buttonGroup1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Ergasthrio"/>
+          </Properties>
+        </Component>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane8">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JList" name="proapNew">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+          </SubComponents>
+        </Container>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="searchStdPage">
@@ -944,13 +841,8 @@
                   <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="updateStdPassword" alignment="0" max="32767" attributes="0"/>
-                      <Component id="updateStdMail" alignment="0" pref="94" max="32767" attributes="0"/>
-                      <Component id="updateStdDieuthinsi" alignment="0" max="32767" attributes="0"/>
-                      <Component id="updateStdOnomatep" alignment="0" max="32767" attributes="0"/>
-                      <Component id="updateStdTilefono" alignment="0" max="32767" attributes="0"/>
+                      <Component id="updateStdOnomatep" alignment="0" pref="94" max="32767" attributes="0"/>
                       <Component id="updateStdAM" alignment="0" max="32767" attributes="0"/>
-                      <Component id="updateStdTmima" alignment="0" max="32767" attributes="0"/>
-                      <Component id="updateStdExamino" alignment="0" pref="94" max="32767" attributes="0"/>
                       <Component id="updateStdUsername" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace pref="453" max="32767" attributes="0"/>
@@ -972,25 +864,15 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="73" max="32767" attributes="0"/>
+                  <EmptySpace pref="80" max="32767" attributes="0"/>
                   <Component id="updateStdUsername" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="updateStdPassword" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                  <Component id="updateStdMail" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="updateStdOnomatep" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="updateStdTilefono" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="updateStdAM" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="updateStdTmima" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="updateStdExamino" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="updateStdDieuthinsi" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="updateStdOnomatep" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="250" max="-2" attributes="0"/>
                   <Component id="deleteStdButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -1015,39 +897,14 @@
             <Property name="text" type="java.lang.String" value="Onomateponimo"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="updateStdTilefono">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Tilefono"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JTextField" name="updateStdAM">
           <Properties>
             <Property name="text" type="java.lang.String" value="AM"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="updateStdTmima">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Tmima"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="updateStdExamino">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Examino"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="updateStdDieuthinsi">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Dieuthinsi"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JTextField" name="updateStdPassword">
           <Properties>
             <Property name="text" type="java.lang.String" value="Password"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="updateStdMail">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Mail"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JToggleButton" name="updateStdButton">
@@ -1087,13 +944,21 @@
                           <Component id="deleteMathButton" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="updateMathDM" alignment="0" pref="112" max="32767" attributes="0"/>
-                              <Component id="updateMathTupos" alignment="0" max="32767" attributes="0"/>
-                              <Component id="updateMathTmima" alignment="0" max="32767" attributes="0"/>
-                              <Component id="updateMathKodikos" alignment="0" max="32767" attributes="0"/>
-                              <Component id="updateMathExamino" alignment="0" max="32767" attributes="0"/>
-                              <Component id="updateMathOnoma" alignment="0" max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="jRadioButton3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jRadioButton4" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="jComboBox1" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="updateMathKodikos" alignment="0" pref="112" max="32767" attributes="0"/>
+                                      <Component id="updateMathOnoma" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane9" min="-2" pref="166" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
@@ -1105,19 +970,21 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
                   <Component id="updateMathOnoma" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="updateMathExamino" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="updateMathKodikos" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="updateMathTmima" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="updateMathTupos" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="updateMathDM" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="193" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jRadioButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jRadioButton4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jScrollPane9" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="45" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="deleteMathButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="updateMathButton" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1133,29 +1000,9 @@
             <Property name="text" type="java.lang.String" value="Onoma"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="updateMathExamino">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Examino"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JTextField" name="updateMathKodikos">
           <Properties>
             <Property name="text" type="java.lang.String" value="Kodikos"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="updateMathTmima">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Tmima"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="updateMathTupos">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Tupos"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="updateMathDM">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Didaktikes monades"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="deleteMathButton">
@@ -1174,6 +1021,50 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="updateMathButtonActionPerformed"/>
           </Events>
         </Component>
+        <Component class="javax.swing.JRadioButton" name="jRadioButton3">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="buttonGroup2"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Theoria"/>
+          </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="jRadioButton3ItemStateChanged"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="jRadioButton4">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="buttonGroup2"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Ergasthrio"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBox1">
+          <Properties>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane9">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JList" name="jList1">
+              <Properties>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+          </SubComponents>
+        </Container>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="searchMathPage">
@@ -1281,7 +1172,7 @@
       <SubComponents>
         <Component class="javax.swing.JTextField" name="searchProfUsername">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Kodikos Mathimatos"/>
+            <Property name="text" type="java.lang.String" value="Username"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="searchProfButton">
@@ -1323,9 +1214,7 @@
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="updateProfPassword" alignment="0" max="32767" attributes="0"/>
-                      <Component id="updateProfMail" alignment="0" max="32767" attributes="0"/>
                       <Component id="updateProfOnomatep" alignment="0" max="32767" attributes="0"/>
-                      <Component id="updateProfTilefono" alignment="0" max="32767" attributes="0"/>
                       <Component id="updateProfTmima" alignment="0" max="32767" attributes="0"/>
                       <Component id="updateProfEidikothta" alignment="0" max="32767" attributes="0"/>
                       <Component id="updateProfUsername" alignment="0" min="-2" pref="94" max="-2" attributes="0"/>
@@ -1343,13 +1232,9 @@
                   <Component id="updateProfUsername" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="updateProfPassword" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                  <Component id="updateProfMail" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="updateProfOnomatep" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="updateProfTilefono" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="56" pref="56" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="139" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Component id="updateProfTmima" min="-2" max="-2" attributes="0"/>
@@ -1369,19 +1254,9 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JTextField" name="updateProfMail">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Mail"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JTextField" name="updateProfPassword">
           <Properties>
             <Property name="text" type="java.lang.String" value="Password"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="updateProfTilefono">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Tilefono"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="updateProfOnomatep">
@@ -1454,20 +1329,30 @@
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                          <Component id="jButton10" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane7" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jScrollPane3" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jScrollPane4" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="jComboBox2" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jComboBox3" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="jScrollPane7" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane4" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jScrollPane5" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jScrollPane6" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
-                          <Component id="jButton10" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
@@ -1485,7 +1370,13 @@
                       <Component id="jScrollPane5" min="-2" max="-2" attributes="0"/>
                       <Component id="jScrollPane7" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="jComboBox2" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                  <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jComboBox3" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   <Component id="prosthikhDhlwshsStd" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="117" max="32767" attributes="0"/>
                   <Component id="jButton10" min="-2" max="-2" attributes="0"/>
@@ -1635,6 +1526,24 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton10ActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBox2">
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBox3">
+          <Properties>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel5">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Tmhma"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

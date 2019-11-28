@@ -20,8 +20,8 @@ public class Admin extends Account {
     private List<Mathima> course = new ArrayList<>();
     private Admin admin ;
     
-    public Admin(String username, String password, String mail, String onomateponumo, String tilefwno) {
-        super(username, password, mail, onomateponumo, tilefwno);
+    public Admin(String username, String password, String onomateponumo) {
+        super(username, password, onomateponumo);
     }
 
     public void setDilwseis(boolean dilwseis) {
@@ -37,64 +37,28 @@ public class Admin extends Account {
         return "Administrator";
     }
 
-    public void createStd(String usernameStd, String passStd, String mailStd, String onomateponumoStd,
-                          String thlefwnoStd, int AMstd, String tmhmaStd, int eksaminoStd, String dieythinsiStd) {
-        Foititis std = new Foititis(usernameStd, passStd, mailStd, onomateponumoStd, thlefwnoStd, AMstd, tmhmaStd, eksaminoStd, dieythinsiStd);
+    public void createStd(String usernameStd, String passStd, String onomateponumoStd, int AMstd) {
+        Foititis std = new Foititis(usernameStd, passStd, onomateponumoStd, AMstd);
         student.add(std);
         putStdToList(std);
     }
 
-    public void createProf(String usernameProf, String passProf, String mailProf, String onomateponumoProf,
-                           String thlefwnoProf, String idikotitaProf, String tmimaProf, List<Mathima> mathimataProf) {
-        Kathigitis prof = new Kathigitis(usernameProf, passProf, mailProf, onomateponumoProf, thlefwnoProf, idikotitaProf, tmimaProf, mathimataProf);
+    public void createProf(String usernameProf, String passProf, String onomateponumoProf,
+                           String idikotitaProf, String tmimaProf, List<Mathima> mathimataProf) {
+        Kathigitis prof = new Kathigitis(usernameProf, passProf, onomateponumoProf, idikotitaProf, tmimaProf, mathimataProf);
         professor.add(prof);
         putProfToList(prof);
     }
 
-    public void createCourse(String courseName, int courseEksamino, String courseTmhma, int kodikosMathimatos, String courseTypos, int courseDM, String proapMath) {
+    public void createTheoria(String courseName, String courseKodikos, List<Mathima> proap){
         Mathima math;
-        if (proapMath!=null){
-            System.out.println("proapMath = "+proapMath);
-            FileInputStream fi = null;
-            ObjectInputStream oi = null;
-            List<Mathima> mathimata = new ArrayList<>();
-            try{
-                fi = new FileInputStream(new File("myCourses.txt"));
-                oi = new ObjectInputStream(fi);
-                while (true){
-                    try{
-                        mathimata.add((Mathima)oi.readObject());
-                    }catch (EOFException ex1) {
-                        break; //EOF reached.
-                    }catch (IOException ex2) {
-                        System.err.println("An IOException was caught: " + ex2.getMessage());
-                    }
-                }
-            } catch (IOException ex) {
-                Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
-            }finally{
-                try{
-                    oi.close();
-                    fi.close();
-                    System.out.println("ekleisa");
-                }catch(IOException ex) {
-                    System.err.println("An IOException was caught: " + ex.getMessage());
-                }
-            }
-            Mathima proap=null;
-            for (Mathima m : mathimata){
-                if(m.getOnomaMathimatos().equals(proapMath)){
-                    proap = m;
-                    break;
-                }
-            }
-            math = new Mathima(courseName, courseEksamino, kodikosMathimatos, courseTmhma, courseTypos, courseDM, proap);
-        }
-        else{
-            math = new Mathima(courseName, courseEksamino, kodikosMathimatos, courseTmhma, courseTypos, courseDM);
-        }
+        math = new Theoria(courseKodikos, courseName, proap);
+        course.add(math);
+        putMathToList(math);
+    }
+    
+    public void createErgasthrio(String courseName, String courseKodikos){
+        Mathima math = new Ergastirio(courseKodikos, courseName );
         course.add(math);
         putMathToList(math);
     }
@@ -256,12 +220,12 @@ public class Admin extends Account {
         ObjectInputStream oi = null;
         Account a;
           try{
-            fi = new FileInputStream(new File("Foithtes.txt"));
+            fi = new FileInputStream(new File("Professors.txt"));
             oi = new ObjectInputStream(fi);
             while (true){
                 try{
                   a = (Account)oi.readObject();
-                  if (a instanceof Foititis){
+                  if (a instanceof Kathigitis){
                       professor.add((Kathigitis)a);
                   }
                 }catch (EOFException ex1) {
@@ -331,10 +295,12 @@ public class Admin extends Account {
         return null;
     }
     
-    public Mathima searchMath(int Kodikos){
+    public Mathima searchMath(String kodikos){
         getMathimataFromFile();
+        System.out.println("eftasa");
         for(int i = 0; i < course.size(); i++) {
-            if(course.get(i).getKodikosMathimatos() == Kodikos) {
+            System.out.println(course.get(i).getKwdikos());
+            if(course.get(i).getKwdikos().equals(kodikos)) {
                Mathima math = course.get(i);
                course.remove(i);
                return math;
@@ -347,6 +313,7 @@ public class Admin extends Account {
     public Kathigitis searchProf(String username){
         getProfFromFile();
         for(int i = 0; i < professor.size(); i++) {
+            System.out.println(professor.get(i).getUsername());
             if(professor.get(i).getUsername().equals(username)) {
                Kathigitis prof = professor.get(i);
                professor.remove(i);
@@ -357,22 +324,27 @@ public class Admin extends Account {
         return null;
     }
     
-    public void updateMath(String courseName, int courseEksamino, String courseTmhma, int kodikosMathimatos, String courseTypos, int courseDM){
-        Mathima math = new Mathima(courseName,courseEksamino,kodikosMathimatos,courseTmhma,courseTypos,courseDM);
+    public void updateTheoria(String courseName, String courseKodikos, List<Mathima> proap){
+        Mathima math = new Theoria(courseKodikos, courseName, proap);
         course.add(math);
         putMathimataToFile();
     }
     
-    public void updateStd(String usernameStd, String passStd, String mailStd, String onomateponumoStd,
-                           String thlefwnoStd, int AMstd, String tmhmaStd, int eksaminoStd, String dieythinsiStd){
-        Foititis std = new Foititis(usernameStd, passStd, mailStd, onomateponumoStd, thlefwnoStd, AMstd, tmhmaStd, eksaminoStd, dieythinsiStd);     
+    public void updateErgasthrio(String courseName, String courseKodikos){
+        Mathima math = new Ergastirio(courseKodikos, courseName);
+        course.add(math);
+        putMathimataToFile();
+    } 
+    
+    public void updateStd(String usernameStd, String passStd, String onomateponumoStd, int AMstd){
+        Foititis std = new Foititis(usernameStd, passStd, onomateponumoStd, AMstd);     
         student.add(std);
         putStdToFile();
     }
     
-    public void updateProf(String usernameProf, String passProf, String mailProf, String onomateponumoProf,
-                           String thlefwnoProf, String tmhmaProf, String eidikothtaProf, List<Mathima> mathimataProf){
-        Kathigitis prof = new Kathigitis(usernameProf, passProf, mailProf, onomateponumoProf, thlefwnoProf, tmhmaProf, eidikothtaProf, mathimataProf);     
+    public void updateProf(String usernameProf, String passProf, String onomateponumoProf,
+                           String tmhmaProf, String eidikothtaProf, List<Mathima> mathimataProf){
+        Kathigitis prof = new Kathigitis(usernameProf, passProf, onomateponumoProf, tmhmaProf, eidikothtaProf, mathimataProf);     
         professor.add(prof);
         putProfToFile();
     }
