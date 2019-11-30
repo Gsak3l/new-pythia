@@ -15,8 +15,13 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -65,6 +70,8 @@ public class NewJFrame extends javax.swing.JFrame {
         dhlwshStd = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         ShowAmStd = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        foititisDilwsiField = new javax.swing.JTextField();
         KathigitisPage = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         kathigitisLogoutButton = new javax.swing.JButton();
@@ -112,7 +119,6 @@ public class NewJFrame extends javax.swing.JFrame {
         updateMathButton = new javax.swing.JToggleButton();
         jRadioButton3 = new javax.swing.JRadioButton();
         jRadioButton4 = new javax.swing.JRadioButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
         jScrollPane9 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
         searchMathPage = new javax.swing.JPanel();
@@ -363,6 +369,15 @@ public class NewJFrame extends javax.swing.JFrame {
 
         jLabel4.setText("AM :");
 
+        jLabel6.setText("Dilwsi :");
+
+        foititisDilwsiField.setEditable(false);
+        foititisDilwsiField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                foititisDilwsiFieldMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout FoiththsPageLayout = new javax.swing.GroupLayout(FoiththsPage);
         FoiththsPage.setLayout(FoiththsPageLayout);
         FoiththsPageLayout.setHorizontalGroup(
@@ -379,11 +394,15 @@ public class NewJFrame extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(FoiththsPageLayout.createSequentialGroup()
-                .addGap(63, 63, 63)
-                .addComponent(jLabel4)
-                .addGap(127, 127, 127)
-                .addComponent(ShowAmStd, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(282, Short.MAX_VALUE))
+                .addGap(51, 51, 51)
+                .addGroup(FoiththsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel4))
+                .addGap(100, 100, 100)
+                .addGroup(FoiththsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ShowAmStd, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(foititisDilwsiField, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         FoiththsPageLayout.setVerticalGroup(
             FoiththsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -394,10 +413,17 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGroup(FoiththsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(ShowAmStd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 350, Short.MAX_VALUE)
-                .addGroup(FoiththsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(foiththsLogoutButton)
-                    .addComponent(dhlwshStd))
+                .addGap(46, 46, 46)
+                .addGroup(FoiththsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(FoiththsPageLayout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(FoiththsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(foiththsLogoutButton)
+                            .addComponent(dhlwshStd)))
+                    .addGroup(FoiththsPageLayout.createSequentialGroup()
+                        .addComponent(foititisDilwsiField, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 148, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -796,8 +822,6 @@ public class NewJFrame extends javax.swing.JFrame {
         buttonGroup2.add(jRadioButton4);
         jRadioButton4.setText("Ergasthrio");
 
-        jComboBox1.setEnabled(false);
-
         jList1.setEnabled(false);
         jScrollPane9.setViewportView(jList1);
 
@@ -818,13 +842,10 @@ public class NewJFrame extends javax.swing.JFrame {
                                 .addComponent(jRadioButton3)
                                 .addGap(18, 18, 18)
                                 .addComponent(jRadioButton4))
-                            .addGroup(updateMathPageLayout.createSequentialGroup()
-                                .addGroup(updateMathPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(updateMathKodikos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
-                                    .addComponent(updateMathOnoma, javax.swing.GroupLayout.Alignment.LEADING))
-                                .addGap(18, 18, 18)
-                                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(updateMathPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(updateMathKodikos, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
+                                .addComponent(updateMathOnoma, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -839,11 +860,9 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGroup(updateMathPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jRadioButton3)
                     .addComponent(jRadioButton4))
-                .addGap(56, 56, 56)
-                .addGroup(updateMathPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addGap(49, 49, 49)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addGroup(updateMathPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(deleteMathButton)
                     .addComponent(updateMathButton))
@@ -1457,7 +1476,9 @@ public class NewJFrame extends javax.swing.JFrame {
             }
             DefaultListModel listModel = new DefaultListModel();
             for (Mathima mathima : mathimata) {
-                listModel.addElement(mathima.getTitlos());
+                if (mathima instanceof Theoria){
+                    listModel.addElement(mathima.getTitlos());
+                }
             }
             proapNew.setModel(listModel);
         }
@@ -1549,7 +1570,9 @@ public class NewJFrame extends javax.swing.JFrame {
                 List<Mathima> proap = ((Theoria)math).getProap();
                 DefaultListModel listModel = new DefaultListModel();
                 for (Mathima mathima : mathimata) {
-                    listModel.addElement(mathima.getTitlos());
+                    if(mathima instanceof Theoria){
+                        listModel.addElement(mathima.getTitlos());
+                    }
                 }
                 jList1.setModel(listModel);
                 int[] selectedIndices = new int[proap.size()];
@@ -1755,6 +1778,7 @@ public class NewJFrame extends javax.swing.JFrame {
             JOptionPane.WARNING_MESSAGE);
         }
         else if(admin.getDilwseis()== true){
+            jComboBox2.removeAllItems();
             System.out.println(admin.getDilwseis());
             FileInputStream fi = null;
             ObjectInputStream oi = null;
@@ -1816,9 +1840,7 @@ public class NewJFrame extends javax.swing.JFrame {
                     System.err.println("An IOException was caught: " + ex2.getMessage());
                 }
             }
-        }catch (IOException ex) {
-            Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }catch (ClassNotFoundException ex) {
+        }catch (IOException | ClassNotFoundException ex) {
             Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
         }finally{
             try{
@@ -1836,7 +1858,20 @@ public class NewJFrame extends javax.swing.JFrame {
                 mathimaDilwsis = mathima;
             }
         }
-        std.addDilwsi(mathimaDilwsis, "");
+        LocalDate date = LocalDate.now(); 
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        if(std.addDilwsi(mathimaDilwsis, date.format(formatter))){
+            JOptionPane.showMessageDialog(null,
+            "H Dhlwsh egine me epityxia",
+            "Info",
+            JOptionPane.INFORMATION_MESSAGE);
+        }
+        else{
+            JOptionPane.showMessageDialog(null,
+            "Lathos sth dhlwsh mathimatos",
+            "Warning",
+            JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_prosthikhDhlwshsStdActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -1919,7 +1954,7 @@ public class NewJFrame extends javax.swing.JFrame {
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         loginAs = "Student";
-        goToLoginPage();
+        goToLoginPage();       
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
@@ -1944,6 +1979,10 @@ public class NewJFrame extends javax.swing.JFrame {
             jList1.setEnabled(false);
         }
     }//GEN-LAST:event_jRadioButton3ItemStateChanged
+
+    private void foititisDilwsiFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_foititisDilwsiFieldMouseClicked
+        foititisDilwsiField.setText(std.getDilwseis());
+    }//GEN-LAST:event_foititisDilwsiFieldMouseClicked
     
     public void clearLoginFields(){
         passwordLogin.setText("");
@@ -2058,6 +2097,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JButton dhlwshStd;
     private javax.swing.JPanel dhlwshStdPage;
     private javax.swing.JButton foiththsLogoutButton;
+    private javax.swing.JTextField foititisDilwsiField;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
@@ -2071,7 +2111,6 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
@@ -2079,6 +2118,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

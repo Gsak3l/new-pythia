@@ -16,7 +16,7 @@ public class Mathima implements Serializable{
     
     @Override
     public String toString() {
-        return "Mathima{" + "kwdikos=" + kwdikos + ", titlos=" + titlos + '}';
+        return "Mathima {" + "kwdikos=" + kwdikos + ", titlos=" + titlos + '}';
     }
     public String getTitlos() {
         return titlos;

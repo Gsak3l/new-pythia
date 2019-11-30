@@ -23,6 +23,10 @@ public class Theoria extends Mathima{
         return proapaitoumena;
     }
     
+    public boolean hasProapaitoumena(){
+        return !proapaitoumena.isEmpty();
+    }
+    
     public String getProapaitoumena(){
         String s="";
         for (Mathima proapaitoumeno : proapaitoumena){
