@@ -1149,8 +1149,6 @@ public class NewJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-        FileInputStream fi=null;
-        ObjectInputStream oi=null;
         try {
             switch(loginAs){
                 case "Admin":
@@ -1227,8 +1225,12 @@ public class NewJFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Someone changed or removed the file manually, File is resetting! Contact an admin");
         }finally{
             try{
-                oi.close();
-                fi.close();
+                if (oi != null){
+                    oi.close();
+                }
+                if (fi != null){
+                    fi.close();
+                }
                 System.out.println("ekleisa");
             } catch (IOException ex) {
                 Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
@@ -1238,18 +1240,28 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_loginButtonActionPerformed
 
     public void resetAccountFile(){
-        Account admin = new Admin("admin", "admin", "Γιώργος Στίνης");
+        Account administrator = new Admin("admin", "admin", "Γιώργος Στίνης");
         try{
             f = new FileOutputStream(new File("Admin.txt"));
             o = new ObjectOutputStream(f);
-            o.writeObject(admin);
+            o.writeObject(administrator);
             o.close();
             f.close();
-            File f = new File("Foithtes.txt");
-            f.delete();
-            f = new File("Professors.txt");
-            f.delete();
-            
+            File file = new File("Foithtes.txt");
+            if (oi != null){
+                oi.close();
+            }
+            if (fi != null){
+                fi.close();
+            }
+            if (file.exists()){
+                file.delete();
+                System.out.println("yparxo");
+            }
+            file = new File("Professors.txt");
+            if (file.exists()){
+                file.delete();
+            }
         } catch (IOException ex) {
             Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -2078,6 +2090,8 @@ public class NewJFrame extends javax.swing.JFrame {
     Mathima math;
     FileOutputStream f = null;
     ObjectOutputStream o = null;
+    FileInputStream fi=null;
+    ObjectInputStream oi=null;
     String loginAs;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AdminPage;
