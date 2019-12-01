@@ -136,17 +136,33 @@ public class Foititis extends Account {
     public int getAM(){
         return this.AM;
     }
-
+    public boolean getDilwsi(String kodMath){
+        for(Dilwsi dil:dilwseis) {
+            if(dil.getMathima().getKwdikos().equals(kodMath)) {
+                return true;
+            }
+        }
+        return false;
+    }
     public String getDilwseis() {
-        int counter = 1;
         String olo = "";        
         for(Dilwsi dil:dilwseis){
             String mathima = String.valueOf(dil.getMathima());
             String hmerom = String.valueOf(dil.getHmeromDilwsis());
-            olo += counter + ") "+ mathima+": "+hmerom+"\n";
-            counter++;
+            olo += mathima+":"+hmerom+"\n";
         }
         return olo;
+    }
+    public List<Dilwsi> getDilwsi3(){
+        return dilwseis;
+    }
+    public Dilwsi getDilwsi2(String kodMath){
+        for(Dilwsi dil:dilwseis) {
+            if(dil.getMathima().getKwdikos().equals(kodMath)) {
+                return dil;
+            }
+        }
+        return null;
     }
 
     public void setDilwseis(List<Dilwsi> dilwseis) {

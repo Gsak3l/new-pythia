@@ -5,6 +5,7 @@ import MVC.Model.Kathigitis;
 import MVC.Model.Foititis;
 import MVC.Model.Account;
 import MVC.Model.Admin;
+import MVC.Model.Dilwsi;
 import MVC.Model.Theoria;
 import java.io.EOFException;
 import java.io.File;
@@ -46,6 +47,7 @@ public class NewJFrame extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
+        jTextField3 = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jButton11 = new javax.swing.JButton();
         jButton12 = new javax.swing.JButton();
@@ -73,7 +75,7 @@ public class NewJFrame extends javax.swing.JFrame {
         ShowAmStd = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane10 = new javax.swing.JScrollPane();
-        foititisDilwsiField = new javax.swing.JTextArea();
+        DilwsiStd = new javax.swing.JTextArea();
         KathigitisPage = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         kathigitisLogoutButton = new javax.swing.JButton();
@@ -158,6 +160,24 @@ public class NewJFrame extends javax.swing.JFrame {
         jComboBox2 = new javax.swing.JComboBox<>();
         jComboBox3 = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
+        SearchStdProf = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jButton15 = new javax.swing.JButton();
+        profMathList = new javax.swing.JComboBox<>();
+        onomaFoitMath = new javax.swing.JComboBox<>();
+        jLabel12 = new javax.swing.JLabel();
+        vathmologiaProfPage = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        vathmologiaProfAm = new javax.swing.JTextField();
+        VathmologiaProfOnoma = new javax.swing.JTextField();
+        vathmologiaProfMathima = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        vathmosProfVath = new javax.swing.JTextField();
+        vathmologiaProfApply = new javax.swing.JButton();
+
+        jTextField3.setText("jTextField3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.CardLayout());
@@ -229,14 +249,15 @@ public class NewJFrame extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(100, 100, 100)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(passwordLogin)
-                    .addComponent(usernameLogin)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jToggleButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
-                        .addGap(2, 2, 2)
-                        .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(148, Short.MAX_VALUE))
+                        .addGap(1, 1, 1)
+                        .addComponent(jToggleButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(passwordLogin)
+                    .addComponent(usernameLogin))
+                .addContainerGap(352, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -249,7 +270,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(loginButton)
                     .addComponent(jToggleButton1))
-                .addContainerGap(217, Short.MAX_VALUE))
+                .addContainerGap(293, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, "card2");
@@ -385,61 +406,61 @@ public class NewJFrame extends javax.swing.JFrame {
 
         jLabel6.setText("Dilwsi :");
 
-        foititisDilwsiField.setColumns(20);
-        foititisDilwsiField.setRows(5);
-        foititisDilwsiField.addMouseListener(new java.awt.event.MouseAdapter() {
+        DilwsiStd.setColumns(20);
+        DilwsiStd.setRows(5);
+        DilwsiStd.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                foititisDilwsiFieldMouseClicked(evt);
+                DilwsiStdMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                DilwsiStdMouseEntered(evt);
             }
         });
-        jScrollPane10.setViewportView(foititisDilwsiField);
+        jScrollPane10.setViewportView(DilwsiStd);
 
         javax.swing.GroupLayout FoiththsPageLayout = new javax.swing.GroupLayout(FoiththsPage);
         FoiththsPage.setLayout(FoiththsPageLayout);
         FoiththsPageLayout.setHorizontalGroup(
             FoiththsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(FoiththsPageLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(FoiththsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(FoiththsPageLayout.createSequentialGroup()
-                        .addComponent(dhlwshStd)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(foiththsLogoutButton))
+                        .addContainerGap()
+                        .addGroup(FoiththsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(FoiththsPageLayout.createSequentialGroup()
+                                .addComponent(dhlwshStd)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(foiththsLogoutButton))
+                            .addGroup(FoiththsPageLayout.createSequentialGroup()
+                                .addGroup(FoiththsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel2))
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(FoiththsPageLayout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(FoiththsPageLayout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addGroup(FoiththsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel4))
-                .addGap(100, 100, 100)
-                .addGroup(FoiththsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(FoiththsPageLayout.createSequentialGroup()
+                        .addGap(62, 62, 62)
+                        .addComponent(jLabel4)
+                        .addGap(100, 100, 100)
                         .addComponent(ShowAmStd, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(296, Short.MAX_VALUE))
+                        .addGap(0, 289, Short.MAX_VALUE))
                     .addGroup(FoiththsPageLayout.createSequentialGroup()
-                        .addComponent(jScrollPane10)
-                        .addGap(31, 31, 31))))
+                        .addContainerGap()
+                        .addComponent(jScrollPane10)))
+                .addContainerGap())
         );
         FoiththsPageLayout.setVerticalGroup(
             FoiththsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(FoiththsPageLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
-                .addGroup(FoiththsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(FoiththsPageLayout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addGroup(FoiththsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(ShowAmStd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(46, 46, 46)
-                        .addComponent(jLabel6))
-                    .addGroup(FoiththsPageLayout.createSequentialGroup()
-                        .addGap(100, 100, 100)
-                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
+                .addGap(43, 43, 43)
+                .addGroup(FoiththsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(ShowAmStd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(58, 58, 58)
+                .addComponent(jLabel6)
+                .addGap(28, 28, 28)
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
                 .addGroup(FoiththsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(foiththsLogoutButton)
                     .addComponent(dhlwshStd))
@@ -458,6 +479,11 @@ public class NewJFrame extends javax.swing.JFrame {
         });
 
         jButton14.setText("Vathmologia");
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout KathigitisPageLayout = new javax.swing.GroupLayout(KathigitisPage);
         KathigitisPage.setLayout(KathigitisPageLayout);
@@ -467,7 +493,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(KathigitisPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, KathigitisPageLayout.createSequentialGroup()
-                        .addGap(0, 337, Short.MAX_VALUE)
+                        .addGap(0, 498, Short.MAX_VALUE)
                         .addComponent(kathigitisLogoutButton))
                     .addGroup(KathigitisPageLayout.createSequentialGroup()
                         .addComponent(jLabel3)
@@ -485,7 +511,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(73, 73, 73)
                 .addComponent(jButton14)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 264, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 309, Short.MAX_VALUE)
                 .addComponent(kathigitisLogoutButton)
                 .addContainerGap())
         );
@@ -1174,6 +1200,135 @@ public class NewJFrame extends javax.swing.JFrame {
 
         getContentPane().add(dhlwshStdPage, "card15");
 
+        jLabel7.setText("Μαθήματα που Διδάσκω");
+
+        jButton15.setText("Search");
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
+
+        profMathList.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                profMathListPropertyChange(evt);
+            }
+        });
+
+        onomaFoitMath.setEnabled(false);
+
+        jLabel12.setText("<- Φοιτητές που εχουν το μάθημα");
+
+        javax.swing.GroupLayout SearchStdProfLayout = new javax.swing.GroupLayout(SearchStdProf);
+        SearchStdProf.setLayout(SearchStdProfLayout);
+        SearchStdProfLayout.setHorizontalGroup(
+            SearchStdProfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SearchStdProfLayout.createSequentialGroup()
+                .addGap(75, 75, 75)
+                .addGroup(SearchStdProfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(profMathList, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(97, 97, 97)
+                .addGroup(SearchStdProfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton15)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(onomaFoitMath, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(137, Short.MAX_VALUE))
+        );
+        SearchStdProfLayout.setVerticalGroup(
+            SearchStdProfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SearchStdProfLayout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addGroup(SearchStdProfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel12))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(SearchStdProfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(profMathList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(onomaFoitMath, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(88, 88, 88)
+                .addComponent(jButton15)
+                .addContainerGap(270, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(SearchStdProf, "card17");
+
+        jLabel8.setText("AM :");
+
+        jLabel9.setText("Onomateponumo :");
+
+        jLabel10.setText("Mathima :");
+
+        vathmologiaProfAm.setEditable(false);
+
+        VathmologiaProfOnoma.setEditable(false);
+
+        vathmologiaProfMathima.setEditable(false);
+
+        jLabel11.setText("Vathmos :");
+
+        vathmosProfVath.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                vathmosProfVathActionPerformed(evt);
+            }
+        });
+
+        vathmologiaProfApply.setText("Apply");
+        vathmologiaProfApply.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                vathmologiaProfApplyActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout vathmologiaProfPageLayout = new javax.swing.GroupLayout(vathmologiaProfPage);
+        vathmologiaProfPage.setLayout(vathmologiaProfPageLayout);
+        vathmologiaProfPageLayout.setHorizontalGroup(
+            vathmologiaProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(vathmologiaProfPageLayout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addGroup(vathmologiaProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel10))
+                .addGap(37, 37, 37)
+                .addGroup(vathmologiaProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(vathmologiaProfAm, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
+                    .addComponent(VathmologiaProfOnoma)
+                    .addComponent(vathmologiaProfMathima)
+                    .addComponent(vathmosProfVath))
+                .addContainerGap(355, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, vathmologiaProfPageLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(vathmologiaProfApply)
+                .addContainerGap())
+        );
+        vathmologiaProfPageLayout.setVerticalGroup(
+            vathmologiaProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(vathmologiaProfPageLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(vathmologiaProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(vathmologiaProfAm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(vathmologiaProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(VathmologiaProfOnoma, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(vathmologiaProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(vathmologiaProfMathima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(vathmologiaProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(vathmosProfVath, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 270, Short.MAX_VALUE)
+                .addComponent(vathmologiaProfApply)
+                .addContainerGap())
+        );
+
+        getContentPane().add(vathmologiaProfPage, "card18");
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -1370,6 +1525,9 @@ public class NewJFrame extends javax.swing.JFrame {
         getContentPane().add(AdminPage);
         getContentPane().repaint();
         getContentPane().revalidate();
+        
+        
+        
     }//GEN-LAST:event_profNewSubmitActionPerformed
 
     private void addProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addProfActionPerformed
@@ -2020,10 +2178,120 @@ public class NewJFrame extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
-    private void foititisDilwsiFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_foititisDilwsiFieldMouseClicked
+    private void DilwsiStdMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DilwsiStdMouseEntered
+       
+    }//GEN-LAST:event_DilwsiStdMouseEntered
+
+    private void DilwsiStdMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DilwsiStdMouseClicked
+        DilwsiStd.setText(std.getDilwseis());
+    }//GEN-LAST:event_DilwsiStdMouseClicked
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        profMathList.removeAllItems();
+        for(Mathima list: prof.getMathimata()) {
+            profMathList.addItem(list.getTitlos());
+        }
+        profMathList.setSelectedIndex(-1);
+        getContentPane().removeAll();
+        getContentPane().repaint();
+        getContentPane().revalidate();
+        getContentPane().add(SearchStdProf);
+        getContentPane().repaint();
+        getContentPane().revalidate();     
+        
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+//        String usernameFoititi = UsernameStdProf.getText();
+//        std = admin.searchStd(usernameFoititi);
+//        
+//        for(Mathima list:prof.getMathimata()){
+//            if(std.getDilwsi(list.getKwdikos())) {
+//                getContentPane().removeAll();
+//                getContentPane().repaint();
+//                getContentPane().revalidate();
+//                getContentPane().add(vathmologiaProfPage);
+//                getContentPane().repaint();
+//                getContentPane().revalidate(); 
+//                vathmologiaProfAm.setText(String.valueOf(std.getAM()));
+//                VathmologiaProfOnoma.setText(std.getOnomateponumo());
+//                vathmologiaProfMathima.setText(list.getTitlos());
+//            }
+//        }
+    }//GEN-LAST:event_jButton15ActionPerformed
+
+    private void vathmosProfVathActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vathmosProfVathActionPerformed
         // TODO add your handling code here:
-        foititisDilwsiField.setText(std.getDilwseis());
-    }//GEN-LAST:event_foititisDilwsiFieldMouseClicked
+    }//GEN-LAST:event_vathmosProfVathActionPerformed
+
+    private void vathmologiaProfApplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vathmologiaProfApplyActionPerformed
+//        int vathmos = Integer.parseInt(vathmosProfVath.getText());
+//        
+//        String usernameFoititi = UsernameStdProf.getText();
+//        std = admin.searchStd(usernameFoititi);
+//        
+//        for(Mathima list:prof.getMathimata()){
+//            if(std.getDilwsi(list.getKwdikos())) {
+//             std.getDilwsi2(usernameFoititi).setVathmos(vathmos);
+//            }
+//        }
+    }//GEN-LAST:event_vathmologiaProfApplyActionPerformed
+
+    private void profMathListPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_profMathListPropertyChange
+        String mathStr = String.valueOf(profMathList.getSelectedItem());
+        Mathima math;
+        for(Mathima profMath: prof.getMathimata()) {
+            if(profMath.getTitlos().equals(mathStr)) {
+                math = profMath;
+                setStdList(math);
+            }
+        }
+    }//GEN-LAST:event_profMathListPropertyChange
+    public void setStdList(Mathima math) {
+        onomaFoitMath.setEnabled(true);
+        List<Foititis> stdList = getStdsFromFile();
+        for(Foititis std: stdList) {
+            for(Dilwsi dil: std.getDilwsi3()) {
+                if(String.valueOf(profMathList.getSelectedItem()).equals(dil.getMathima().getTitlos())) {
+                    onomaFoitMath.setSelectedItem(std.getUsername());
+                    break;
+                }
+            }
+        }
+        onomaFoitMath.setSelectedIndex(-1); 
+   }
+    
+    public List<Foititis> getStdsFromFile() {
+        FileInputStream fi=null;
+        ObjectInputStream oi=null;
+        List<Foititis> stdList = new ArrayList<>();
+        try {
+            fi = new FileInputStream(new File("Foithtes.txt"));
+            oi = new ObjectInputStream(fi);
+            while (true){
+                try{
+                    stdList.add((Foititis)oi.readObject());
+                }catch (EOFException ex1) {
+                    break; //EOF reached.
+                }catch (IOException ex2) {
+                  System.err.println("An IOException was caught: " + ex2.getMessage());
+                }catch (ClassNotFoundException ex) {
+                    Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{
+            try{
+                oi.close();
+                fi.close();
+                System.out.println("ekleisa");
+            } catch (IOException ex) {
+                Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return stdList;
+    }
     
     public void clearLoginFields(){
         passwordLogin.setText("");
@@ -2123,9 +2391,12 @@ public class NewJFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AdminPage;
     private javax.swing.JButton DhloseisEnable;
+    private javax.swing.JTextArea DilwsiStd;
     private javax.swing.JPanel FoiththsPage;
     private javax.swing.JPanel KathigitisPage;
+    private javax.swing.JPanel SearchStdProf;
     private javax.swing.JTextField ShowAmStd;
+    private javax.swing.JTextField VathmologiaProfOnoma;
     private javax.swing.JButton addMath;
     private javax.swing.JButton addProf;
     private javax.swing.JButton addStd;
@@ -2138,13 +2409,13 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JButton dhlwshStd;
     private javax.swing.JPanel dhlwshStdPage;
     private javax.swing.JButton foiththsLogoutButton;
-    private javax.swing.JTextArea foititisDilwsiField;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -2156,11 +2427,17 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -2178,6 +2455,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JTextField jTextField3;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JButton kathigitisLogoutButton;
     private javax.swing.JButton loginButton;
@@ -2192,9 +2470,11 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JPanel newMathPage;
     private javax.swing.JPanel newProfPage;
     private javax.swing.JPanel newStdPage;
+    private javax.swing.JComboBox<String> onomaFoitMath;
     private javax.swing.JPasswordField passwordLogin;
     private javax.swing.JList<String> proapNew;
     private javax.swing.JTextField profIdikotita;
+    private javax.swing.JComboBox<String> profMathList;
     private javax.swing.JList<String> profMathimata;
     private javax.swing.JButton profNewSubmit;
     private javax.swing.JTextField profOnomateponimo;
@@ -2235,5 +2515,10 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JTextField updateStdPassword;
     private javax.swing.JTextField updateStdUsername;
     private javax.swing.JTextField usernameLogin;
+    private javax.swing.JTextField vathmologiaProfAm;
+    private javax.swing.JButton vathmologiaProfApply;
+    private javax.swing.JTextField vathmologiaProfMathima;
+    private javax.swing.JPanel vathmologiaProfPage;
+    private javax.swing.JTextField vathmosProfVath;
     // End of variables declaration//GEN-END:variables
 }

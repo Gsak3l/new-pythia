@@ -22,6 +22,10 @@ public class Dilwsi implements Serializable{
     public String getHmeromDilwsis() {
         return hmeromDilwsis;
     }
+
+    public void setVathmos(float vathmos) {
+        this.vathmos = vathmos;
+    }
     
     
 }
