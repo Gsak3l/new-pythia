@@ -1209,14 +1209,6 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
-        profMathList.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                profMathListPropertyChange(evt);
-            }
-        });
-
-        onomaFoitMath.setEnabled(false);
-
         jLabel12.setText("<- Φοιτητές που εχουν το μάθημα");
 
         javax.swing.GroupLayout SearchStdProfLayout = new javax.swing.GroupLayout(SearchStdProf);
@@ -1233,7 +1225,7 @@ public class NewJFrame extends javax.swing.JFrame {
                     .addComponent(jButton15)
                     .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(onomaFoitMath, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(137, Short.MAX_VALUE))
+                .addContainerGap(136, Short.MAX_VALUE))
         );
         SearchStdProfLayout.setVerticalGroup(
             SearchStdProfLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1248,7 +1240,7 @@ public class NewJFrame extends javax.swing.JFrame {
                     .addComponent(onomaFoitMath, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(88, 88, 88)
                 .addComponent(jButton15)
-                .addContainerGap(270, Short.MAX_VALUE))
+                .addContainerGap(272, Short.MAX_VALUE))
         );
 
         getContentPane().add(SearchStdProf, "card17");
@@ -2192,6 +2184,12 @@ public class NewJFrame extends javax.swing.JFrame {
             profMathList.addItem(list.getTitlos());
         }
         profMathList.setSelectedIndex(-1);
+        onomaFoitMath.removeAllItems();
+        List<Foititis> stdList = getStdsFromFile();
+        for (Foititis std : stdList){
+            onomaFoitMath.addItem(std.getUsername());
+        }
+        onomaFoitMath.setSelectedIndex(-1);
         getContentPane().removeAll();
         getContentPane().repaint();
         getContentPane().revalidate();
@@ -2202,22 +2200,68 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-//        String usernameFoititi = UsernameStdProf.getText();
-//        std = admin.searchStd(usernameFoititi);
-//        
-//        for(Mathima list:prof.getMathimata()){
-//            if(std.getDilwsi(list.getKwdikos())) {
-//                getContentPane().removeAll();
-//                getContentPane().repaint();
-//                getContentPane().revalidate();
-//                getContentPane().add(vathmologiaProfPage);
-//                getContentPane().repaint();
-//                getContentPane().revalidate(); 
-//                vathmologiaProfAm.setText(String.valueOf(std.getAM()));
-//                VathmologiaProfOnoma.setText(std.getOnomateponumo());
-//                vathmologiaProfMathima.setText(list.getTitlos());
-//            }
-//        }
+        String selectedMath = String.valueOf(profMathList.getSelectedItem());
+        String selectedStd = String.valueOf(onomaFoitMath.getSelectedItem());
+        FileInputStream fi = null;
+        ObjectInputStream oi = null;
+        Account a;
+        try{
+            fi = new FileInputStream(new File("Foithtes.txt"));
+            oi = new ObjectInputStream(fi);
+            while (true){
+                try{
+                    a = (Account)oi.readObject();
+                    if (a instanceof Foititis){
+                        if(a.getUsername().equals(selectedStd)){
+                            std = (Foititis)a;
+                        }
+                    }
+                }catch (EOFException ex1) {
+                    break; //EOF reached.
+                }catch (IOException ex2) {
+                    System.err.println("An IOException was caught: " + ex2.getMessage());
+                }
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{
+            try{
+                oi.close();
+                fi.close();
+                System.out.println("ekleisa");
+            }catch(IOException ex) {
+                System.err.println("An IOException was caught: " + ex.getMessage());
+            }
+        }
+        boolean flag = false;
+        for(Dilwsi dil : std.getDilwsi3()){
+            if (selectedMath.equals(dil.getMathima().getTitlos())){
+                flag = true;
+                getContentPane().removeAll();
+                getContentPane().repaint();
+                getContentPane().revalidate();
+                getContentPane().add(vathmologiaProfPage);
+                getContentPane().repaint();
+                getContentPane().revalidate(); 
+                vathmologiaProfAm.setText(String.valueOf(std.getAM()));
+                VathmologiaProfOnoma.setText(std.getOnomateponumo());
+                vathmologiaProfMathima.setText(dil.getMathima().getTitlos());
+                vathmosProfVath.setText(String.valueOf(dil.getVathmos()));
+                break;
+            }
+        }
+        if (!flag){
+            JOptionPane.showMessageDialog(null,
+            "Lathos syndyasmos",
+            "Warning",
+            JOptionPane.WARNING_MESSAGE);
+        }
+        
+
+                
+                
     }//GEN-LAST:event_jButton15ActionPerformed
 
     private void vathmosProfVathActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vathmosProfVathActionPerformed
@@ -2225,41 +2269,26 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_vathmosProfVathActionPerformed
 
     private void vathmologiaProfApplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vathmologiaProfApplyActionPerformed
-//        int vathmos = Integer.parseInt(vathmosProfVath.getText());
-//        
-//        String usernameFoititi = UsernameStdProf.getText();
-//        std = admin.searchStd(usernameFoititi);
-//        
-//        for(Mathima list:prof.getMathimata()){
-//            if(std.getDilwsi(list.getKwdikos())) {
-//             std.getDilwsi2(usernameFoititi).setVathmos(vathmos);
-//            }
-//        }
-    }//GEN-LAST:event_vathmologiaProfApplyActionPerformed
-
-    private void profMathListPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_profMathListPropertyChange
-        String mathStr = String.valueOf(profMathList.getSelectedItem());
-        Mathima math;
-        for(Mathima profMath: prof.getMathimata()) {
-            if(profMath.getTitlos().equals(mathStr)) {
-                math = profMath;
-                setStdList(math);
-            }
-        }
-    }//GEN-LAST:event_profMathListPropertyChange
-    public void setStdList(Mathima math) {
-        onomaFoitMath.setEnabled(true);
-        List<Foititis> stdList = getStdsFromFile();
-        for(Foititis std: stdList) {
-            for(Dilwsi dil: std.getDilwsi3()) {
-                if(String.valueOf(profMathList.getSelectedItem()).equals(dil.getMathima().getTitlos())) {
-                    onomaFoitMath.setSelectedItem(std.getUsername());
-                    break;
+        float vathmos = Float.parseFloat(vathmosProfVath.getText());   
+        for(Mathima list:prof.getMathimata()){
+            if (list.getTitlos().equals(vathmologiaProfMathima.getText())){
+                LocalDate date = LocalDate.now(); 
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                if(std.addVathmos(list, date.format(formatter), vathmos)){
+                    JOptionPane.showMessageDialog(null,
+                    "H vathmologia perastike me epityxia",
+                    "Info",
+                    JOptionPane.INFORMATION_MESSAGE);
+                }
+                else{
+                    JOptionPane.showMessageDialog(null,
+                    "Lathos sth eisagwgi vathmologias",
+                    "Warning",
+                    JOptionPane.WARNING_MESSAGE);
                 }
             }
         }
-        onomaFoitMath.setSelectedIndex(-1); 
-   }
+    }//GEN-LAST:event_vathmologiaProfApplyActionPerformed
     
     public List<Foititis> getStdsFromFile() {
         FileInputStream fi=null;
@@ -2271,6 +2300,7 @@ public class NewJFrame extends javax.swing.JFrame {
             while (true){
                 try{
                     stdList.add((Foititis)oi.readObject());
+                    System.out.println("Eftasa edo");
                 }catch (EOFException ex1) {
                     break; //EOF reached.
                 }catch (IOException ex2) {

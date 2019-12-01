@@ -1,7 +1,15 @@
 package MVC.Model;
 
+import MVC.View_Controller.NewJFrame;
+import java.io.EOFException;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Kathigitis extends Account {
     private String eidikotita;
@@ -48,4 +56,5 @@ public class Kathigitis extends Account {
     public String toString() {
         return this.getUsername();
     }
+    
 }

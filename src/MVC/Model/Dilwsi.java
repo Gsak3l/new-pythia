@@ -15,6 +15,10 @@ public class Dilwsi implements Serializable{
         this.mathima = mathima;
     }
 
+    public float getVathmos() {
+        return vathmos;
+    }
+
     public Mathima getMathima() {
         return mathima;
     }
@@ -23,7 +27,8 @@ public class Dilwsi implements Serializable{
         return hmeromDilwsis;
     }
 
-    public void setVathmos(float vathmos) {
+    public void setVathmos(String hmeromExetasis, float vathmos) {
+        this.hmeromExetasis = hmeromExetasis;
         this.vathmos = vathmos;
     }
     

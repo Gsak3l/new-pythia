@@ -35,12 +35,47 @@ public class Foititis extends Account {
         }
     }
     
+    public boolean addVathmos(Mathima math, String hmeromEksetashs, float vathmos){
+        if(!elegxosVathmoy(vathmos)){
+            return false;
+        }
+        Dilwsi dilwsi = null;
+        for(int i = 0; i < dilwseis.size(); i++) {
+            if (dilwseis.get(i).getMathima().getTitlos().equals(math.getTitlos())){
+                dilwsi = dilwseis.get(i);
+                dilwseis.remove(i);
+                break;
+            }
+        }
+        if(dilwsi != null){
+            dilwsi.setVathmos(hmeromEksetashs, vathmos);
+            dilwseis.add(dilwsi);
+            updateStdFile(getStdFromFile()); 
+            return true;
+        }
+        System.out.println("H vathmologia toy mathimatos apetyxe");
+        return false;
+    }
+    
+    public boolean elegxosVathmoy(float vathmos){
+        if (vathmos>=0 && vathmos<=10){
+            return true;
+        }
+        return false;
+    }
+    
     public boolean elegxosData(Mathima mathima){
         if (mathima instanceof Theoria){
             System.out.println("Eimai theoria");
             for(Dilwsi dilwsi : dilwseis){
                 if (((Theoria) mathima).hasProapaitoumena()){
-                    //Elegxei an exei perasei to mathima
+                    List<Mathima> proap = ((Theoria) mathima).getProap();
+                    if(elegxosPerasmenonProap(proap)){
+                        return true;
+                    }
+                    else{
+                        return false;
+                    }
                 }
                 if (dilwsi.getMathima().getKwdikos().equals(mathima.getKwdikos())){
                     System.out.println("Yparxo hdh sth lista theoria");
@@ -68,25 +103,50 @@ public class Foititis extends Account {
         return true;
     }
     
+    public boolean elegxosPerasmenonProap(List<Mathima> proap){
+        boolean flagDilwsis = false;
+        for (Mathima math : proap){
+            for (Dilwsi dilwsi : dilwseis){
+                if (dilwsi.getMathima().getTitlos().equals(math.getTitlos())){
+                    if(dilwsi.getVathmos()<5){
+                        return false;
+                    }
+                    flagDilwsis = true;
+                }
+            }
+            if (!flagDilwsis){
+                return false;
+            }
+        }
+        return true;
+    }
+    
+    
     public void updateStdFile(List<Foititis> stds){
         FileOutputStream f=null;
         ObjectOutputStream o=null;
-        try {
-            f = new FileOutputStream(new File("Foithtes.txt"));
-            o = new ObjectOutputStream(f);  
-            for (Foititis std : stds){
-               o.writeObject(std);
-            }   
-        } catch (IOException ex) {
-            Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try{
-                o.close();
-                f.close();
-                System.out.println("ekleisa");
-            }catch(IOException ex) {
-                System.err.println("An IOException was caught: " + ex.getMessage());
+        File file = new File("Foithtes.txt");
+        if (file.exists()){
+            try {
+                f = new FileOutputStream(file);
+                o = new ObjectOutputStream(f);  
+                for (Foititis std : stds){
+                   o.writeObject(std);
+                }   
+            } catch (IOException ex) {
+                Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+            } finally {
+                try{
+                    o.close();
+                    f.close();
+                    System.out.println("ekleisa");
+                }catch(IOException ex) {
+                    System.err.println("An IOException was caught: " + ex.getMessage());
+                }
             }
+        }
+        else {
+            System.out.println("Den yparxei to arxeio");
         }
     }
     
@@ -94,42 +154,48 @@ public class Foititis extends Account {
         List<Foititis> student = new ArrayList<>();
         FileInputStream fi = null;
         ObjectInputStream oi = null;
+        File file = new File("Foithtes.txt");        
         Account a;
-          try{
-            fi = new FileInputStream(new File("Foithtes.txt"));
-            oi = new ObjectInputStream(fi);
-            while (true){
+        if (file.exists()){
+            try{
+                fi = new FileInputStream(file);
+                oi = new ObjectInputStream(fi);
+                while (true){
+                    try{
+                      a = (Account)oi.readObject();
+                      if (a instanceof Foititis){
+                          if(a.getUsername().equals(this.getUsername())){
+                              System.out.println("Ego eimai");
+                              student.add(this);
+                          }
+                          else{
+                            student.add((Foititis)a);
+                          }
+                      }
+                    }catch (EOFException ex1) {
+                        break; //EOF reached.
+                    }catch (IOException ex2) {
+                        System.err.println("An IOException was caught: " + ex2.getMessage());
+                    }
+                }
+            } catch (IOException ex) {
+                Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }finally{
                 try{
-                  a = (Account)oi.readObject();
-                  if (a instanceof Foititis){
-                      if(a.getUsername().equals(this.getUsername())){
-                          System.out.println("Ego eimai");
-                          student.add(this);
-                      }
-                      else{
-                        student.add((Foititis)a);
-                      }
-                  }
-                }catch (EOFException ex1) {
-                    break; //EOF reached.
-                }catch (IOException ex2) {
-                    System.err.println("An IOException was caught: " + ex2.getMessage());
+                    oi.close();
+                    fi.close();
+                    System.out.println("ekleisa");
+                }catch(IOException ex) {
+                    System.err.println("An IOException was caught: " + ex.getMessage());
                 }
             }
-        } catch (IOException ex) {
-            Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }finally{
-            try{
-                oi.close();
-                fi.close();
-                System.out.println("ekleisa");
-            }catch(IOException ex) {
-                System.err.println("An IOException was caught: " + ex.getMessage());
-            }
+            return student;
         }
-        return student;
+        else{
+            return null;
+        }
     }
     
     
