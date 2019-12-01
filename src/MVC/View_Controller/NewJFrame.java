@@ -54,6 +54,7 @@ public class NewJFrame extends javax.swing.JFrame {
         usernameLogin = new javax.swing.JTextField();
         passwordLogin = new javax.swing.JPasswordField();
         loginButton = new javax.swing.JButton();
+        jToggleButton1 = new javax.swing.JToggleButton();
         AdminPage = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         adminLogoutButton = new javax.swing.JButton();
@@ -71,10 +72,12 @@ public class NewJFrame extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         ShowAmStd = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        foititisDilwsiField = new javax.swing.JTextField();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        foititisDilwsiField = new javax.swing.JTextArea();
         KathigitisPage = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         kathigitisLogoutButton = new javax.swing.JButton();
+        jButton14 = new javax.swing.JButton();
         newStdPage = new javax.swing.JPanel();
         stdUsername = new javax.swing.JTextField();
         stdPassword = new javax.swing.JTextField();
@@ -190,7 +193,7 @@ public class NewJFrame extends javax.swing.JFrame {
                     .addComponent(jButton13)
                     .addComponent(jButton11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(288, Short.MAX_VALUE))
+                .addContainerGap(277, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -201,7 +204,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addComponent(jButton12)
                 .addGap(18, 18, 18)
                 .addComponent(jButton13)
-                .addContainerGap(228, Short.MAX_VALUE))
+                .addContainerGap(220, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2, "card16");
@@ -213,18 +216,27 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
+        jToggleButton1.setText("Back");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(115, 115, 115)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(loginButton)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(usernameLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                        .addComponent(passwordLogin)))
-                .addContainerGap(381, Short.MAX_VALUE))
+                .addGap(100, 100, 100)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(passwordLogin)
+                    .addComponent(usernameLogin)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jToggleButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
+                        .addGap(2, 2, 2)
+                        .addComponent(loginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(148, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -234,8 +246,10 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(passwordLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(loginButton)
-                .addContainerGap(301, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(loginButton)
+                    .addComponent(jToggleButton1))
+                .addContainerGap(217, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, "card2");
@@ -323,7 +337,7 @@ public class NewJFrame extends javax.swing.JFrame {
                     .addGroup(AdminPageLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(DhloseisEnable)))
-                .addContainerGap(382, Short.MAX_VALUE))
+                .addContainerGap(371, Short.MAX_VALUE))
         );
         AdminPageLayout.setVerticalGroup(
             AdminPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -342,7 +356,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addComponent(jButton2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
                 .addComponent(DhloseisEnable)
                 .addGap(29, 29, 29)
                 .addComponent(adminLogoutButton)
@@ -371,12 +385,14 @@ public class NewJFrame extends javax.swing.JFrame {
 
         jLabel6.setText("Dilwsi :");
 
-        foititisDilwsiField.setEditable(false);
+        foititisDilwsiField.setColumns(20);
+        foititisDilwsiField.setRows(5);
         foititisDilwsiField.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 foititisDilwsiFieldMouseClicked(evt);
             }
         });
+        jScrollPane10.setViewportView(foititisDilwsiField);
 
         javax.swing.GroupLayout FoiththsPageLayout = new javax.swing.GroupLayout(FoiththsPage);
         FoiththsPage.setLayout(FoiththsPageLayout);
@@ -400,30 +416,33 @@ public class NewJFrame extends javax.swing.JFrame {
                     .addComponent(jLabel4))
                 .addGap(100, 100, 100)
                 .addGroup(FoiththsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ShowAmStd, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(foititisDilwsiField, javax.swing.GroupLayout.PREFERRED_SIZE, 391, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(21, Short.MAX_VALUE))
+                    .addGroup(FoiththsPageLayout.createSequentialGroup()
+                        .addComponent(ShowAmStd, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(296, Short.MAX_VALUE))
+                    .addGroup(FoiththsPageLayout.createSequentialGroup()
+                        .addComponent(jScrollPane10)
+                        .addGap(31, 31, 31))))
         );
         FoiththsPageLayout.setVerticalGroup(
             FoiththsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(FoiththsPageLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
-                .addGap(43, 43, 43)
-                .addGroup(FoiththsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(ShowAmStd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(46, 46, 46)
                 .addGroup(FoiththsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(FoiththsPageLayout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(43, 43, 43)
                         .addGroup(FoiththsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(foiththsLogoutButton)
-                            .addComponent(dhlwshStd)))
+                            .addComponent(jLabel4)
+                            .addComponent(ShowAmStd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(46, 46, 46)
+                        .addComponent(jLabel6))
                     .addGroup(FoiththsPageLayout.createSequentialGroup()
-                        .addComponent(foititisDilwsiField, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 148, Short.MAX_VALUE)))
+                        .addGap(100, 100, 100)
+                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
+                .addGroup(FoiththsPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(foiththsLogoutButton)
+                    .addComponent(dhlwshStd))
                 .addContainerGap())
         );
 
@@ -438,17 +457,25 @@ public class NewJFrame extends javax.swing.JFrame {
             }
         });
 
+        jButton14.setText("Vathmologia");
+
         javax.swing.GroupLayout KathigitisPageLayout = new javax.swing.GroupLayout(KathigitisPage);
         KathigitisPage.setLayout(KathigitisPageLayout);
         KathigitisPageLayout.setHorizontalGroup(
             KathigitisPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, KathigitisPageLayout.createSequentialGroup()
-                .addContainerGap(519, Short.MAX_VALUE)
-                .addComponent(kathigitisLogoutButton)
-                .addContainerGap())
             .addGroup(KathigitisPageLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3)
+                .addGroup(KathigitisPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, KathigitisPageLayout.createSequentialGroup()
+                        .addGap(0, 337, Short.MAX_VALUE)
+                        .addComponent(kathigitisLogoutButton))
+                    .addGroup(KathigitisPageLayout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(KathigitisPageLayout.createSequentialGroup()
+                .addGap(156, 156, 156)
+                .addComponent(jButton14)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         KathigitisPageLayout.setVerticalGroup(
@@ -456,7 +483,9 @@ public class NewJFrame extends javax.swing.JFrame {
             .addGroup(KathigitisPageLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 413, Short.MAX_VALUE)
+                .addGap(73, 73, 73)
+                .addComponent(jButton14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 264, Short.MAX_VALUE)
                 .addComponent(kathigitisLogoutButton)
                 .addContainerGap())
         );
@@ -492,7 +521,7 @@ public class NewJFrame extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, newStdPageLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jButton3)
-                .addGap(34, 531, Short.MAX_VALUE))
+                .addGap(34, 520, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, newStdPageLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(newStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -516,7 +545,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGroup(newStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(stdPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(stdAM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 311, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 303, Short.MAX_VALUE)
                 .addGroup(newStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(stdNewSubmit)
                     .addComponent(jButton3))
@@ -575,12 +604,12 @@ public class NewJFrame extends javax.swing.JFrame {
                             .addComponent(profOnomateponimo, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(profPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(profIdikotita, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 300, Short.MAX_VALUE))))
+                        .addGap(0, 289, Short.MAX_VALUE))))
         );
         newProfPageLayout.setVerticalGroup(
             newProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, newProfPageLayout.createSequentialGroup()
-                .addContainerGap(56, Short.MAX_VALUE)
+                .addContainerGap(48, Short.MAX_VALUE)
                 .addComponent(profTmima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(profUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -642,7 +671,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGroup(newMathPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, newMathPageLayout.createSequentialGroup()
                         .addComponent(jButton6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 456, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 445, Short.MAX_VALUE)
                         .addComponent(mathNewSubmit))
                     .addGroup(newMathPageLayout.createSequentialGroup()
                         .addGroup(newMathPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -670,7 +699,7 @@ public class NewJFrame extends javax.swing.JFrame {
                     .addComponent(jRadioButton2))
                 .addGap(37, 37, 37)
                 .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
                 .addGroup(newMathPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton6)
                     .addComponent(mathNewSubmit))
@@ -708,7 +737,7 @@ public class NewJFrame extends javax.swing.JFrame {
                         .addComponent(searchStdButton)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, searchStdPageLayout.createSequentialGroup()
-                        .addGap(0, 421, Short.MAX_VALUE)
+                        .addGap(0, 410, Short.MAX_VALUE)
                         .addComponent(searchStdUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(92, 92, 92))))
         );
@@ -717,7 +746,7 @@ public class NewJFrame extends javax.swing.JFrame {
             .addGroup(searchStdPageLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(searchStdUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 398, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 390, Short.MAX_VALUE)
                 .addGroup(searchStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(searchStdButton)
                     .addComponent(jButton7))
@@ -759,7 +788,7 @@ public class NewJFrame extends javax.swing.JFrame {
                     .addComponent(updateStdOnomatep, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
                     .addComponent(updateStdAM)
                     .addComponent(updateStdUsername))
-                .addContainerGap(453, Short.MAX_VALUE))
+                .addContainerGap(442, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, updateStdPageLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(deleteStdButton)
@@ -768,12 +797,12 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGroup(updateStdPageLayout.createSequentialGroup()
                     .addContainerGap()
                     .addComponent(updateStdButton)
-                    .addContainerGap(519, Short.MAX_VALUE)))
+                    .addContainerGap(508, Short.MAX_VALUE)))
         );
         updateStdPageLayout.setVerticalGroup(
             updateStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, updateStdPageLayout.createSequentialGroup()
-                .addContainerGap(80, Short.MAX_VALUE)
+                .addContainerGap(72, Short.MAX_VALUE)
                 .addComponent(updateStdUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(updateStdPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -786,7 +815,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(updateStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(updateStdPageLayout.createSequentialGroup()
-                    .addContainerGap(438, Short.MAX_VALUE)
+                    .addContainerGap(430, Short.MAX_VALUE)
                     .addComponent(updateStdButton)
                     .addContainerGap()))
         );
@@ -834,7 +863,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGroup(updateMathPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, updateMathPageLayout.createSequentialGroup()
                         .addComponent(updateMathButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 444, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 435, Short.MAX_VALUE)
                         .addComponent(deleteMathButton))
                     .addGroup(updateMathPageLayout.createSequentialGroup()
                         .addGroup(updateMathPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -862,7 +891,7 @@ public class NewJFrame extends javax.swing.JFrame {
                     .addComponent(jRadioButton4))
                 .addGap(49, 49, 49)
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
                 .addGroup(updateMathPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(deleteMathButton)
                     .addComponent(updateMathButton))
@@ -894,7 +923,7 @@ public class NewJFrame extends javax.swing.JFrame {
             .addGroup(searchMathPageLayout.createSequentialGroup()
                 .addGap(82, 82, 82)
                 .addComponent(searchMathKodikos, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(401, Short.MAX_VALUE))
+                .addContainerGap(390, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, searchMathPageLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jButton8)
@@ -907,7 +936,7 @@ public class NewJFrame extends javax.swing.JFrame {
             .addGroup(searchMathPageLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addComponent(searchMathKodikos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 389, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 381, Short.MAX_VALUE)
                 .addGroup(searchMathPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(searchMathButton)
                     .addComponent(jButton8))
@@ -939,7 +968,7 @@ public class NewJFrame extends javax.swing.JFrame {
             .addGroup(searchProfPageLayout.createSequentialGroup()
                 .addGap(82, 82, 82)
                 .addComponent(searchProfUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(401, Short.MAX_VALUE))
+                .addContainerGap(390, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, searchProfPageLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jButton9)
@@ -952,7 +981,7 @@ public class NewJFrame extends javax.swing.JFrame {
             .addGroup(searchProfPageLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addComponent(searchProfUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 389, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 381, Short.MAX_VALUE)
                 .addGroup(searchProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(searchProfButton)
                     .addComponent(jButton9))
@@ -1005,14 +1034,14 @@ public class NewJFrame extends javax.swing.JFrame {
                     .addComponent(updateProfTmima)
                     .addComponent(updateProfEidikothta)
                     .addComponent(updateProfUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 107, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(106, 106, 106))
         );
         updateProfPageLayout.setVerticalGroup(
             updateProfPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, updateProfPageLayout.createSequentialGroup()
-                .addContainerGap(57, Short.MAX_VALUE)
+                .addContainerGap(49, Short.MAX_VALUE)
                 .addComponent(updateProfUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(updateProfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1092,7 +1121,7 @@ public class NewJFrame extends javax.swing.JFrame {
         dhlwshStdPageLayout.setHorizontalGroup(
             dhlwshStdPageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dhlwshStdPageLayout.createSequentialGroup()
-                .addContainerGap(287, Short.MAX_VALUE)
+                .addContainerGap(274, Short.MAX_VALUE)
                 .addComponent(prosthikhDhlwshsStd)
                 .addGap(162, 162, 162))
             .addGroup(dhlwshStdPageLayout.createSequentialGroup()
@@ -1138,7 +1167,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addComponent(prosthikhDhlwshsStd)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
                 .addComponent(jButton10)
                 .addGap(21, 21, 21))
         );
@@ -1149,6 +1178,8 @@ public class NewJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
+        FileInputStream fi=null;
+        ObjectInputStream oi=null;
         try {
             switch(loginAs){
                 case "Admin":
@@ -1225,12 +1256,8 @@ public class NewJFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Someone changed or removed the file manually, File is resetting! Contact an admin");
         }finally{
             try{
-                if (oi != null){
-                    oi.close();
-                }
-                if (fi != null){
-                    fi.close();
-                }
+                oi.close();
+                fi.close();
                 System.out.println("ekleisa");
             } catch (IOException ex) {
                 Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
@@ -1240,28 +1267,18 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_loginButtonActionPerformed
 
     public void resetAccountFile(){
-        Account administrator = new Admin("admin", "admin", "Γιώργος Στίνης");
+        Account admin = new Admin("admin", "admin", "Γιώργος Στίνης");
         try{
             f = new FileOutputStream(new File("Admin.txt"));
             o = new ObjectOutputStream(f);
-            o.writeObject(administrator);
+            o.writeObject(admin);
             o.close();
             f.close();
-            File file = new File("Foithtes.txt");
-            if (oi != null){
-                oi.close();
-            }
-            if (fi != null){
-                fi.close();
-            }
-            if (file.exists()){
-                file.delete();
-                System.out.println("yparxo");
-            }
-            file = new File("Professors.txt");
-            if (file.exists()){
-                file.delete();
-            }
+            File f = new File("Foithtes.txt");
+            f.delete();
+            f = new File("Professors.txt");
+            f.delete();
+            
         } catch (IOException ex) {
             Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -1992,7 +2009,19 @@ public class NewJFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jRadioButton3ItemStateChanged
 
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        
+        getContentPane().removeAll();
+        getContentPane().repaint();
+        getContentPane().revalidate();
+        getContentPane().add(jPanel2);
+        getContentPane().repaint();
+        getContentPane().revalidate();     
+        
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
+
     private void foititisDilwsiFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_foititisDilwsiFieldMouseClicked
+        // TODO add your handling code here:
         foititisDilwsiField.setText(std.getDilwseis());
     }//GEN-LAST:event_foititisDilwsiFieldMouseClicked
     
@@ -2090,8 +2119,6 @@ public class NewJFrame extends javax.swing.JFrame {
     Mathima math;
     FileOutputStream f = null;
     ObjectOutputStream o = null;
-    FileInputStream fi=null;
-    ObjectInputStream oi=null;
     String loginAs;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AdminPage;
@@ -2111,12 +2138,13 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JButton dhlwshStd;
     private javax.swing.JPanel dhlwshStdPage;
     private javax.swing.JButton foiththsLogoutButton;
-    private javax.swing.JTextField foititisDilwsiField;
+    private javax.swing.JTextArea foititisDilwsiField;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -2141,6 +2169,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -2149,6 +2178,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JButton kathigitisLogoutButton;
     private javax.swing.JButton loginButton;
     private javax.swing.JTextField mathKodikos;

@@ -138,12 +138,13 @@ public class Foititis extends Account {
     }
 
     public String getDilwseis() {
-        
+        int counter = 1;
         String olo = "";        
         for(Dilwsi dil:dilwseis){
             String mathima = String.valueOf(dil.getMathima());
             String hmerom = String.valueOf(dil.getHmeromDilwsis());
-            olo += mathima+":"+hmerom+"";
+            olo += counter + ") "+ mathima+": "+hmerom+"\n";
+            counter++;
         }
         return olo;
     }
