@@ -27,6 +27,10 @@ public class Dilwsi implements Serializable{
         return hmeromDilwsis;
     }
 
+    public String getHmeromExetasis() {
+        return hmeromExetasis;
+    }
+    
     public void setVathmos(String hmeromExetasis, float vathmos) {
         this.hmeromExetasis = hmeromExetasis;
         this.vathmos = vathmos;

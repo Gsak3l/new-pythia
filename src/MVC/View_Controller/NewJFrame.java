@@ -1325,8 +1325,7 @@ public class NewJFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
-        FileInputStream fi=null;
-        ObjectInputStream oi=null;
+        
         try {
             switch(loginAs){
                 case "Admin":
@@ -1340,7 +1339,6 @@ public class NewJFrame extends javax.swing.JFrame {
                 case "Professor":
                     fi = new FileInputStream(new File("Professors.txt"));
                     oi = new ObjectInputStream(fi);
-                    System.out.println("eftasa");
                     break;
             }
             Account a1;
@@ -1366,10 +1364,8 @@ public class NewJFrame extends javax.swing.JFrame {
                                 getContentPane().add(AdminPage);
                                 if(admin.getDilwseis()){
                                     DhloseisEnable.setText("Periodos Diloseon");
-                                    System.out.println(admin.getDilwseis());
                                 }else{
                                     DhloseisEnable.setText("Enable Diloseis");
-                                    System.out.println(admin.getDilwseis());
                                 }
                                 break;
                             case "Professor":
@@ -1391,10 +1387,8 @@ public class NewJFrame extends javax.swing.JFrame {
                 }catch (IOException ex2) {
                     resetAccountFile();
                     JOptionPane.showMessageDialog(null, "File was reset");
-                    loginButtonActionPerformed(evt);
                     break;
                 }catch (ClassNotFoundException ex) {
-                    System.out.println("Ex1");
                     Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
@@ -1403,9 +1397,12 @@ public class NewJFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Someone changed or removed the file manually, File is resetting! Contact an admin");
         }finally{
             try{
-                oi.close();
-                fi.close();
-                System.out.println("ekleisa");
+                if (oi != null){
+                    oi.close();
+                }
+                if (fi != null){
+                    fi.close();
+                }
             } catch (IOException ex) {
                 Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -1414,17 +1411,27 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_loginButtonActionPerformed
 
     public void resetAccountFile(){
-        Account admin = new Admin("admin", "admin", "Γιώργος Στίνης");
+        Account administrator  = new Admin("admin", "admin", "Γιώργος Στίνης");
         try{
             f = new FileOutputStream(new File("Admin.txt"));
             o = new ObjectOutputStream(f);
-            o.writeObject(admin);
+            o.writeObject(administrator);
             o.close();
             f.close();
-            File f = new File("Foithtes.txt");
-            f.delete();
-            f = new File("Professors.txt");
-            f.delete();
+            File file = new File("Foithtes.txt");
+            if (oi != null){
+                oi.close();
+            }
+            if (fi != null){
+                fi.close();
+            }
+            if (file.exists()){
+                file.delete();
+            }
+            file = new File("Professors.txt");
+            if (file.exists()){
+                file.delete();
+            }
             
         } catch (IOException ex) {
             Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
@@ -1491,7 +1498,6 @@ public class NewJFrame extends javax.swing.JFrame {
             try{
                 oi.close();
                 fi.close();
-                System.out.println("ekleisa");
             }catch(IOException ex) {
                 System.err.println("An IOException was caught: " + ex.getMessage());
             }
@@ -1549,7 +1555,6 @@ public class NewJFrame extends javax.swing.JFrame {
             try{
                 oi.close();
                 fi.close();
-                System.out.println("ekleisa");
             }catch(IOException ex) {
                 System.err.println("An IOException was caught: " + ex.getMessage());
             }
@@ -1594,7 +1599,6 @@ public class NewJFrame extends javax.swing.JFrame {
                     try{
                         oi.close();
                         fi.close();
-                        System.out.println("ekleisa");
                     }catch(IOException ex) {
                         System.err.println("An IOException was caught: " + ex.getMessage());
                     }
@@ -1648,7 +1652,6 @@ public class NewJFrame extends javax.swing.JFrame {
                 try{
                     oi.close();
                     fi.close();
-                    System.out.println("ekleisa");
                 }catch(IOException ex) {
                     System.err.println("An IOException was caught: " + ex.getMessage());
                 }
@@ -1706,7 +1709,6 @@ public class NewJFrame extends javax.swing.JFrame {
     private void searchMathButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchMathButtonActionPerformed
         String kodikos = searchMathKodikos.getText();
         math = admin.searchMath(kodikos);
-        System.out.println("geia");
         if (math != null){
             getContentPane().removeAll();
             getContentPane().repaint();
@@ -1741,7 +1743,6 @@ public class NewJFrame extends javax.swing.JFrame {
                     try{
                         oi.close();
                         fi.close();
-                        System.out.println("ekleisa");
                     }catch(IOException ex) {
                         System.err.println("An IOException was caught: " + ex.getMessage());
                     }
@@ -1798,7 +1799,6 @@ public class NewJFrame extends javax.swing.JFrame {
             try{
                 oi.close();
                 fi.close();
-                System.out.println("ekleisa");
             }catch(IOException ex) {
                 System.err.println("An IOException was caught: " + ex.getMessage());
             }
@@ -1868,7 +1868,6 @@ public class NewJFrame extends javax.swing.JFrame {
                 try{
                     oi.close();
                     fi.close();
-                    System.out.println("ekleisa");
                 }catch(IOException ex) {
                     System.err.println("An IOException was caught: " + ex.getMessage());
                 }
@@ -1918,7 +1917,6 @@ public class NewJFrame extends javax.swing.JFrame {
             try{
                 oi.close();
                 fi.close();
-                System.out.println("ekleisa");
             }catch(IOException ex) {
                 System.err.println("An IOException was caught: " + ex.getMessage());
             }
@@ -1958,7 +1956,6 @@ public class NewJFrame extends javax.swing.JFrame {
         }
         else if(admin.getDilwseis()== true){
             jComboBox2.removeAllItems();
-            System.out.println(admin.getDilwseis());
             FileInputStream fi = null;
             ObjectInputStream oi = null;
             List<Mathima> mathimata = new ArrayList<>();
@@ -1982,7 +1979,6 @@ public class NewJFrame extends javax.swing.JFrame {
                 try{
                     oi.close();
                     fi.close();
-                    System.out.println("ekleisa");
                 }catch(IOException ex) {
                     System.err.println("An IOException was caught: " + ex.getMessage());
                 }
@@ -2025,7 +2021,6 @@ public class NewJFrame extends javax.swing.JFrame {
             try{
                 oi.close();
                 fi.close();
-                System.out.println("ekleisa");
             }catch(IOException ex) {
                 System.err.println("An IOException was caught: " + ex.getMessage());
             }
@@ -2110,10 +2105,8 @@ public class NewJFrame extends javax.swing.JFrame {
     private void DhloseisEnableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DhloseisEnableActionPerformed
         if(admin.updateDhlwseis()){
            DhloseisEnable.setText("Periodos Diloseon");
-           System.out.println(admin.getDilwseis());
         }else{
            DhloseisEnable.setText("Enable Diloseis");
-           System.out.println(admin.getDilwseis());
         }
     }//GEN-LAST:event_DhloseisEnableActionPerformed
 
@@ -2175,7 +2168,7 @@ public class NewJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_DilwsiStdMouseEntered
 
     private void DilwsiStdMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DilwsiStdMouseClicked
-        DilwsiStd.setText(std.getDilwseis());
+        DilwsiStd.setText(std.getDilwseisStr());
     }//GEN-LAST:event_DilwsiStdMouseClicked
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
@@ -2230,13 +2223,12 @@ public class NewJFrame extends javax.swing.JFrame {
             try{
                 oi.close();
                 fi.close();
-                System.out.println("ekleisa");
             }catch(IOException ex) {
                 System.err.println("An IOException was caught: " + ex.getMessage());
             }
         }
         boolean flag = false;
-        for(Dilwsi dil : std.getDilwsi3()){
+        for(Dilwsi dil : std.getListWithDilwseis()){
             if (selectedMath.equals(dil.getMathima().getTitlos())){
                 flag = true;
                 getContentPane().removeAll();
@@ -2300,7 +2292,6 @@ public class NewJFrame extends javax.swing.JFrame {
             while (true){
                 try{
                     stdList.add((Foititis)oi.readObject());
-                    System.out.println("Eftasa edo");
                 }catch (EOFException ex1) {
                     break; //EOF reached.
                 }catch (IOException ex2) {
@@ -2315,7 +2306,6 @@ public class NewJFrame extends javax.swing.JFrame {
             try{
                 oi.close();
                 fi.close();
-                System.out.println("ekleisa");
             } catch (IOException ex) {
                 Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -2355,7 +2345,6 @@ public class NewJFrame extends javax.swing.JFrame {
             try{
                 oi.close();
                 fi.close();
-                System.out.println("ekleisa");
             } catch (IOException ex) {
                 Logger.getLogger(NewJFrame.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -2417,6 +2406,8 @@ public class NewJFrame extends javax.swing.JFrame {
     Mathima math;
     FileOutputStream f = null;
     ObjectOutputStream o = null;
+    FileInputStream fi=null;
+    ObjectInputStream oi=null;
     String loginAs;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AdminPage;

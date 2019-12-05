@@ -7,7 +7,6 @@ import java.util.List;
 public class Mathima implements Serializable{
     private String titlos;
     private String kwdikos;
-    //private List<Mathima> proapaitoumena = new ArrayList<>();
     
     public Mathima(String kodikosMathimatos, String onomaMathimatos) {
         this.titlos = onomaMathimatos;

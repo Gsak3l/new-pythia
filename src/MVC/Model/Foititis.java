@@ -66,7 +66,11 @@ public class Foititis extends Account {
     
     public boolean elegxosData(Mathima mathima){
         if (mathima instanceof Theoria){
-            System.out.println("Eimai theoria");
+            if (dilwseis.isEmpty()){
+                if (((Theoria) mathima).hasProapaitoumena()){
+                    return false;
+                }
+            }
             for(Dilwsi dilwsi : dilwseis){
                 if (((Theoria) mathima).hasProapaitoumena()){
                     List<Mathima> proap = ((Theoria) mathima).getProap();
@@ -84,7 +88,6 @@ public class Foititis extends Account {
             }
         }
         else if (mathima instanceof Ergastirio){
-            System.out.println("Eimai erg");
             String kwdikos = mathima.getKwdikos();
             String kwdikosTheorias = kwdikos.substring(0, kwdikos.length()-1)+"Θ";
             boolean flag = false;
@@ -139,14 +142,10 @@ public class Foititis extends Account {
                 try{
                     o.close();
                     f.close();
-                    System.out.println("ekleisa");
                 }catch(IOException ex) {
                     System.err.println("An IOException was caught: " + ex.getMessage());
                 }
             }
-        }
-        else {
-            System.out.println("Den yparxei to arxeio");
         }
     }
     
@@ -165,7 +164,6 @@ public class Foititis extends Account {
                       a = (Account)oi.readObject();
                       if (a instanceof Foititis){
                           if(a.getUsername().equals(this.getUsername())){
-                              System.out.println("Ego eimai");
                               student.add(this);
                           }
                           else{
@@ -186,7 +184,6 @@ public class Foititis extends Account {
                 try{
                     oi.close();
                     fi.close();
-                    System.out.println("ekleisa");
                 }catch(IOException ex) {
                     System.err.println("An IOException was caught: " + ex.getMessage());
                 }
@@ -202,7 +199,7 @@ public class Foititis extends Account {
     public int getAM(){
         return this.AM;
     }
-    public boolean getDilwsi(String kodMath){
+    public boolean checkMathimaInDilwsi(String kodMath){
         for(Dilwsi dil:dilwseis) {
             if(dil.getMathima().getKwdikos().equals(kodMath)) {
                 return true;
@@ -210,7 +207,7 @@ public class Foititis extends Account {
         }
         return false;
     }
-    public String getDilwseis() {
+    public String getDilwseisStr() {
         String olo = "";        
         for(Dilwsi dil:dilwseis){
             String mathima = String.valueOf(dil.getMathima());
@@ -219,10 +216,10 @@ public class Foititis extends Account {
         }
         return olo;
     }
-    public List<Dilwsi> getDilwsi3(){
+    public List<Dilwsi> getListWithDilwseis(){
         return dilwseis;
     }
-    public Dilwsi getDilwsi2(String kodMath){
+    public Dilwsi getDilwsiByMathima(String kodMath){
         for(Dilwsi dil:dilwseis) {
             if(dil.getMathima().getKwdikos().equals(kodMath)) {
                 return dil;
@@ -247,5 +244,14 @@ public class Foititis extends Account {
     @Override
     public String toString() {
         return this.getUsername();
+    }
+    
+    public void showStatus(){
+        for(Dilwsi dil : this.getListWithDilwseis()){
+            if(dil.getVathmos() != 0.0){
+                System.out.println("Δήλωση: "+this.getAM()+", "+dil.getMathima().getKwdikos()+", "+dil.getHmeromDilwsis());
+                System.out.println("Βαθμολογία: "+this.getAM()+", "+dil.getMathima().getKwdikos()+", "+dil.getVathmos()+", "+dil.getHmeromExetasis());
+            }
+        }
     }
 }
