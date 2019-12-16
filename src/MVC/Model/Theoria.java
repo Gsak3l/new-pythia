@@ -37,7 +37,7 @@ public class Theoria extends Mathima{
     
     @Override
     public String toString() {
-        return "Theoria{ " + super.toString()+ " }";
+        return "Θεωρία [ " + super.toString()+ " ] ";
     }
    
 

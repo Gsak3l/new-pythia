@@ -15,6 +15,6 @@ public class Ergastirio extends Mathima{
     
     @Override
     public String toString() {
-        return "Ergastirio{ " + super.toString() + " }";
+        return "Εργαστήριο [ " + super.toString() + " ] ";
     }
 }

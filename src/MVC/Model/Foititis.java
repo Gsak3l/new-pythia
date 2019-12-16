@@ -30,7 +30,7 @@ public class Foititis extends Account {
             return true;
         }
         else {
-            System.out.println("H dhlwsh toy mathimatos apetyxe");
+            System.out.println("Η δήλωση του μαθήματος απέτυχε");
             return false;
         }
     }
@@ -53,7 +53,7 @@ public class Foititis extends Account {
             updateStdFile(getStdFromFile()); 
             return true;
         }
-        System.out.println("H vathmologia toy mathimatos apetyxe");
+        System.out.println("Η βαθμολογία του μαθήματος απέτυχε");
         return false;
     }
     
@@ -212,7 +212,8 @@ public class Foititis extends Account {
         for(Dilwsi dil:dilwseis){
             String mathima = String.valueOf(dil.getMathima());
             String hmerom = String.valueOf(dil.getHmeromDilwsis());
-            olo += mathima+":"+hmerom+"\n";
+            String vathmos = String.valueOf(dil.getVathmos());
+            olo += mathima+" | Ημερομηνία δήλωσης : "+hmerom+" | Βαθμός : "+vathmos+"\n";
         }
         return olo;
     }
